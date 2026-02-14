@@ -1,0 +1,78 @@
+   .admin-wrap {
+       max-width: 900px;
+       margin: 0 auto;
+       padding: 18px;
+   }
+
+   .card {
+       background: #fff;
+       border-radius: 16px;
+       padding: 14px;
+       box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+   }
+
+   .row {
+       display: flex;
+       gap: 10px;
+       flex-wrap: wrap;
+       align-items: center
+   }
+
+   input {
+       padding: 10px 12px;
+       border-radius: 12px;
+       border: 1px solid rgba(0, 0, 0, .12);
+       outline: none
+   }
+
+   .btn {
+       padding: 10px 12px;
+       border-radius: 12px;
+       border: 0;
+       cursor: pointer;
+       font-weight: 800
+   }
+
+   .btn-primary {
+       background: #ff8f94;
+       color: #fff
+   }
+
+   .btn-gray {
+       background: #e5e7eb;
+       color: #111
+   }
+
+   .btn-danger {
+       background: #ef4444;
+       color: #fff
+   }
+
+   table {
+       width: 100%;
+       border-collapse: collapse;
+       margin-top: 12px
+   }
+
+   th,
+   td {
+       padding: 10px;
+       border-bottom: 1px solid rgba(0, 0, 0, .08);
+       text-align: left;
+       font-size: 14px
+   }
+
+   th {
+       background: #f3f4f6
+   }
+
+   .msg {
+       margin: 12px 0;
+       color: #0f766e;
+       font-weight: 800
+   }
+
+   .small {
+       font-size: 12px;
+       color: #6b7280
+   }
