@@ -1,19 +1,28 @@
-<?php 
+<?php
+session_start();
 require_once __DIR__ . '/../helpers/function.php';
 
 $username = trim($_POST['username'] ?? '');
 $email    = trim($_POST['email'] ?? '');
-$password = trim($_POST['password'] ?? '');
+$password = $_POST['password'] ?? '';
 
-$error = registerValidation($username, $email, $password);
-if ($error) {
-    
-    die($error);
+$err = registerValidation($username, $email, $password);
+if ($err) {
+  $_SESSION['auth_error'] = $err;
+  header("Location: /MILKYWAY/auth/auth.php?mode=register");
+  exit();
 }
 
-$passwordHash = password_hash($password, PASSWORD_DEFAULT);
-createUser($username, $email, $passwordHash);
+if (emailExists($email)) {
+  $_SESSION['auth_error'] = "Email already registered. Try logging in.";
+  header("Location: /MILKYWAY/auth/auth.php?mode=login");
+  exit();
+}
 
-header("Location: ../auth/login.php");
+$hash = password_hash($password, PASSWORD_DEFAULT);
+$userId = createUser($username, $email, $hash, 'viewer');
+
+// Option A: auto-login after signup:
+loginUser($userId, 'viewer');
+header("Location: /MILKYWAY/index.php");
 exit();
-?>

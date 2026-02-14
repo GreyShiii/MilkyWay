@@ -101,9 +101,8 @@ body {
   z-index: 1000;
 }
 
-.footer-container button {
-  background: none;
-  border: none;
+.footer-container a {
+  text-decoration: none;
   cursor: pointer;
   padding: 6px 0;
   display: flex;

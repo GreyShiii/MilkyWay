@@ -13,7 +13,7 @@
     <section class="feature-grid">
 
         <div class="feature-container">
-            <a href="" class="feature-card">
+            <a href="/MILKYWAY/pages/watch.php" class="feature-card">
                 <div class="card-icon"><img src="/MILKYWAY/public/images/home-video.png" alt="Watch & Learn"></div>
                 <div class="card-text">
                     <h3>Watch & Learn</h3>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="feature-container">
-            <a href="" class="feature-card">
+            <a href="/MILKYWAY/locator.php" class="feature-card">
                 <div class="card-icon"><img src="/MILKYWAY/public/images/home-location.png" alt="Buddy"></div>
                 <div class="card-text">
                     <h3>Buddy</h3>

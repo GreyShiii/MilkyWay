@@ -1,8 +1,9 @@
-<?php include __DIR__ . "/layout/head.php"; ?>
-<?php include __DIR__ . "/components/header.php"; ?>
+<?php
+require_once __DIR__ . "/helpers/guard.php";
 
-<?php include __DIR__ . "/pages/home.php"; ?>
 
-<?php include __DIR__ . "/components/footer.php"; ?>
-</body>
-</html>
+include __DIR__ . "/layout/head.php";
+include __DIR__ . "/components/header.php";
+include __DIR__ . "/pages/home.php";
+include __DIR__ . "/components/footer.php";
+?>

@@ -1,28 +1,18 @@
 <?php
 session_start();
-
 require_once __DIR__ . '/../helpers/function.php';
 
 $email    = trim($_POST['email'] ?? '');
-$password = trim($_POST['password'] ?? '');
-
-if (empty($email) || empty($password)) {
-    die("Please fill in all fields.");
-}
+$password = $_POST['password'] ?? '';
 
 $user = getUserByEmail($email);
 
-if (!$user) {
-    die("Invalid email or password.");
+if (!$user || !password_verify($password, $user['password'])) {
+  $_SESSION['auth_error'] = "Invalid email or password.";
+  header("Location: /MILKYWAY/auth/auth.php?mode=login");
+  exit();
 }
 
-if (!password_verify($password, $user['password_hash'])) {
-    die("Invalid email or password.");
-}
-
-$_SESSION['user_id'] = $user['user_id'];
-$_SESSION['username'] = $user['username'];
-$_SESSION['role'] = $user['role'];
-
-header("Location: ../index.php");
+loginUser((int)$user['user_id'], $user['role']);
+header("Location: /MILKYWAY/index.php");
 exit();
