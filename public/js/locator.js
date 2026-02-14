@@ -1,13 +1,6 @@
-/* public/js/locator.js */
-
-// -------------------- CONSTANTS (must be first) --------------------
 const CAVITE_CENTER = { lat: 14.2766, lng: 120.862 };
 const RADIUS_METERS = 12000;
 
-/**
- * Approx Cavite bounds (good for "Cavite-only" behavior)
- * You can adjust these later if you want tighter/looser coverage.
- */
 const CAVITE_BOUNDS_SW = { lat: 13.65, lng: 120.70 };
 const CAVITE_BOUNDS_NE = { lat: 14.53, lng: 121.05 };
 
@@ -26,17 +19,13 @@ const MODE_CONFIG = {
   },
 };
 
-// -------------------- STATE --------------------
 let map, placesService, infoWindow, geocoder, autocomplete;
 let caviteBounds;
-
 let activeMode = "clinic";
 let searchCenter = CAVITE_CENTER;
-
 let markers = [];
 let markersByPlaceId = new Map();
 
-// -------------------- INIT --------------------
 window.initMap = function initMap() {
   const mapEl = document.getElementById("map");
   if (!mapEl) {
@@ -44,7 +33,6 @@ window.initMap = function initMap() {
     return;
   }
 
-  // Build LatLngBounds after google maps is available
   caviteBounds = new google.maps.LatLngBounds(
     new google.maps.LatLng(CAVITE_BOUNDS_SW.lat, CAVITE_BOUNDS_SW.lng),
     new google.maps.LatLng(CAVITE_BOUNDS_NE.lat, CAVITE_BOUNDS_NE.lng)
@@ -62,16 +50,13 @@ window.initMap = function initMap() {
   geocoder = new google.maps.Geocoder();
 
   setupModeButtons();
-  setupSearchBar();       // GPS button + Enter fallback
-  setupAutocomplete();    // Google Maps-style dropdown suggestions
+  setupSearchBar();   
+  setupAutocomplete();   
 
-  // Initial load (Cavite only)
   fetchAndRender();
 };
 
-// -------------------- HELPERS --------------------
 function isInsideCavite(latLng) {
-  // latLng is a google.maps.LatLng
   return caviteBounds && caviteBounds.contains(latLng);
 }
 
@@ -80,7 +65,6 @@ function showCaviteOnlyMessageAndClear() {
   renderList([], "Cavite only. Please search within Cavite.");
 }
 
-// -------------------- UI WIRING --------------------
 function setupModeButtons() {
   const btnClinic = document.getElementById("btnClinic");
   const btnStation = document.getElementById("btnStation");
@@ -93,7 +77,6 @@ function setupSearchBar() {
   const input = document.getElementById("searchInput");
   const gpsBtn = document.querySelector(".gps-btn");
 
-  // Enter fallback: if user doesn't click a suggestion, we geocode once
   if (input) {
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") {
@@ -105,7 +88,6 @@ function setupSearchBar() {
     });
   }
 
-  // Use my location button
   if (gpsBtn) {
     gpsBtn.addEventListener("click", () => {
       if (!navigator.geolocation) {
@@ -116,10 +98,7 @@ function setupSearchBar() {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           const loc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-
-          // Cavite-only pins
           if (!isInsideCavite(loc)) {
-            // Still pan there if you want, but do NOT show pins.
             map.panTo(loc);
             map.setZoom(12);
             showCaviteOnlyMessageAndClear();
@@ -142,20 +121,17 @@ function setupAutocomplete() {
   const input = document.getElementById("searchInput");
   if (!input) return;
 
-  // Google-style suggestions
   autocomplete = new google.maps.places.Autocomplete(input, {
     fields: ["geometry", "name", "formatted_address", "place_id"],
     types: ["geocode"],
-    componentRestrictions: { country: "ph" }, // optional
+    componentRestrictions: { country: "ph" }, 
   });
 
-  // Bias suggestions to current map bounds (better UX)
   autocomplete.bindTo("bounds", map);
 
   autocomplete.addListener("place_changed", () => {
     const place = autocomplete.getPlace();
 
-    // If user typed but didn't select properly
     if (!place || !place.geometry || !place.geometry.location) {
       const q = input.value.trim();
       if (q) geocodeAndGo(q);
@@ -164,11 +140,9 @@ function setupAutocomplete() {
 
     const loc = place.geometry.location;
 
-    // Pan map to selected place always (nice UX)
     map.panTo(loc);
     map.setZoom(13);
 
-    // Cavite-only pins/results
     if (!isInsideCavite(loc)) {
       showCaviteOnlyMessageAndClear();
       return;
@@ -178,13 +152,11 @@ function setupAutocomplete() {
     fetchAndRender();
   });
 
-  // Prevent Enter from submitting forms / refreshing
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") e.preventDefault();
   });
 }
 
-// -------------------- GEOCODER FALLBACK --------------------
 function geocodeAndGo(query) {
   if (!geocoder) return;
 
@@ -198,11 +170,9 @@ function geocodeAndGo(query) {
 
     const loc = results[0].geometry.location;
 
-    // Pan there for user feedback
     map.panTo(loc);
     map.setZoom(13);
 
-    // Cavite-only pins/results
     if (!isInsideCavite(loc)) {
       showCaviteOnlyMessageAndClear();
       return;
@@ -213,7 +183,6 @@ function geocodeAndGo(query) {
   });
 }
 
-// -------------------- MODE --------------------
 function setMode(mode) {
   if (activeMode === mode) return;
   activeMode = mode;
@@ -227,11 +196,9 @@ function setMode(mode) {
   fetchAndRender();
 }
 
-// -------------------- PLACES FETCH + RENDER --------------------
 function fetchAndRender() {
   if (!placesService) return;
 
-  // Hard safety: never fetch if center isn't Cavite
   const centerLatLng = new google.maps.LatLng(searchCenter.lat, searchCenter.lng);
   if (!isInsideCavite(centerLatLng)) {
     showCaviteOnlyMessageAndClear();
@@ -361,7 +328,6 @@ function focusPlace(place, marker) {
   infoWindow.open({ anchor: marker, map });
 }
 
-// -------------------- CLEANUP + UTILS --------------------
 function clearMarkers() {
   markers.forEach((m) => m.setMap(null));
   markers = [];
