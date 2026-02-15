@@ -1,0 +1,100 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const stars = document.querySelectorAll("#starRating .star");
+  const submitBtn = document.getElementById("btnSubmitFeedback");
+  const likeButtons = document.querySelectorAll("#likeGrid .like-card");
+
+  // Popup elements
+  const thanksOverlay = document.getElementById("thanksOverlay");
+  const btnThanksClose = document.getElementById("btnThanksClose");
+
+  let selectedRating = 0;
+
+  function renderStars(fillUpTo) {
+    stars.forEach(s => {
+      const shouldFill = Number(s.dataset.value) <= fillUpTo;
+      s.classList.toggle("active", shouldFill);
+      s.textContent = shouldFill ? "★" : "☆";
+    });
+  }
+
+  function openThanks() {
+    if (!thanksOverlay) return;
+    thanksOverlay.classList.add("is-open");
+    thanksOverlay.setAttribute("aria-hidden", "false");
+  }
+
+  function closeThanks() {
+    if (!thanksOverlay) return;
+    thanksOverlay.classList.remove("is-open");
+    thanksOverlay.setAttribute("aria-hidden", "true");
+  }
+
+  // Close popup actions
+  btnThanksClose?.addEventListener("click", closeThanks);
+  thanksOverlay?.addEventListener("click", (e) => {
+    if (e.target === thanksOverlay) closeThanks();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeThanks();
+  });
+
+  /* ===== STAR HOVER + CLICK ===== */
+  stars.forEach(star => {
+    star.addEventListener("mouseenter", () => {
+      renderStars(Number(star.dataset.value));
+    });
+
+    star.addEventListener("mouseleave", () => {
+      renderStars(selectedRating);
+    });
+
+    star.addEventListener("click", () => {
+      selectedRating = Number(star.dataset.value);
+      renderStars(selectedRating);
+    });
+  });
+
+  /* ===== LIKE CARDS ===== */
+  likeButtons.forEach(btn => {
+    btn.addEventListener("click", () => btn.classList.toggle("is-selected"));
+  });
+
+  /* ===== SUBMIT ===== */
+  submitBtn?.addEventListener("click", async () => {
+    if (selectedRating < 1 || selectedRating > 5) {
+      alert("Please select a star rating first.");
+      return;
+    }
+
+    const liked = [];
+    document.querySelectorAll("#likeGrid .like-card.is-selected")
+      .forEach(b => liked.push(b.dataset.like));
+
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch("/MilkyWay/process/save_feedback.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ rating: selectedRating, liked })
+      });
+
+      const out = await res.json();
+      if (!out.ok) throw new Error(out.error || "Save failed");
+
+      // ✅ reset UI
+      selectedRating = 0;
+      renderStars(0);
+      likeButtons.forEach(btn => btn.classList.remove("is-selected"));
+
+      // ✅ show popup
+      openThanks();
+
+    } catch (e) {
+      console.error(e);
+      alert("Failed to save feedback. Please try again.");
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+});

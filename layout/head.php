@@ -5,6 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Milky Way</title>
 
-  <link rel="stylesheet" href="/MilkyWay/public/css/main.css">
+  <link rel="stylesheet" href="/MILKYWAY/public/css/main.css">
 </head>
 <body>
