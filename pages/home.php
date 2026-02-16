@@ -12,7 +12,7 @@
   <section class="feature-grid">
 
     <div class="feature-container">
-      <a href="/MILKYWAY/pages/watch.php" class="feature-card">
+      <a href="/MilkyWay/index.php?page=watch" class="feature-card">
         <div class="card-icon">
           <img src="/MILKYWAY/public/images/home-video.png" alt="Watch & Learn">
         </div>

@@ -8,8 +8,10 @@
 
 
         <div class="logo">
+            <img class="logo-img" src="/MILKYWAY/public/images/logo.png" alt="Milky Way">
             <span class="logo-text">Milky Way</span>
         </div>
+
 
         <div class="topbar-spacer"></div>
     </div>

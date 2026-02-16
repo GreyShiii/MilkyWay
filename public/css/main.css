@@ -3,6 +3,9 @@ html, body {
   overflow-x: hidden;
 }
 
+html { scrollbar-gutter: stable; }
+html { overflow-y: scroll; }
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -56,17 +59,30 @@ body {
   border-radius: 3px;
 }
 
-.logo { 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-} 
-
-.logo-text { 
-  font-size: 22px; 
-  font-weight: 700; 
-  color: #fff; 
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;              /* space between icon and text */
+  min-width: 0;           /* prevents overflow issues */
 }
+
+.logo-img{
+  width: 40px;            /* adjust if you want bigger */
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.logo-text{
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  white-space: nowrap;    /* keep "Milky Way" on one line */
+}
+
 
 .subbar {
   background: #ffffff;
@@ -96,7 +112,7 @@ body {
   padding: 10px 10px calc(10px + env(safe-area-inset-bottom));
   border-top: 1px solid rgba(0,0,0,0.08);
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   z-index: 1000;
 }
@@ -124,12 +140,30 @@ body {
 }
 
 
+/* Base */
 .page {
   flex: 1;
   padding: 16px;
-  width: 100%;
   padding-bottom: 100px;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
 }
+
+/* Tablet */
+@media (min-width: 768px) {
+  .page {
+    max-width: 720px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .page {
+    max-width: 900px;
+  }
+}
+
 
 .hero {
   margin-top: 12px;
@@ -867,3 +901,646 @@ body {
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(255, 111, 122, 0.25);
 }
+
+/* ========================
+   WATCH & LEARN (FIXED)
+======================== */
+
+.watch-page {
+  display: grid;
+  gap: 12px;
+
+  /* 🔴 CRITICAL FIX */
+  align-content: start;
+}
+
+.watch-head {
+  text-align: center;
+  padding-top: 4px;
+}
+
+.watch-head h1 {
+  margin: 0;
+  font-size: 22px;
+  color: #ff6f7a;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.watch-head p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* ========================
+   CATEGORY CHIPS
+======================== */
+
+.watch-chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 12px 12px;
+  align-items: center;
+}
+
+.watch-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.watch-chips .chip {
+  flex: 0 0 auto;
+  padding: 6px 12px;
+  height: 32px;
+  border-radius: 999px;
+  background: #fff;
+  color: #111827;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+
+.watch-chips .chip.is-active {
+  background: #ff6f7a;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .watch-chips {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+
+/* ========================
+   VIDEO LIST (FIXED)
+======================== */
+
+.watch-list {
+  display: grid;
+  gap: 12px;
+
+  /* 🔴 CRITICAL FIX */
+  align-content: start;
+}
+
+.watch-card {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 12px;
+
+  background: #fff;
+  border-radius: 18px;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+
+  /* 🔴 CRITICAL FIX */
+  align-self: start;
+}
+
+.watch-thumb {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 92px;
+  background: #eee;
+}
+
+.watch-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(88%);
+}
+
+.watch-play {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.85);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  color: #ff6f7a;
+}
+
+.watch-dur {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  background: rgba(0,0,0,0.55);
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+.watch-meta {
+  display: grid;
+  align-content: center;
+  gap: 6px;
+}
+
+.watch-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.25;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.watch-author {
+  margin: 0;
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.watch-desc{
+  margin: 0;
+  font-size: 11px;
+  color: #6b7280;
+  font-weight: 500;
+  line-height: 1.3;
+
+  /* clamp to 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* ========================
+   WATCH VIEW (PLAYER)
+======================== */
+
+.watch-view-page {
+  display: grid;
+  gap: 12px;
+}
+
+.watch-player {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+}
+
+.watch-player video {
+  width: 100%;
+  height: auto;
+  max-height: 55vh;
+  display: block;
+  object-fit: contain;
+}
+
+.watch-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #fff;
+  color: #ff6f7a;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.watch-back:active {
+  transform: scale(0.98);
+}
+
+/* Articles */
+
+/* ===== ARTICLES CATEGORIES (PAGE 1) ===== */
+
+.articles-page{
+  padding-top: 10px;
+}
+
+.articles-cats{
+  display: grid;
+  gap: 14px;
+}
+
+.article-cat-card{
+  position: relative;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  text-decoration: none;
+  min-height: 150px;
+}
+
+.article-cat-img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(88%);
+}
+
+/* Ribbon like your screenshot */
+.article-cat-ribbon{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  padding: 14px 12px;
+
+  text-align: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+
+  border-radius: 0;          /* 🔥 NO ROUNDING */
+  box-shadow: none;          /* optional – matches your mockup */
+}
+
+
+/* ===== ARTICLES CATEGORY PAGE (PAGE 2 placeholder) ===== */
+
+.articles-list-page{
+  padding-top: 0;
+}
+
+.articles-list-hero{
+  position: relative;
+  border-radius: 0 0 22px 22px;
+  overflow: hidden;
+  margin: -16px -16px 12px; /* stretch to edges inside .page */
+}
+
+.articles-list-hero img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(90%);
+}
+
+.articles-list-chip{
+  position: absolute;
+  left: 14px;
+  bottom: 52px;
+  background: rgba(255,255,255,0.90);
+  color: #ff6f7a;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 7px 10px;
+  border-radius: 999px;
+}
+
+.articles-list-title{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  text-align: center;
+  color: #fff;
+  font-weight: 900;
+  font-size: 14px;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.articles-grid{
+  display: grid;
+  gap: 12px;
+}
+
+.articles-empty{
+  background: #fff;
+  border-radius: 16px;
+  padding: 14px;
+  font-size: 12px;
+  color: #6b7280;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+}
+
+/* ===== ARTICLES CATEGORY STRIPS (NO GAP, NO RADIUS) ===== */
+
+.article-cats{
+  margin: 0;
+  padding: 0;
+  display: block;           /* stack naturally */
+}
+
+/* each category is a full-width strip */
+.article-cat{
+  display: block;
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+
+  margin: 0;                /* ✅ no gaps */
+  border-radius: 0;         /* ✅ no rounding */
+  overflow: hidden;         /* keeps ribbon clean */
+}
+
+/* image fills the strip */
+.article-cat-img{
+  width: 100%;
+  height: 170px;            /* adjust to match your mockup */
+  display: block;
+  object-fit: cover;
+
+  border-radius: 0;         /* ✅ no rounding */
+}
+
+/* full-width title bar */
+.article-cat-ribbon{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  padding: 12px 12px;
+
+  text-align: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+
+  border-radius: 0;         /* ✅ no rounding */
+}
+
+/* Ribbon colors (match your screenshot vibe) */
+.ribbon-pink{   background: #ff7fd6; }
+.ribbon-red{    background: #ff4b4b; }
+.ribbon-purple{ background: #b58bff; }
+
+
+/* ===== ARTICLES HEADER (STYLE ONLY) ===== */
+
+.articles-head {
+  text-align: center;
+  padding: 12px 0 6px;
+}
+
+.articles-head h1 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 500;
+  color: #ff6f7a;
+
+  /* handwritten look */
+  font-family: 'Pacifico', 'Brush Script MT', cursive;
+}
+
+.articles-head p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+
+/* ===== ARTICLES CATEGORY PAGE ===== */
+
+.articles-cat-hero{
+  position: relative;
+  overflow: hidden;
+}
+
+.articles-cat-hero-img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.articles-cat-back{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 11px;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0,0,0,0.25);
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.articles-cat-ribbon{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 12px;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+
+  /* IMPORTANT: no rounded + fills all space */
+  border-radius: 0;
+}
+
+/* ribbon colors */
+.ribbon-pink{ background: #ff7fd0; }
+.ribbon-red{ background: #ff4d4d; }
+.ribbon-purple{ background: #a66bff; }
+
+/* grid like your screenshot (3 columns) */
+.articles-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 12px 6px 0;
+}
+
+/* card */
+.article-card{
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-thumb{
+  width: 100%;
+  height: 110px;
+  background: #fff;
+  border: 2px solid rgba(255, 111, 122, 0.45);
+  border-radius: 10px;
+}
+
+.article-card-meta{
+  padding: 6px 2px 0;
+  text-align: center;
+}
+
+.article-card-title{
+  margin: 0;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.article-card-author{
+  margin: 2px 0 0;
+  font-size: 8px;
+  color: #6b7280;
+  line-height: 1.2;
+}
+
+.articles-empty{
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #6b7280;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* ===== ARTICLE VIEW (READABLE LIKE BLOG) ===== */
+
+.article-view-page{
+  padding: 14px 0 30px;
+}
+
+.article-shell{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.article-back{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #ff6f7a;
+  font-weight: 800;
+  font-size: 13px;
+  margin: 6px 0 14px;
+}
+
+.article-title{
+  margin: 0 0 10px;
+  font-size: 26px;
+  line-height: 1.15;
+  font-weight: 900;
+  color: #111827;
+}
+
+.article-meta{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 16px;
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.article-meta-label{
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.article-meta-value{
+  color: #374151;
+}
+
+.article-meta-dot{
+  color: #cbd5e1;
+  margin: 0 4px;
+}
+
+.article-overview{
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: #374151;
+
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* Content typography */
+.article-content{
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+
+  font-size: 16px;
+  line-height: 1.85;
+  color: #111827;
+}
+
+.article-content p{
+  margin: 0 0 14px;
+}
+
+.article-content h2,
+.article-content h3{
+  margin: 18px 0 10px;
+  line-height: 1.25;
+  color: #111827;
+}
+
+.article-content h2{
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.article-content h3{
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.article-content a{
+  color: #ff6f7a;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.article-content ul,
+.article-content ol{
+  margin: 0 0 14px 18px;
+}
+
+.article-content li{
+  margin: 6px 0;
+}
+
+/* Simple callout/quote style (optional) */
+.article-content blockquote{
+  margin: 16px 0;
+  padding: 12px 14px;
+  border-left: 4px solid rgba(255,111,122,0.55);
+  background: rgba(255,111,122,0.08);
+  border-radius: 12px;
+  color: #374151;
+}
+
+

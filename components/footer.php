@@ -10,11 +10,6 @@
     <p class="image-title">Watch</p>
   </a>
 
-  <a href="/MILKYWAY/pages/mommates.php">
-    <img src="/MILKYWAY/public/images/footer-community.png" alt="">
-    <p class="image-title">MomMates</p>
-  </a>
-
   <a href="/MILKYWAY/pages/articles.php">
     <img src="/MILKYWAY/public/images/footer-book.png" alt="">
     <p class="image-title">Articles</p>
