@@ -36,7 +36,7 @@ $VIDEOS = [
 //   Nutrition
   [
     'id' => 3,
-    'title' => '15 FOODS PARA DUMAMI ANG BREASTMILK NG BREASTFEEDING MOMMIES!.mp4',
+    'title' => '15 Foods na Pamparami ng Breastmilk',
     'author' => 'Healing Galing',
     'description' => 'A practical guide on nutrient tips and diet strategies to support breastfeeding moms’ health, including foods to include for energy, hydration, and milk production',
     'category' => 'nutrition',
@@ -46,7 +46,7 @@ $VIDEOS = [
   ],
   [
     'id' => 4,
-    'title' => '10 Foods to Avoid During Breastfeeding | Food Breastfeeding Mother Should Avoid',
+    'title' => '10 Food to avoid During Pregnancy',
     'author' => 'FirstCry Parenting',
     'description' => 'Key guidance on what foods may affect your baby or breast milk negatively so you can adjust your diet with confidence while nursing.',
     'category' => 'nutrition',
@@ -56,7 +56,7 @@ $VIDEOS = [
   ],
   [
     'id' => 5,
-    'title' => '10 Best Foods to Increase Breast Milk | How to Increase Breast Milk Supply Quickly',
+    'title' => '10 Best Foods to Increase Breast Milk',
     'author' => 'FirstCry Parenting',
     'description' => 'Discover the top 10 nutritious foods that can help breastfeeding moms boost milk production and stay energized with healthy, family-friendly nutrition tips.',
     'category' => 'nutrition',
@@ -66,7 +66,7 @@ $VIDEOS = [
   ],
   [
     'id' => 6,
-    'title' => '6 Best Fruits to Eat During Breastfeeding | Breastfeeding Diet | Foods To Eat While Breastfeeding',
+    'title' => '6 Best Fruits Every Breastfeeding Mom Should eat',
     'author' => 'FirstCry Parenting',
     'description' => 'Learn which 6 fruits are most beneficial to include in your breastfeeding diet for extra vitamins, hydration, and overall nourishment.',
     'category' => 'nutrition',
@@ -100,7 +100,7 @@ $VIDEOS = [
     'id' => 9,
     'title' => 'Poor Latch',
     'author' => 'Scottish Government',
-    'description' => 'No description',
+    'description' => 'Latch right, feed bright. Secured attachment turns every feed into an effortless, nurturing experience',
     'category' => 'problems',
     'duration' => '1:04',
     'thumb' => '/MilkyWay/public/images/thumbnails/problems/problems1.jpg',
@@ -108,9 +108,9 @@ $VIDEOS = [
   ],
   [
     'id' => 10,
-    'title' => 'Mastitis - Breast pain during lactation or pregnancy. Mastitis symptoms and treatment.',
+    'title' => 'Mastitis',
     'author' => 'Dr. Constantin',
-    'description' => 'wikiHow',
+    'description' => 'Awareness today prevents complications tomorrow. Protected breast health, protects your milk flow.',
     'category' => 'problems',
     'duration' => '2:48',
     'thumb' => '/MilkyWay/public/images/thumbnails/problems/problems2.jpg',
@@ -118,9 +118,9 @@ $VIDEOS = [
   ],
   [
     'id' => 11,
-    'title' => 'Low Breast Milk Supply – Causes, Signs & Solutions',
+    'title' => 'Low Breast Milk Supply',
     'author' => 'FirstCry Parenting',
-    'description' => 'Learning what causes a low milk supply, understanding its signs and applying the solutions to improve breastmilk production.',
+    'description' => 'When supply feels low, knowledge and support help it grow because understanding the causes, signs, and solutions can turn worry into action.',
     'category' => 'problems',
     'duration' => '4:08',
     'thumb' => '/MilkyWay/public/images/thumbnails/problems/problems3.jpg',
@@ -149,9 +149,9 @@ $VIDEOS = [
 //   Proper Position
   [
     'id' => 14,
-    'title' => 'How-To: The Cross-Cradle Breastfeeding Position',
+    'title' => 'Cross - cradle position ',
     'author' => 'Emma’s Diary',
-    'description' => 'a guide on how to do the cross-cradle breastfeeding position.',
+    'description' => 'Guide the head, support the body, cross-cradle makes feeding easy.',
     'category' => 'position',
     'duration' => '0:45',
     'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position1.jpg',
@@ -159,9 +159,9 @@ $VIDEOS = [
   ],
   [
     'id' => 15,
-    'title' => 'How-to: The Cradle Breastfeeding Position',
+    'title' => 'Cradle Position',
     'author' => 'Emma’s Diary',
-    'description' => 'a guide on how to do the cradle breastfeeding position.',
+    'description' => 'Cradle the bond, cradle the baby. With this guide master the cradle hold with confidence and comfort.',
     'category' => 'position',
     'duration' => '0:44',
     'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position2.jpg',
@@ -169,9 +169,9 @@ $VIDEOS = [
   ],
   [
     'id' => 16,
-    'title' => 'How-to: Back-lying Breastfeeding Position',
+    'title' => 'Back - Lying Position',
     'author' => 'Emma’s Diary',
-    'description' => 'wikiHow',
+    'description' => 'Relax, and let your baby find the perfect latch with confidence.',
     'category' => 'position',
     'duration' => '0:48',
     'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position3.jpg',
@@ -179,9 +179,9 @@ $VIDEOS = [
   ],
   [
     'id' => 17,
-    'title' => 'Breastfeeding-Football Position',
+    'title' => 'Football Position',
     'author' => 'Breastfeeding Success',
-    'description' => 'wikiHow',
+    'description' => 'Position your little one under your arm, keeping them close and their head steady. Keep their neck and spine in line to ensure a safe, comfortable feeding posture with a football position.',
     'category' => 'position',
     'duration' => '1:30',
     'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position4.jpg',
@@ -189,9 +189,9 @@ $VIDEOS = [
   ],
   [
     'id' => 18,
-    'title' => 'Breastfeeding in the side-lying position | Breastfeeding',
+    'title' => 'Side-lying Position',
     'author' => 'SIKANA English',
-    'description' => 'wikiHow',
+    'description' => 'In side-lying breastfeeding, the mother can fully rest while the baby feeds, creating a calm and comfortable environment. Keeping the baby’s body aligned with their head supported encourages efficient milk transfer. This position is ideal for reducing strain, promoting bonding, and making feeding sessions peaceful.',
     'category' => 'position',
     'duration' => '2:05',
     'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position5.jpg',
@@ -200,7 +200,7 @@ $VIDEOS = [
 //   Techniques
   [
     'id' => 19,
-    'title' => 'How to Massage and Hand Express to Remove Your Milk | Informative',
+    'title' => 'How to Breast Massage and Hand Express to Remove Milk',
     'author' => 'Sunny Huang - IBCLC',
     'description' => 'Step-by-step demonstration of hand expression techniques and massage tips to help gently express breast milk without a pump.',
     'category' => 'techniques',
@@ -210,7 +210,7 @@ $VIDEOS = [
   ],
   [
     'id' => 20,
-    'title' => 'Mother Milk Magic: Enhancing Low Breast Milk Production',
+    'title' => 'Methods to Increase Low - Milk Supply? ',
     'author' => 'Medical Centric Podcast',
     'description' => 'Expert strategies and tips on enhancing milk supply naturally, including lifestyle changes and nursing tips to support low milk production.',
     'category' => 'techniques',

@@ -18,7 +18,6 @@ $avgRatingFormatted = number_format($avgRating, 1);
 
 <main class="page feedback-page">
 
-  <!-- APP RATING CARD -->
   <section class="feedback-summary">
     <div class="rating-card">
       <div class="rating-icon">⭐</div>
@@ -36,7 +35,6 @@ $avgRatingFormatted = number_format($avgRating, 1);
     </div>
   </section>
 
-  <!-- STAR RATING -->
   <section class="feedback-stars">
     <h3>How was your experience?</h3>
     <p class="tap-text">Tap to rate</p>
@@ -54,7 +52,6 @@ $avgRatingFormatted = number_format($avgRating, 1);
     <p class="feedback-thanks" id="feedbackThanks"></p>
   </section>
 
-  <!-- WHAT DID YOU LIKE -->
   <section class="feedback-likes">
     <h3>What did you like the most?</h3>
 

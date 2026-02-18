@@ -1,5 +1,3 @@
-// public/js/menu.js
-
 (function () {
   const body = document.body;
   const btn = document.getElementById("menuBtn");        // hamburger
@@ -27,14 +25,39 @@
 
   overlay.addEventListener("click", closeMenu);
 
-  // Close on ESC
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 
-  // Close when a link inside menu is clicked
   drawer.addEventListener("click", (e) => {
     const a = e.target.closest("a");
     if (a) closeMenu();
   });
+
+  const langModal = document.getElementById("langModal");
+  const openLang = document.getElementById("openLang");
+  const closeLang = document.getElementById("closeLang");
+
+  if (langModal && openLang && closeLang) {
+    const open = () => {
+      langModal.classList.add("is-open");
+      langModal.setAttribute("aria-hidden", "false");
+    };
+    const close = () => {
+      langModal.classList.remove("is-open");
+      langModal.setAttribute("aria-hidden", "true");
+    };
+
+    openLang.addEventListener("click", open);
+    closeLang.addEventListener("click", close);
+
+    langModal.addEventListener("click", (e) => {
+      if (e.target === langModal) close();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+  }
+
 })();

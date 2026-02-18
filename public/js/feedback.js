@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitBtn = document.getElementById("btnSubmitFeedback");
   const likeButtons = document.querySelectorAll("#likeGrid .like-card");
 
-  // Popup elements
   const thanksOverlay = document.getElementById("thanksOverlay");
   const btnThanksClose = document.getElementById("btnThanksClose");
 
@@ -29,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     thanksOverlay.setAttribute("aria-hidden", "true");
   }
 
-  // Close popup actions
   btnThanksClose?.addEventListener("click", closeThanks);
   thanksOverlay?.addEventListener("click", (e) => {
     if (e.target === thanksOverlay) closeThanks();
@@ -38,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeThanks();
   });
 
-  /* ===== STAR HOVER + CLICK ===== */
   stars.forEach(star => {
     star.addEventListener("mouseenter", () => {
       renderStars(Number(star.dataset.value));
@@ -54,12 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ===== LIKE CARDS ===== */
   likeButtons.forEach(btn => {
     btn.addEventListener("click", () => btn.classList.toggle("is-selected"));
   });
 
-  /* ===== SUBMIT ===== */
   submitBtn?.addEventListener("click", async () => {
     if (selectedRating < 1 || selectedRating > 5) {
       alert("Please select a star rating first.");
@@ -82,12 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const out = await res.json();
       if (!out.ok) throw new Error(out.error || "Save failed");
 
-      // ✅ reset UI
       selectedRating = 0;
       renderStars(0);
       likeButtons.forEach(btn => btn.classList.remove("is-selected"));
 
-      // ✅ show popup
       openThanks();
 
     } catch (e) {

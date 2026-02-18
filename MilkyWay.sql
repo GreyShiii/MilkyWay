@@ -10,3 +10,9 @@ CREATE TABLE feedback (
   liked_tips BOOLEAN DEFAULT 0,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE daily_tips (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  tip_text TEXT NOT NULL,
+  is_active TINYINT(1) DEFAULT 1
+);

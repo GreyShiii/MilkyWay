@@ -1,11 +1,12 @@
+<?php include __DIR__ . '/menu.php'; ?>
+
 <header class="header">
     <div class="topbar">
-        <button id="menuBtn" class="hamburger" type="button" aria-label="Open menu">
+        <button id="menuBtn" class="hamburger" type="button" aria-label="Menu">
             <span class="hamburger__line"></span>
             <span class="hamburger__line"></span>
             <span class="hamburger__line"></span>
         </button>
-
 
         <div class="logo">
             <img class="logo-img" src="/MILKYWAY/public/images/logo.png" alt="Milky Way">

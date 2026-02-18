@@ -11,10 +11,11 @@
 <body>
   <main class="page locator-page">
 
-    <section class="locator-title">
-      <h1>Breastfeed Buddy</h1>
-      <p>Breastfeeding Station Locator</p>
-    </section>
+    <section class="page-title-wrap">
+  <h1 class="page-title">Breastfeed Buddy</h1>
+  <p class="page-subtitle">Breastfeeding Station Locator</p>
+</section>
+
 
     <section class="locator-search">
       <div class="search-pill">
