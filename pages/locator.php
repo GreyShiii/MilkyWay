@@ -12,9 +12,10 @@
   <main class="page locator-page">
 
     <section class="page-title-wrap">
-  <h1 class="page-title">Breastfeed Buddy</h1>
-  <p class="page-subtitle">Breastfeeding Station Locator</p>
-</section>
+      <h1 class="page-title">Breastfeed Buddy</h1>
+      <p class="page-subtitle">Breastfeeding Station Locator</p>
+    </section>
+
 
 
     <section class="locator-search">

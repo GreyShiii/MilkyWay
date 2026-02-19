@@ -10,6 +10,7 @@ require_once __DIR__ . '/../helpers/articles.php';
   </section>
 
 
+
   <section class="article-cats">
     <?php foreach ($ARTICLE_CATEGORIES as $c): ?>
       <a class="article-cat"

@@ -52,7 +52,7 @@ $tip = $dailyTips[$dayIndex % count($dailyTips)];
     </div>
 
     <div class="feature-container">
-      <a href="#" class="feature-card">
+      <a href="/MILKYWAY/index.php?page=didyouknow" class="feature-card">
         <div class="card-icon">
           <img src="/MILKYWAY/public/images/home-community.png" alt="MomMates">
         </div>

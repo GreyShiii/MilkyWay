@@ -290,12 +290,21 @@ function renderList(places, emptyMessage = "No results found. Try switching mode
     const card = document.createElement("div");
     card.className = "place-card";
     card.innerHTML = `
-      <h3 class="place-name">${escapeHtml(p.name)}</h3>
-      <div class="place-meta">
-        <div>📍 ${escapeHtml(p.address)}</div>
-        <div>🕒 ${escapeHtml(openLabel)}</div>
-      </div>
-    `;
+  <h3 class="place-name">${escapeHtml(p.name)}</h3>
+
+  <div class="place-meta">
+    <div class="meta-row">
+      <img class="meta-ic" src="/MILKYWAY/public/images/location.png" alt="Location" loading="lazy">
+      <span>${escapeHtml(p.address)}</span>
+    </div>
+
+    <div class="meta-row">
+      <img class="meta-ic" src="/MILKYWAY/public/images/clock.png" alt="Hours" loading="lazy">
+      <span>${escapeHtml(openLabel)}</span>
+    </div>
+  </div>
+`;
+
 
     card.addEventListener("click", () => {
       const marker = markersByPlaceId.get(p.placeId);

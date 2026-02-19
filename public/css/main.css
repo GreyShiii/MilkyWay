@@ -1330,7 +1330,7 @@ body{
 .articles-cat-hero{
   position: relative;
   overflow: hidden;
-  margin: -16px -16px 14px;
+  margin: 0 -16px 14px;
 }
 
 .articles-cat-hero-img{
@@ -2010,3 +2010,471 @@ button.menu-btn:focus-visible{
 .team-avatar-feature img{
   border-width: 4px !important;
 }
+
+/* ===== DID YOU KNOW (Accordion) ===== */
+.didk-page{
+  background: #fdecef;
+  min-height: 100vh;
+}
+
+.didk-hero{
+  background: #ff9aa7;
+  padding: 14px 16px 18px;
+  position: relative;
+}
+
+.didk-back{
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  text-decoration: none;
+  font-size: 22px;
+  color: #fff;
+}
+
+.didk-hero-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.didk-logo{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.didk-title{
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ff3b5f;
+  font-family: 'Caveat', cursive;
+}
+
+.didk-subtitle{
+  margin: 0;
+  font-size: 13px;
+  color: rgba(0,0,0,0.65);
+}
+
+.didk-cards{
+  padding: 14px;
+  display: grid;
+  gap: 14px;
+}
+
+.didk-card{
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+.didk-card-btn{
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.didk-img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.didk-bar{
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Caveat', cursive;
+}
+
+.didk-bar--trivia{ background: #a100ff; }
+.didk-bar--facts{ background: #ff0050; }
+
+.didk-chevron{
+  position: absolute;
+  right: 14px;
+  font-size: 22px;
+  transition: transform 180ms ease;
+}
+
+.didk-card.is-open .didk-chevron{
+  transform: rotate(180deg);
+}
+
+.didk-panel{
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 220ms ease;
+  background: #fff;
+}
+
+.didk-panel-inner{
+  padding: 12px 14px 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.didk-item{
+  display: block;
+  padding: 12px 12px;
+  border-radius: 12px;
+  background: #f6f7fb;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+/* ===== Reusable Accordion Card ===== */
+.acc-card{
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+.acc-btn{
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.acc-img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.acc-bar{
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Caveat', cursive;
+}
+
+.acc-chevron{
+  position: absolute;
+  right: 14px;
+  font-size: 22px;
+  transition: transform 180ms ease;
+}
+
+.acc-card.is-open .acc-chevron{
+  transform: rotate(180deg);
+}
+
+.acc-panel{
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 220ms ease;
+  background: #fff;
+}
+
+.acc-inner{
+  padding: 12px 14px 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.acc-item{
+  display: block;
+  padding: 12px 12px;
+  border-radius: 12px;
+  background: #f6f7fb;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+/* ===== DidYouKnow uses Article cards + dropdown ===== */
+.didk-cat-btn{
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Put chevron on the ribbon like a dropdown indicator */
+.article-cat-ribbon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.didk-chev{
+  position: absolute;
+  right: 14px;
+  transition: transform 180ms ease;
+}
+.didk-acc.is-open .didk-chev{
+  transform: rotate(180deg);
+}
+
+/* dropdown panel under the card */
+.didk-panel{
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 220ms ease;
+  background: transparent;
+}
+.didk-panel-inner{
+  padding: 10px 4px 0;
+  display: grid;
+  gap: 10px;
+}
+.didk-item{
+  display: block;
+  padding: 12px 12px;
+  border-radius: 12px;
+  background: #ffffff;
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* ===== Intro / Splash Screen ===== */
+.intro-page{
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #ffd1d8 0%, #ffe9ee 55%, #ffd1d8 100%);
+}
+
+.intro-wrap{
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  animation: introFade 900ms ease both;
+}
+
+.intro-logo{
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  animation: introPop 900ms cubic-bezier(.2,.9,.2,1) both;
+}
+
+.intro-title{
+  font-family: 'Caveat', cursive;
+  font-size: 42px;
+  font-weight: 700;
+  color: #ff4f6d;
+  letter-spacing: 0.5px;
+  animation: introUp 900ms ease 180ms both;
+}
+
+.intro-sub{
+  font-size: 12px;
+  color: rgba(0,0,0,0.55);
+  animation: introUp 900ms ease 260ms both;
+}
+
+/* Animations */
+@keyframes introPop{
+  from { transform: scale(.75); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+@keyframes introUp{
+  from { transform: translateY(10px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes introFade{
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.place-meta{
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.meta-row{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.2;
+}
+
+.meta-ic{
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex: 0 0 16px;
+  opacity: 0.9;
+}
+
+/* ===== Global Page Loader ===== */
+.page-loader{
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 230, 230, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.page-loader.is-active{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.page-loader__box{
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.75);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.10);
+}
+
+.page-loader__spinner{
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 3px solid rgba(255, 111, 122, 0.25);
+  border-top-color: rgba(255, 111, 122, 1);
+  animation: loaderSpin 0.8s linear infinite;
+}
+
+.page-loader__text{
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(17,24,39,0.7);
+  letter-spacing: 0.2px;
+}
+
+@keyframes loaderSpin{
+  to { transform: rotate(360deg); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .page-loader{ transition: none; }
+  .page-loader__spinner{ animation: none; }
+}
+
+/* ===== Force all page title blocks to align the same ===== */
+.page-title-wrap{
+  text-align: center;
+  padding: 10px 0 6px;
+  margin: 0;
+}
+
+.page-title{
+  margin: 0;
+  line-height: 1.1;
+}
+
+.page-subtitle{
+  margin: 4px 0 0;
+  line-height: 1.2;
+}
+
+/* Kill spacing differences from older title systems */
+.watch-head,
+.articles-head,
+.locator-title{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* If any of these still exist, remove their extra margins */
+.watch-head h1,
+.articles-head h1,
+.locator-title h1{
+  margin: 0 !important;
+}
+
+.watch-head p,
+.articles-head p,
+.locator-title p{
+  margin: 4px 0 0 !important;
+}
+
+/* ===== ARTICLE VIEW ===== */
+.article-view-page{
+  padding-top: 10px;
+}
+
+.article-view-head{
+  position: relative;
+  padding-top: 16px; /* gives room for the back button */
+}
+
+.article-back{
+  position: absolute;
+  left: 0;
+  top: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #fff;
+  color: #ff6f7a;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 12px;
+
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.article-back:active{
+  transform: scale(0.98);
+}
+
+.article-overview{
+  margin: 10px 0 12px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 16px;
+  padding: 12px 14px;
+  font-size: 12px;
+  color: #374151;
+  line-height: 1.5;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.article-content{
+  background: #fff;
+  border-radius: 18px;
+  padding: 14px 14px;
+  font-size: 12px;
+  line-height: 1.65;
+  color: #111827;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+}
+

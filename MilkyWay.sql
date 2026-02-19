@@ -1,6 +1,6 @@
 CREATE DATABASE MilkyWay;
-USE MilkyWay;
 
+USE milkyway;
 CREATE TABLE feedback (
   feedback_id INT AUTO_INCREMENT PRIMARY KEY,
   rating TINYINT NOT NULL CHECK (rating BETWEEN 1 AND 5),

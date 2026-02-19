@@ -23,12 +23,17 @@ $filtered = array_values(
 
 <main class="page articles-cat-page">
 
+  <section class="page-title-wrap">
+    <h1 class="page-title">Latch Library</h1>
+    <p class="page-subtitle">Articles</p>
+  </section>
+
+
   <section class="articles-cat-hero">
     <img
       class="articles-cat-hero-img"
       src="<?= htmlspecialchars($category['hero']) ?>"
-      alt=""
-    >
+      alt="">
 
     <a class="articles-cat-back" href="/MILKYWAY/index.php?page=articles">
       &larr; All Articles
@@ -50,8 +55,7 @@ $filtered = array_values(
           class="article-link-card"
           href="<?= htmlspecialchars($a['link']) ?>"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
 
           <p class="article-snippet">
             <?= htmlspecialchars($a['overview'] ?? 'No description yet.') ?>

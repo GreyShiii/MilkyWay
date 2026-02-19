@@ -1,6 +1,3 @@
-<?php
-?>
-
 <main class="page about-page">
 
   <section class="about-hero">

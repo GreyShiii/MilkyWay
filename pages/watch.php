@@ -18,9 +18,10 @@ $filtered = array_values(array_filter($VIDEOS, function ($v) use ($cat) {
 <main class="page watch-page">
 
   <section class="page-title-wrap">
-    <h1 class="page-title">Watch &amp; Learn</h1>
+    <h1 class="page-title">Watch & Learn</h1>
     <p class="page-subtitle">Video Library</p>
   </section>
+
 
 
   <section class="watch-chips">

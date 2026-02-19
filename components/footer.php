@@ -7,6 +7,14 @@ $isArticles = in_array($page, ['articles','articles_cat','article_view'], true);
 $isBuddy    = in_array($page, ['locator','clinic_connect'], true); 
 ?>
 
+<div id="pageLoader" class="page-loader" aria-hidden="true">
+  <div class="page-loader__box">
+    <div class="page-loader__spinner"></div>
+    <div class="page-loader__text">Loading…</div>
+  </div>
+</div>
+
+
 <footer class="footer-container">
   <a href="/MILKYWAY/index.php?page=home" class="<?= $isHome ? 'is-active' : '' ?>">
     <img src="/MILKYWAY/public/images/footer-home.png" alt="">
