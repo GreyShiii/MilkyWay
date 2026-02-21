@@ -16,6 +16,12 @@ if (!$video) {
   echo "<main class='page'><p>Video not found.</p></main>";
   return;
 }
+
+/* ✅ DEFINE THESE BEFORE HTML */
+$title  = (string)($video['title'] ?? '');
+$author = (string)($video['author'] ?? '');
+$desc   = (string)($video['description'] ?? '');
+$src    = (string)($video['src'] ?? '');
 ?>
 
 <main class="page watch-view-page">
@@ -24,18 +30,56 @@ if (!$video) {
     <a class="watch-back" href="/MilkyWay/index.php?page=watch">← <?= htmlspecialchars(t('back')) ?></a>
   </div>
 
-  <h2 class="watch-title"><?= htmlspecialchars($video['title']) ?></h2>
-
   <div class="watch-player">
     <video controls playsinline>
-      <source src="<?= htmlspecialchars($video['src']) ?>" type="video/mp4">
+      <source src="<?= htmlspecialchars($src) ?>" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
 
-  <p class="watch-info">
-    <?= htmlspecialchars(t('watch_duration')) ?>: <strong><?= htmlspecialchars($video['duration']) ?></strong> •
-    <?= htmlspecialchars(t('watch_category')) ?>: <strong><?= htmlspecialchars(ucfirst($video['category'])) ?></strong>
-  </p>
+  <!-- Title (no container) -->
+  <h2 class="watch-view-title"><?= htmlspecialchars($title) ?></h2>
+
+  <!-- Author (no container) -->
+  <?php if ($author !== ''): ?>
+    <div class="watch-view-meta">
+      <div class="watch-author-row">
+        <span class="watch-view-author"><?= htmlspecialchars($author) ?></span>
+      </div>
+    </div>
+  <?php endif; ?>
+
+  <!-- Description (ONLY container) -->
+  <?php if (trim($desc) !== ''): ?>
+    <section class="watch-desc-card" id="descCard">
+      <div class="watch-desc-head">
+        
+        <button class="watch-desc-toggle" type="button" id="descToggle">Show more</button>
+      </div>
+
+      <p class="watch-view-desc" id="descText"><?= htmlspecialchars($desc) ?></p>
+    </section>
+
+    <script>
+      (function () {
+        const btn = document.getElementById('descToggle');
+        const card = document.getElementById('descCard');
+        const text = document.getElementById('descText');
+        if (!btn || !card || !text) return;
+
+        const isShort = text.textContent.trim().length < 160;
+        if (isShort) {
+          btn.style.display = 'none';
+          card.classList.add('is-open');
+          return;
+        }
+
+        btn.addEventListener('click', function () {
+          const open = card.classList.toggle('is-open');
+          btn.textContent = open ? 'Show less' : 'Show more';
+        });
+      })();
+    </script>
+  <?php endif; ?>
 
 </main>

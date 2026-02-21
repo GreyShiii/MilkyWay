@@ -192,7 +192,7 @@ body{
 
 /* Base */
 .page {
-  position: absolute;
+  position: relative;
   padding-left: 16px !important;
   padding-right: 16px !important;
   width: 100%;
@@ -1092,9 +1092,9 @@ body{
 
 .watch-play {
   position: absolute;
-  left: 12px;
+  left: 50%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   width: 34px;
   height: 34px;
   border-radius: 999px;
@@ -1103,6 +1103,7 @@ body{
   place-items: center;
   font-size: 14px;
   color: #ff6f7a;
+  z-index: 2
 }
 
 .watch-dur {
@@ -1154,22 +1155,33 @@ body{
 
 
 /* ========================
-   WATCH VIEW (PLAYER)
+   WATCH VIEW (YouTube-like)
 ======================== */
 
-.watch-view-page {
+.watch-view-page{
   display: grid;
-  gap: 12px;
+  gap: 10px;
 }
 
-.watch-player {
+.watch-top{
+  display: flex;
+  align-items: center;
+}
+
+.watch-view-page{
+  display: grid;
+  gap: 12px;
+  padding-top: 14px; /* ✅ pushes back button down */
+}
+
+.watch-player{
   background: #fff;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 10px 22px rgba(0,0,0,0.07);
 }
 
-.watch-player video {
+.watch-player video{
   width: 100%;
   height: auto;
   max-height: 55vh;
@@ -1177,7 +1189,98 @@ body{
   object-fit: contain;
 }
 
-.watch-back {
+/* Title (no container) */
+.watch-view-title{
+  margin: 4px 0 0;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.25;
+  color: #111827;
+}
+
+/* Author line (no container) */
+.watch-view-meta{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.watch-author-row{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.watch-view-author{
+  color: #ff6f7a;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+/* Description (ONLY thing in a container) */
+.watch-desc-card{
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 12px 12px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+}
+
+/* header row inside description card */
+.watch-desc-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.watch-desc-label{
+  font-size: 12px;
+  font-weight: 900;
+  color: rgba(17,24,39,0.7);
+}
+
+/* Show more button */
+.watch-desc-toggle{
+  border: none;
+  background: transparent;
+  color: #ff6f7a;
+  font-weight: 900;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 10px;
+}
+
+.watch-desc-toggle:active{
+  transform: scale(0.98);
+}
+
+/* Description text */
+.watch-view-desc{
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #374151;
+
+  /* collapsed state */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* expanded */
+.watch-desc-card.is-open .watch-view-desc{
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* Back button stays clean */
+.watch-back{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1186,12 +1289,12 @@ body{
   background: #fff;
   color: #ff6f7a;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 12px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.06);
 }
 
-.watch-back:active {
+.watch-back:active{
   transform: scale(0.98);
 }
 
@@ -3975,4 +4078,379 @@ body.is-intro .page.intro-page{
   font-weight: 800;
   text-decoration: underline;
   word-break: break-word;
+}
+
+/* =========================
+   FIX: Center .page on iPad / tablet
+   (because .page is position:absolute)
+   ========================= */
+
+@media (min-width: 768px) and (max-width: 1099px){
+  .page{
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* =========================
+   GLOBAL HOVER SYSTEM (Buttons + Pill Links)
+   Paste at VERY BOTTOM of main.css
+   ========================= */
+
+/* Smooth interactions everywhere */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a.menu-btn,
+a.menu-nav,
+a.watch-back,
+a.article-back,
+a.didk-cat-back,
+a.articles-cat-back,
+.page-back,
+.back-btn,
+.mode-btn,
+.gps-btn,
+.lang-option,
+.feedback-submit,
+.thanks-close,
+.like-card,
+.watch-chips .chip,
+.footer-container a,
+.place-card,
+.didk-item,
+.acc-item,
+.didk-card-btn,
+.acc-btn {
+  transition:
+    transform 160ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    filter 180ms ease,
+    opacity 180ms ease;
+}
+
+/* Desktop / laptop hover */
+@media (hover: hover) and (pointer: fine) {
+
+  /* Generic hover “lift” */
+  button:hover,
+  a.menu-btn:hover,
+  a.menu-nav:hover,
+  a.watch-back:hover,
+  a.article-back:hover,
+  a.didk-cat-back:hover,
+  a.articles-cat-back:hover,
+  .page-back:hover,
+  .back-btn:hover,
+  .mode-btn:hover,
+  .gps-btn:hover,
+  .lang-option:hover,
+  .feedback-submit:hover,
+  .thanks-close:hover,
+  .like-card:hover,
+  .watch-chips .chip:hover,
+  .footer-container a:hover,
+  .place-card:hover,
+  .didk-item:hover,
+  .acc-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.10);
+    filter: brightness(1.02) saturate(1.05);
+  }
+
+  /* Pills/white buttons should get a soft pink “ink” */
+  a.watch-back:hover,
+  a.article-back:hover,
+  .page-back:hover,
+  .back-btn:hover,
+  a.menu-btn:hover,
+  .watch-chips .chip:hover,
+  .lang-option:hover {
+    border-color: rgba(255,111,122,0.35);
+    box-shadow:
+      0 12px 26px rgba(0,0,0,0.10),
+      0 0 0 3px rgba(255,111,122,0.12);
+  }
+
+  /* Pink buttons: stronger glow + better contrast */
+  .mode-btn:hover,
+  .feedback-submit:hover,
+  .thanks-close:hover {
+    filter: brightness(1.03) saturate(1.1);
+    box-shadow:
+      0 14px 28px rgba(255,111,122,0.22),
+      0 0 0 3px rgba(255,111,122,0.16);
+  }
+
+  /* Active chips / active menu should not “wash out” */
+  .watch-chips .chip.is-active:hover,
+  .menu-nav.is-active:hover,
+  .lang-option.is-active:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.02) saturate(1.05);
+    box-shadow:
+      0 12px 24px rgba(255,111,122,0.22),
+      0 0 0 3px rgba(255,111,122,0.14);
+  }
+
+  /* Footer tabs: subtle lift only (avoid huge shadows) */
+  .footer-container a:hover {
+    transform: translateY(-1px);
+    box-shadow: none;
+    filter: none;
+  }
+  .footer-container a:hover img {
+    transform: translateY(-2px);
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
+  }
+  .footer-container a:hover .image-title {
+    color: #ff6f7a;
+    font-weight: 800;
+  }
+
+  /* Cards that act like buttons */
+  .place-card:hover,
+  .didk-item:hover,
+  .acc-item:hover {
+    background: rgba(255,255,255,0.92);
+  }
+}
+
+/* Mobile tap feedback (no hover) */
+button:active,
+a.menu-btn:active,
+a.menu-nav:active,
+a.watch-back:active,
+a.article-back:active,
+a.didk-cat-back:active,
+a.articles-cat-back:active,
+.page-back:active,
+.back-btn:active,
+.mode-btn:active,
+.gps-btn:active,
+.lang-option:active,
+.feedback-submit:active,
+.thanks-close:active,
+.like-card:active,
+.watch-chips .chip:active,
+.footer-container a:active,
+.place-card:active,
+.didk-item:active,
+.acc-item:active {
+  transform: scale(0.98);
+}
+
+/* Keyboard accessibility (important on desktop) */
+button:focus-visible,
+a.menu-btn:focus-visible,
+a.menu-nav:focus-visible,
+a.watch-back:focus-visible,
+a.article-back:focus-visible,
+a.didk-cat-back:focus-visible,
+a.articles-cat-back:focus-visible,
+.page-back:focus-visible,
+.back-btn:focus-visible,
+.mode-btn:focus-visible,
+.gps-btn:focus-visible,
+.lang-option:focus-visible,
+.feedback-submit:focus-visible,
+.thanks-close:focus-visible,
+.like-card:focus-visible,
+.watch-chips .chip:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 3px rgba(255,111,122,0.28),
+    0 10px 22px rgba(0,0,0,0.08);
+}
+
+/* Disabled buttons shouldn’t react */
+button:disabled,
+.feedback-submit:disabled {
+  transform: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* =========================
+   ABOUT (DESKTOP FIX)
+   Bigger text + no scroll + fit-to-screen
+   Paste at VERY BOTTOM of main.css
+   ========================= */
+
+@media (min-width: 1100px){
+
+  /* About page should behave like a single-screen section */
+  .page.about-page{
+    /* override your mobile about-page rules */
+    padding: 22px 26px !important;
+    min-height: calc(100vh) !important;
+    height: calc(100vh) !important;
+    overflow: hidden !important;
+
+    /* keep your soft theme */
+    background: #ffe9ee !important;
+
+    /* layout: logo/title -> team -> about text */
+    display: grid !important;
+    grid-template-rows: auto 1fr auto;
+    gap: 18px !important;
+  }
+
+  /* Remove the big hero padding that causes scroll on desktop */
+  .about-hero{
+    padding: 12px 0 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+  }
+
+  .about-hero-inner{
+    padding-top: 0 !important;
+    gap: 10px;
+  }
+
+  /* Logo slightly bigger but controlled */
+  .about-logo{
+    width: 200px !important;
+    height: auto !important;
+    max-width: 260px;
+    margin: 0 auto !important;
+  }
+
+  /* Subtitle readable */
+  .about-subtitle{
+    margin: 0 !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #ff4f6d !important;
+    line-height: 1.1 !important;
+  }
+
+  /* Stop the overlap trick on desktop (this is a main scroll cause) */
+  .about-team{
+    margin-top: 0 !important;
+    padding: 0 !important;
+
+    /* center the team area */
+    display: grid;
+    align-content: center;
+    justify-items: center;
+  }
+
+  /* Make team layout fit one screen:
+     2 on top, 3 on bottom, but tighter and centered */
+  .team-grid-top{
+    gap: 28px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .team-grid-bottom{
+    gap: 28px !important;
+  }
+
+  /* Bigger avatars for desktop but still compact */
+  .team-avatar{
+    width: 120px !important;
+    height: 120px !important;
+    padding: 7px !important;
+  }
+
+  .team-avatar-feature{
+    width: 128px !important;
+    height: 128px !important;
+  }
+
+  /* Make names + roles readable */
+  .team-name{
+    margin-top: 8px;
+    font-size: 14px !important;
+    font-weight: 900 !important;
+    color: #ff2f58 !important; /* stronger contrast */
+    line-height: 1.2 !important;
+  }
+
+  .team-role{
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    color: rgba(17,24,39,0.72) !important;
+  }
+
+  /* About text: larger + readable + clamp to prevent scroll */
+  .about-box{
+    margin: 0 auto !important;
+    width: min(900px, 100%) !important;
+
+    background: rgba(255, 255, 255, 0.70) !important;
+    border: 1px solid rgba(255, 79, 109, 0.18) !important;
+    border-radius: 18px !important;
+    padding: 16px 18px !important;
+
+    /* keep it from pushing page height */
+    max-height: 170px;
+    overflow: hidden;
+  }
+
+  .about-box p{
+    margin: 0 !important;
+
+    /* readable font on desktop */
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+
+    color: rgba(17,24,39,0.85) !important;
+    font-weight: 600 !important;
+
+    /* prevent overflow while keeping it clean */
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* =========================
+   ABOUT BOX — Desktop Fix
+   ========================= */
+
+@media (min-width: 1100px){
+
+  .about-box{
+    max-width: 800px !important;   /* make it wider */
+    width: 100% !important;
+
+    padding: 28px 34px !important; /* more breathing space */
+
+    border-radius: 22px !important;
+
+    max-height: none !important;   /* REMOVE height limit */
+    overflow: visible !important;  /* show full text */
+  }
+
+  .about-box p{
+    font-size: 17px !important;    /* larger readable text */
+    line-height: 1.9 !important;   /* better readability */
+    font-weight: 500 !important;
+  }
+
+}
+
+/* =========================
+   ABOUT PAGE — Enable Scroll
+   ========================= */
+
+@media (min-width: 1100px){
+
+  .page.about-page{
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow: visible !important;
+  }
+
 }

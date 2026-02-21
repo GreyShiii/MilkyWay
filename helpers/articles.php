@@ -83,12 +83,12 @@ $ARTICLES = [
     'author' => 'UNICEF (2023)',
     'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
     'overview' => 'Tagalog guide discussing common breastfeeding problems and practical solutions.',
-    'link' => 'https://www.unicef.org/philippines/breastfeeding',
+    'link' => 'https://www.unicef.org/philippines/stories/breastfeeding-best-pero-paano-nga-ba',
   ],
 
   [
     'id' => 4,
-    'cat' => '',
+    'cat' => 'what-is-breastfeeding',
     'title' => 'Making Breastfeeding possible for mothers in every community ',
     'author' => 'UNICEF (2025)',
     'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
