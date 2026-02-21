@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/db.php';
+require_once __DIR__ . '/../helpers/lang.php';
 
 $sql = "SELECT COUNT(*) AS total_reviews, AVG(rating) AS avg_rating FROM feedback";
 $res = $conn->query($sql);

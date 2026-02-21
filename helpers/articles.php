@@ -1,49 +1,59 @@
 <?php
+require_once __DIR__ . '/lang.php';
+
 $ARTICLE_CATEGORIES = [
   [
     'slug' => 'what-is-breastfeeding',
-    'name' => 'What is breastfeeding?',
+    'name' => [
+      'en'  => 'What is breastfeeding?',
+      'fil' => 'Ano ang pagpapasuso?',
+    ],
     'hero' => '/MILKYWAY/public/images/articles/categories/what_is_breastfeeding.jpg',
     'ribbon_class' => 'theme-intro',
   ],
   [
     'slug' => 'problems',
-    'name' => 'Problems Encounter During Breastfeeding',
+    'name' => [
+      'en'  => 'Problems Encounter During Breastfeeding',
+      'fil' => 'Mga Suliraning Nararanasan sa Pagpapasuso',
+    ],
     'hero' => '/MILKYWAY/public/images/articles/categories/problems.jpg',
     'ribbon_class' => 'theme-problems',
   ],
   [
     'slug' => 'nutrition',
-    'name' => 'Nutrition',
+    'name' => [
+      'en'  => 'Nutrition',
+      'fil' => 'Nutrisyon',
+    ],
     'hero' => '/MILKYWAY/public/images/articles/categories/nutrition.jpg',
     'ribbon_class' => 'theme-nutrition',
   ],
   [
     'slug' => 'tips',
-    'name' => 'Breastfeeding Tips / Benefits',
+    'name' => [
+      'en'  => 'Breastfeeding Tips / Benefits',
+      'fil' => 'Mga Tip / Benepisyo ng Pagpapasuso',
+    ],
     'hero' => '/MILKYWAY/public/images/articles/categories/tips.jpg',
     'ribbon_class' => 'theme-tips',
   ],
   [
     'slug' => 'la',
-    'name' => 'Latching & Attaching',
-    'hero' => '/MILKYWAY/public/images/articles/categories/la.jpg',
-    'ribbon_class' => 'theme-latch',
-  ],
-  // New
-  [
-    'slug' => 'others',
-    'name' => 'Others',
+    'name' => [
+      'en'  => 'Latching & Attaching',
+      'fil' => 'Tamang Latch at Pagdikit',
+    ],
     'hero' => '/MILKYWAY/public/images/articles/categories/la.jpg',
     'ribbon_class' => 'theme-latch',
   ],
 ];
 
-
 /* =========================
    ARTICLE CARDS
    - Every card redirects to an external link
    ========================= */
+
 $ARTICLES = [
 
   [
@@ -276,98 +286,6 @@ $ARTICLES = [
   ],
   [
     'id' => 24,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  // BAGONG CATEGORY CUH ****** NEW *******
-  // Others
-  [
-    'id' => 25,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 26,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 27,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 28,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 29,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 30,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 31,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 32,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 33,
-    'cat' => 'la',
-    'title' => 'The First Week: Positioning and Latch',
-    'author' => 'La Leche League International. (2023). ',
-    'thumb' => '/MILKYWAY/public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Highlights the importance of position and latching for a newborn.',
-    'link' => 'https://llli.org/breastfeeding-info/positioning/',
-  ],
-  [
-    'id' => 34,
     'cat' => 'la',
     'title' => 'The First Week: Positioning and Latch',
     'author' => 'La Leche League International. (2023). ',

@@ -18,31 +18,31 @@ $currentLang = lang();
 
     <div class="menu-section">
       <button id="openLang" class="menu-btn" type="button"><?= htmlspecialchars(t('menu_language')) ?></button>
-
-      <a class="menu-btn" href="/MILKYWAY/index.php?page=locator&mode=clinic"> <?= htmlspecialchars(t('menu_clinic')) ?></a>
+      <a class="menu-btn" href="/MILKYWAY/index.php?page=locator&mode=clinic"><?= htmlspecialchars(t('menu_clinic')) ?></a>
       <a class="menu-btn" href="/MILKYWAY/index.php?page=about"><?= htmlspecialchars(t('menu_about')) ?></a>
       <a class="menu-btn" href="/MILKYWAY/index.php?page=feedback"><?= htmlspecialchars(t('menu_feedback')) ?></a>
+
     </div>
 
     <div class="menu-bottom">
       <a class="menu-nav" href="/MILKYWAY/index.php?page=home">
         <span class="menu-nav-ic"></span>
-        <span><?= htmlspecialchars(t('nav_home')) ?></span>
+        <span class="menu-button-color"><?= htmlspecialchars(t('nav_home')) ?></span>
       </a>
 
       <a class="menu-nav" href="/MILKYWAY/index.php?page=watch">
         <span class="menu-nav-ic"></span>
-        <span><?= htmlspecialchars(t('nav_watch')) ?></span>
+        <span class="menu-button-color"><?= htmlspecialchars(t('nav_watch')) ?></span>
       </a>
 
       <a class="menu-nav" href="/MILKYWAY/index.php?page=articles">
         <span class="menu-nav-ic"></span>
-        <span><?= htmlspecialchars(t('nav_articles')) ?></span>
+        <span class="menu-button-color"><?= htmlspecialchars(t('nav_articles')) ?></span>
       </a>
 
       <a class="menu-nav" href="/MILKYWAY/index.php?page=locator">
         <span class="menu-nav-ic"></span>
-        <span><?= htmlspecialchars(t('nav_locator')) ?></span>
+        <span class="menu-button-color"><?= htmlspecialchars(t('nav_locator')) ?></span>
       </a>
     </div>
 

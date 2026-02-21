@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../helpers/videos.php';
+require_once __DIR__ . '/../helpers/lang.php';
 
 $cat = $_GET['cat'] ?? 'all';
 $cat = strtolower(trim($cat));
@@ -18,8 +19,8 @@ $filtered = array_values(array_filter($VIDEOS, function ($v) use ($cat) {
 <main class="page watch-page">
 
   <section class="page-title-wrap">
-    <h1 class="page-title">Watch & Learn</h1>
-    <p class="page-subtitle">Video Library</p>
+    <h1 class="page-title"><?= htmlspecialchars(t('watch_title')) ?></h1>
+    <p class="page-subtitle"><?= htmlspecialchars(t('watch_sub')) ?></p>
   </section>
 
 
@@ -35,7 +36,7 @@ $filtered = array_values(array_filter($VIDEOS, function ($v) use ($cat) {
 
   <section class="watch-list">
     <?php if (count($filtered) === 0): ?>
-      <div class="empty-card">No videos in this category yet.</div>
+      <div class="empty-card"><?= htmlspecialchars(t('watch_empty')) ?></div>
     <?php endif; ?>
 
     <?php foreach ($filtered as $v): ?>

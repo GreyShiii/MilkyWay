@@ -1,7 +1,6 @@
 <main class="page about-page">
 
   <section class="about-hero">
-    <a class="about-back" href="/MILKYWAY/index.php?page=home">&larr;</a>
 
     <div class="about-hero-inner">
       <img class="about-logo" src="/MILKYWAY/public/images/logo-name.png" alt="Milky Way">

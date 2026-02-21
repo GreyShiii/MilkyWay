@@ -192,6 +192,7 @@ body{
 
 /* Base */
 .page {
+  position: absolute;
   padding-left: 16px !important;
   padding-right: 16px !important;
   width: 100%;
@@ -226,6 +227,9 @@ body{
 .page-title-wrap{
   text-align: center;
   padding: 10px 0 6px;
+  text-align: center;
+  padding: 10px 0 6px;
+  margin: 0px;
 }
 
 .page-title{
@@ -242,6 +246,7 @@ body{
   font-size: 12px;
   color: #9ca3af;
   font-weight: 400;
+  line-height: 1.2;
 }
 
 .hero {
@@ -337,6 +342,7 @@ body{
   padding: 20px; 
   background-color: #fff;
   border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06), 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .daily-tip h2 {
@@ -653,6 +659,7 @@ body{
   padding: 10px 18px 18px;
   display: grid;
   gap: 10px;
+  
 }
 
 .menu-nav {
@@ -1341,11 +1348,10 @@ body{
 }
 
 .articles-cat-back{
-  position: absolute;
-  left: 12px;
+  left: 100px;
   top: 12px;
   font-size: 12px;
-  font-weight: 900;
+  font-weight: 500;
   color: #fff;
   text-decoration: none;
   background: rgba(0,0,0,0.35);
@@ -2387,20 +2393,10 @@ button.menu-btn:focus-visible{
 }
 
 /* ===== Force all page title blocks to align the same ===== */
-.page-title-wrap{
-  text-align: center;
-  padding: 10px 0 6px;
-  margin: 0;
-}
 
 .page-title{
   margin: 0;
   line-height: 1.1;
-}
-
-.page-subtitle{
-  margin: 4px 0 0;
-  line-height: 1.2;
 }
 
 /* Kill spacing differences from older title systems */
@@ -2478,3 +2474,1505 @@ button.menu-btn:focus-visible{
   box-shadow: 0 10px 22px rgba(0,0,0,0.07);
 }
 
+/* ===== DID YOU KNOW (Category Text Page) ===== */
+.didk-cat-page{
+  padding-top: 12px;
+}
+
+.didk-cat-back{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: #fff;
+  color: #ff6f7a;
+  font-weight: 900;
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+.didk-cat-title{
+  margin: 14px 0 10px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.didk-facts{
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px 16px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+}
+
+.didk-fact{
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #111827;
+}
+
+.didk-fact:last-child{
+  margin-bottom: 0;
+}
+
+/* Make the "Did you know?" part feel like your sample */
+.didk-fact em,
+.didk-fact i{
+  font-style: italic;
+  font-weight: 900;
+}
+
+/* ===== Page Head (Back + Title Alignment) ===== */
+.page-head{
+  display: grid;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0 6px;
+}
+
+.page-back{
+  width: 50px;
+  height: 30px;       
+  border-radius: 400px;       
+  display: flex;           
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: #fff;
+  color: #ff6f7a;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;           
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+
+
+
+.page-head-spacer{
+  width: 44px;
+  height: 44px;
+}
+.page-title-wrap--left{
+  text-align: left;
+  padding: 0;
+}
+
+.page-title-wrap--center{
+  text-align: center;
+  padding: 0;
+}
+
+.page-title-wrap--left .page-title{
+  margin: 0;
+  line-height: 1.1;
+}
+
+.page-title-wrap--left .page-subtitle{
+  margin: 2px 0 0;
+}
+
+/* Category title below header */
+.didk-cat-title{
+  margin: 14px 0 10px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #111827;
+}
+
+/* Facts container */
+.didk-facts{
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+}
+
+.didk-fact{
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #111827;
+}
+
+.didk-fact:last-child{
+  margin-bottom: 0;
+}
+
+.page-title-wrap--center .page-title{
+  margin: 0;
+  line-height: 1.1;
+}
+
+.page-title-wrap--center .page-subtitle{
+  margin: 2px 0 0;
+}
+
+/* ===== DID YOU KNOW HERO (match Latch Library style) ===== */
+
+.didk-cat-hero{
+  position: relative;
+  padding: 20px 0 10px;
+}
+
+/* Reuse same pill style from articles */
+.articles-cat-back{
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+
+.didk-cat-hero-title{
+  text-align: center;
+}
+
+.didk-cat-hero-title .page-title{
+  margin: 0;
+}
+
+.didk-cat-hero-title .page-subtitle{
+  margin: 2px 0 0;
+}
+
+
+/* =========================
+   DESKTOP UI — MATCH SCREENSHOTS
+   Paste at VERY BOTTOM of main.css
+   ========================= */
+
+@media (min-width: 1100px) {
+
+  /* Hide mobile bottom nav on desktop */
+  .footer-container {
+    display: none !important;
+  }
+
+  /* Hide mobile topbar/hamburger area (desktop uses sidebar) */
+  .topbar,
+  .subbar,
+  .topbar-spacer {
+    display: none !important;
+  }
+
+  /* Body should not reserve space for mobile footer */
+  body {
+    padding-bottom: 0 !important;
+    background: #ffffff;
+  }
+
+  /* =========================
+     SIDEBAR (menu-drawer)
+     ========================= */
+  .menu-overlay {
+    display: none !important;
+    pointer-events: none !important;
+  }
+
+  .menu-drawer {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100vh !important;
+    width: 290px !important;
+    transform: none !important;
+    border-radius: 0 !important;
+
+    /* screenshot-like: white panel */
+    background: #ffffff !important;
+    box-shadow: none !important;
+    z-index: 5000 !important;
+
+    /* subtle right divider */
+    border-right: 1px solid rgba(0,0,0,0.08) !important;
+    overflow: hidden !important;
+  }
+
+  .menu-inner {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  /* TOP BRAND HEADER (gradient like screenshot) */
+  .menu-top {
+    padding: 18px 18px 18px !important;
+    background: linear-gradient(90deg, #ff7e86 0%, #ffb2a8 100%) !important;
+  }
+
+  .menu-brand {
+    text-align: left !important;
+  }
+
+  /* If you show an image logo in sidebar, keep it small on desktop */
+  .menu-logo {
+    display: none !important; /* screenshot shows text logo style */
+  }
+
+  .menu-title {
+    margin: 0 !important;
+    font-family: 'Itim', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-size: 26px !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    line-height: 1.05 !important;
+  }
+
+  .menu-subtitle {
+    margin: 6px 0 0 !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    color: rgba(255,255,255,0.95) !important;
+  }
+
+  /* MENU LIST AREA */
+  .menu-section {
+    padding: 14px 14px !important;
+    display: grid !important;
+    gap: 10px !important;
+  }
+
+  /* Make menu items look like sidebar nav rows */
+  .menu-bottom {
+    margin-top: 0 !important;
+    padding: 10px 14px 14px !important;
+    display: grid !important;
+    gap: 10px !important;
+  }
+
+  /* Unify link/button menu rows */
+  .menu-btn,
+  .menu-nav,
+  .menu-section a.menu-btn,
+  .menu-section button.menu-btn,
+  .menu-bottom a.menu-nav {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+
+    border-radius: 14px !important;
+    padding: 12px 14px !important;
+
+    background: #FF8F91 !important;
+    color: #7b4b4f !important;
+    text-decoration: none !important;
+
+    font-size: 14px !important;
+    font-weight: 700 !important;
+
+    box-shadow: none !important;
+    border: 1px solid transparent !important;
+  }
+
+  /* Icon slot (works with your existing .menu-nav-ic) */
+  .menu-nav-ic {
+    width: 18px !important;
+    min-width: 18px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0.75 !important;
+    font-size: 18px !important;
+  }
+
+  /* Hover */
+  .menu-btn:hover,
+  .menu-nav:hover {
+    background: rgba(255, 111, 122, 0.08) !important;
+  }
+
+  /* Active state like screenshot (pink pill) */
+  .menu-nav.is-active,
+  .menu-btn.is-active {
+    background: linear-gradient(90deg, #ff6f7a 0%, #ffb7a6 100%) !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 111, 122, 0.25) !important;
+  }
+
+  .menu-nav.is-active .menu-nav-ic,
+  .menu-btn.is-active .menu-nav-ic {
+    opacity: 1 !important;
+  }
+
+  /* Bottom “Made with love” pinned */
+  .menu-inner {
+    position: relative !important;
+  }
+
+  /* If you have a footer inside the menu, keep it at bottom (optional safety) */
+  .menu-inner .made-with-love,
+  .menu-inner .menu-footer {
+    margin-top: auto !important;
+    padding: 14px 14px 18px !important;
+    color: rgba(0,0,0,0.55) !important;
+    font-size: 12px !important;
+  }
+
+  /* =========================
+     MAIN CONTENT AREA
+     ========================= */
+  .page {
+    max-width: none !important;
+    width: calc(100% - 290px) !important;
+    margin: 0 0 0 290px !important;
+    padding: 28px 34px !important;
+    padding-bottom: 28px !important;
+  }
+
+  /* Home hero bigger like screenshot */
+  .hero {
+    margin-top: 0 !important;
+  }
+
+  .hero-card {
+    border-radius: 26px !important;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+
+  .hero-img {
+    height: 420px !important;
+    border-radius: 26px !important;
+    filter: brightness(75%) !important;
+  }
+
+  .hero-quote {
+    left: 26px !important;
+    bottom: 22px !important;
+    font-size: 13px !important;
+    max-width: 62% !important;
+  }
+
+  /* Home feature row becomes 4 cards wide like screenshot */
+  .feature-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 16px !important;
+    margin-top: 18px !important;
+  }
+
+  .feature-container {
+    border-radius: 18px !important;
+    padding: 14px !important;
+  }
+
+  .card-icon {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    border-radius: 14px !important;
+  }
+
+  .card-text h3 {
+    font-size: 13px !important;
+  }
+
+  .card-text p {
+    font-size: 11px !important;
+  }
+
+  /* Daily tip bar like screenshot */
+  .daily-tip {
+    margin-top: 18px !important;
+    border-radius: 18px !important;
+    padding: 22px !important;
+  }
+
+  /* WATCH: make it grid cards on desktop (like screenshot) */
+  .watch-chips {
+    justify-content: center !important;
+  }
+
+  .watch-list {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px !important;
+    align-content: start !important;
+  }
+
+  .watch-card {
+    grid-template-columns: 1fr !important;
+    border-radius: 18px !important;
+  }
+
+  .watch-thumb {
+    height: 150px !important;
+  }
+
+  /* ARTICLES category strips show clean centered */
+  .articles-cat-hero {
+    margin: 0 0 14px !important;
+    border-radius: 22px !important;
+    overflow: hidden !important;
+  }
+
+  .articles-cat-hero-img {
+    height: 300px !important;
+  }
+
+  .article-cat-img {
+    height: 240px !important;
+  }
+
+  /* LOCATOR: side-by-side layout like screenshot */
+  .locator-page #map {
+    height: 420px !important;
+  }
+
+  /* FEEDBACK center card spacing */
+  .feedback-page {
+    gap: 18px !important;
+  }
+}
+
+/* =========================
+   FIX: Watch category chips not aligned (desktop + all)
+   Paste at VERY BOTTOM of main.css
+   ========================= */
+
+.watch-chips{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.watch-chips .chip{
+  /* normalize <a> vs <button> */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  /* hard alignment */
+  height: 34px !important;
+  line-height: 1 !important;
+
+  padding: 0 14px !important;
+  border-radius: 999px !important;
+
+  /* remove default button styles if any chip is a button */
+  border: none !important;
+  background: #fff;
+  font: inherit !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  box-sizing: border-box !important;
+}
+
+/* Optional: make the row wrap cleanly on large screens */
+@media (min-width: 1100px){
+  .watch-chips{
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    row-gap: 10px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+
+/* =========================
+   FIX: Sidebar menu alignment
+   (make all items full-width rows)
+   ========================= */
+
+/* Make the sidebar containers consistent */
+.menu-section,
+.menu-bottom{
+  display: grid !important;
+  gap: 12px !important;
+  padding: 16px 18px !important;
+}
+
+/* Normalize BOTH buttons and links inside sidebar */
+.menu-section .menu-btn,
+.menu-section a.menu-btn,
+.menu-section button.menu-btn,
+.menu-bottom .menu-nav{
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important; /* <-- fixes centering misalignment */
+  text-align: left !important;
+
+  padding: 14px 16px !important;
+  border-radius: 14px !important;
+
+  box-sizing: border-box !important;
+  margin: 0 !important;
+
+  /* keep visuals consistent */
+  background: #fff !important;
+  color: #7b4b4f !important;
+  font-weight: 700 !important;
+
+  /* remove random default styles */
+  border: none !important;
+  outline: none !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06) !important;
+}
+
+/* Remove any accidental “center text” styles */
+.menu-section .menu-btn,
+.menu-bottom .menu-nav{
+  text-align: left !important;
+}
+
+/* Make sure the nav icon slot doesn’t shift spacing */
+.menu-nav-ic{
+  width: 18px !important;
+  min-width: 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 10px !important;
+}
+
+/* Active state keeps same padding/width so it doesn't "jump" */
+.menu-nav.is-active,
+.menu-btn.is-active{
+  width: 100% !important;
+  padding: 14px 16px !important;
+}
+
+/* Optional: if you want the "Language/Clinic/About/Feedback" to look like plain text rows */
+@media (min-width: 1100px){
+  .menu-section .menu-btn{
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 12px 6px !important;
+    border-radius: 10px !important;
+  }
+}
+
+/* =========================
+   FIX: Sidebar bottom nav alignment (mobile drawer too)
+   ========================= */
+
+/* Remove the "push to bottom" spacing so it aligns like your screenshot layout */
+.menu-bottom{
+  margin-top: 0 !important;
+  padding: 16px 18px !important;
+  display: grid !important;
+  gap: 12px !important;
+}
+
+.menu-bottom a.menu-nav{
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  padding: 12px 14px !important;
+  border-radius: 12px !important;
+  background: #FF8F91 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06) !important;
+  border: none !important;
+}
+
+/* If you don't use icons, remove the icon slot spacing */
+.menu-bottom a.menu-nav .menu-nav-ic{
+  display: none !important;
+}
+
+/* =========================
+   LOCATOR DESKTOP LAYOUT (matches screenshot)
+   ========================= */
+@media (min-width: 1100px){
+
+  .locator-shell{
+    display: grid;
+    grid-template-columns: 1fr 420px; /* map | results */
+    grid-template-rows: auto 1fr;
+    gap: 18px 22px;
+    align-items: start;
+  }
+
+  /* top row spans both columns */
+.locator-top{
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 420px; /* ✅ match the right column width */
+  gap: 18px;
+  align-items: center;
+}
+
+@media (min-width: 1100px){
+
+  /* ensure both right-column sections use the same width and left edge */
+  .locator-results,
+  .mode-row{
+    width: 100% !important;
+    justify-self: stretch !important;
+    align-self: center !important;
+  }
+
+  /* keep buttons filling the right column exactly */
+  .mode-row{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .mode-btn{
+    width: 100% !important;
+  }
+
+  /* make sure list cards start exactly under buttons */
+  .places-list{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+
+
+  /* remove mobile paddings that cause misalignment */
+  .locator-search,
+  .mode-row,
+  .map-card,
+  .places-list{
+    margin: 0 !important;
+  }
+
+  .locator-search{ padding: 0 !important; }
+  .mode-row{ padding: 0 !important; }
+
+  .search-pill{
+    border-radius: 999px !important;
+    padding: 12px 14px !important;
+  }
+  .search-pill input{
+    font-size: 13px !important;
+  }
+
+  .mode-row{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .mode-btn{
+    height: 44px !important;
+    border-radius: 999px !important;
+    padding: 0 16px !important;
+    font-size: 13px !important;
+  }
+
+  /* map left */
+  .locator-map{ grid-column: 1; }
+  .map-card{
+    padding: 7px !important;
+    border-radius: 22px !important;
+  }
+  #map{
+    height: 420px !important;
+    border-radius: 18px !important;
+  }
+
+  /* results right */
+  .locator-results{ grid-column: 2; }
+  .places-list{
+    padding: 0 !important;
+    display: grid !important;
+    gap: 14px !important;
+
+    max-height: 420px;
+    overflow: auto;
+    padding-right: 6px !important;
+  }
+
+  .place-card{
+    border-radius: 18px !important;
+    padding: 14px !important;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.06) !important;
+  }
+}
+
+/* =========================
+   LOCATOR — MOBILE ALIGNMENT FIX
+   Paste at VERY BOTTOM of main.css
+   ========================= */
+
+.locator-page .page-title-wrap{
+  margin-bottom: 6px;
+}
+
+/* Remove extra side padding (page already has 16px) */
+.locator-page .locator-search,
+.locator-page .mode-row,
+.locator-page .places-list{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Make search pill full-width and consistent */
+.locator-page .search-pill{
+  width: 100%;
+  border-radius: 16px;
+  padding: 12px 14px;
+}
+
+/* Clean input sizing so it doesn't look "tight" */
+.locator-page .search-pill input{
+  font-size: 13px;
+  min-width: 0;
+}
+
+/* Make buttons align with the same edges as search + map */
+.locator-page .mode-row{
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.locator-page .mode-btn{
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Map card should also match the same left/right edges */
+.locator-page .map-card{
+  padding: 10px;          /* keep the pink frame */
+  border-radius: 20px;
+  margin-top: 12px;
+}
+
+.locator-page #map{
+  height: 320px;          /* better mobile height */
+  border-radius: 16px;
+}
+
+/* List should align with everything */
+.locator-page .places-list{
+  margin-top: 12px;
+}
+
+/* =========================
+   FIX: Restore MOBILE menu drawer styling
+   (Your desktop sidebar rules were leaking into mobile)
+   Paste at VERY BOTTOM of main.css
+   ========================= */
+
+/* MOBILE / TABLET (drawer) */
+@media (max-width: 1099px){
+
+  /* restore drawer look */
+  .menu-drawer{
+    width: min(360px, 88vw) !important;
+    height: 100vh !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+
+    background: linear-gradient(to bottom, #FF9B9D 25%, #FFE6E6 100%) !important;
+    box-shadow: 12px 0 30px rgba(0,0,0,0.15) !important;
+    border-right: none !important;
+  }
+
+  .menu-inner{
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* header stays centered on mobile */
+  .menu-top{
+    padding: 22px 18px 18px !important;
+    background: transparent !important;
+  }
+
+  .menu-brand{
+    text-align: center !important;
+  }
+
+  .menu-logo{
+    display: block !important;
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto !important;
+  }
+
+  .menu-title{
+    text-align: center !important;
+  }
+
+  .menu-subtitle{
+    text-align: center !important;
+  }
+
+  /* card sections */
+  .menu-section{
+    padding: 16px 18px !important;
+    display: grid !important;
+    gap: 12px !important;
+  }
+
+  /* IMPORTANT: restore centered "card button" style */
+  .menu-section .menu-btn,
+  .menu-section a.menu-btn,
+  .menu-section button.menu-btn{
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+
+    padding: 12px 14px !important;
+    border-radius: 12px !important;
+
+    background: #fff !important;
+    color: #111827 !important;
+
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06) !important;
+    border: none !important;
+  }
+
+  /* bottom nav keeps centered pills too */
+  .menu-bottom{
+    margin-top: auto !important;
+    padding: 10px 18px 18px !important;
+    display: grid !important;
+    gap: 10px !important;
+  }
+
+  .menu-bottom .menu-nav{
+    justify-content: center !important;
+    text-align: center !important;
+    background: #ff9ea0 !important;
+    color: #fff !important;
+    box-shadow: 0 10px 20px rgba(255, 158, 160, 0.35) !important;
+  }
+
+  /* Undo the “hide icon” rule (it broke mobile spacing) */
+  .menu-bottom .menu-nav .menu-nav-ic{
+    display: inline-flex !important;
+    margin-right: 0 !important;
+  }
+}
+
+/* DESKTOP ONLY (sidebar) – keep your sidebar rules here */
+@media (min-width: 1100px){
+  /* If you previously added any desktop-only sidebar rules WITHOUT this wrapper,
+     move them inside this media query. */
+}
+
+
+/* ✅ FIX: Intro must ignore desktop sidebar layout */
+/* ✅ Intro should be full-screen and ignore all page sizing rules */
+.page.intro-page{
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 999999 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* ✅ Intro should be full-screen and ignore all layout rules */
+.intro-page{
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 999999 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-bottom: 0 !important;
+  max-width: none !important;
+
+  display: grid !important;
+  place-items: center !important;
+}
+
+/* =========================
+   INTRO HARD ISOLATION
+   ========================= */
+body.is-intro{
+  padding-bottom: 0 !important;
+  overflow: hidden !important;
+  background: #ffe9ee !important;
+}
+
+/* Hide any app chrome that might still be rendered */
+body.is-intro .menu-drawer,
+body.is-intro .menu-overlay,
+body.is-intro .topbar,
+body.is-intro .subbar,
+body.is-intro .footer-container{
+  display: none !important;
+}
+
+/* Make intro ignore ALL .page desktop rules */
+body.is-intro .page.intro-page{
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 999999 !important;
+}
+
+/* =========================
+   DID YOU KNOW – CATEGORY TITLE STYLE
+   ========================= */
+
+/* =========================
+   DID YOU KNOW – Title like your screenshot
+   ========================= */
+
+/* Make the title look like a centered banner */
+.didk-cat-title{
+  margin: 0;
+  padding: 18px 12px;
+  text-align: center;
+  background: #ffe9ee;        /* soft pink strip like image */
+  border-radius: 0;           /* flat strip */
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.6px;
+  color: #ff6f7a;             /* same pink vibe */
+  line-height: 1.1;
+}
+
+/* =========================
+   DID YOU KNOW — CATEGORY VIEW (READABLE ARTICLE STYLE)
+   Paste at VERY BOTTOM of main.css
+   ========================= */
+
+.didk-cat-page{
+  padding-top: 0 !important;
+}
+
+/* Header bar (like your sample) */
+.didk-cat-hero{
+  position: relative;
+  margin: 0 -16px 16px;
+  padding: 18px 16px 18px;
+  background: #fde6ea;           /* soft pink strip */
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Keep back pill consistent */
+.didk-cat-hero .articles-cat-back{
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+/* Center header content */
+.didk-cat-hero-inner{
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding-top: 10px; /* leaves space for the back pill */
+}
+
+/* “Did U Know?” small label (matches your image sample vibe) */
+.didk-cat-kicker{
+  font-size: 22px;
+  font-style: italic;
+  color: rgba(255, 79, 109, 0.85);
+  line-height: 1;
+}
+
+/* Big category title (Trivia/Facts) */
+.didk-cat-title{
+  margin: 0;
+  font-family: 'Caveat', cursive;
+  font-size: 44px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.2px;
+  color: #ff4f6d;
+  line-height: 1;
+}
+
+/* Article card */
+.didk-facts{
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+
+  /* readability */
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Better paragraph rhythm */
+.didk-fact{
+  margin: 0;
+  padding: 14px 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; /* more readable than decorative body font */
+  font-size: 14px;
+  line-height: 1.85;
+  color: #111827;
+}
+
+/* subtle separators like article sections */
+.didk-fact + .didk-fact{
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Make “Did you know?” pop if it’s wrapped */
+.didk-fact em,
+.didk-fact i,
+.didk-fact strong,
+.didk-fact b{
+  font-style: italic;
+  font-weight: 900;
+  color: #ff4f6d;
+}
+
+/* Links look like article references */
+.didk-facts a{
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+/* Mobile tuning */
+@media (max-width: 420px){
+  .didk-cat-title{ font-size: 36px; }
+  .didk-cat-kicker{ font-size: 20px; }
+  .didk-facts{ padding: 16px; }
+  .didk-fact{ font-size: 13px; line-height: 1.8; }
+}
+
+/* Desktop tuning (matches your screenshot spacing) */
+@media (min-width: 1100px){
+  .didk-cat-hero{
+    margin: 0 0 18px;
+    border-radius: 14px;
+  }
+  .didk-facts{
+    padding: 22px 24px;
+  }
+  .didk-fact{
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   DID YOU KNOW — CATEGORY (Article Style)
+   Paste at VERY BOTTOM of main.css
+   ========================= */
+
+.didk-cat-page{
+  padding-top: 16px;
+}
+
+/* soft header strip like your sample */
+.didk-cat-hero{
+  margin: 0 -16px 14px;
+  padding: 18px 16px 14px;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 14px;
+  position: relative;
+}
+
+/* back button: keep your existing class, but make it cleaner */
+.didk-cat-hero .articles-cat-back{
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  backdrop-filter: blur(6px);
+}
+
+/* title looks like a real article heading */
+.didk-cat-title{
+  margin: 0;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 34px;
+  font-weight: 700;
+  color: #ff4f6d;
+  font-style: italic;
+  letter-spacing: 0.2px;
+}
+
+/* main article container */
+.didk-facts{
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+
+  /* article feel */
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* each paragraph becomes a clean "article paragraph" */
+.didk-fact{
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+
+  /* readable typography */
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.didk-fact:last-child{
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Make "Did you know?" pop consistently */
+.didk-fact strong,
+.didk-fact b,
+.didk-fact em:first-child,
+.didk-fact i:first-child{
+  color: #ff4f6d;
+  font-weight: 900;
+}
+
+/* If your facts use <em>Did you know?</em>, keep it italic but bold */
+.didk-fact em,
+.didk-fact i{
+  font-style: italic;
+  font-weight: 900;
+}
+
+/* links inside facts (reference links) */
+.didk-fact a{
+  color: #ff4f6d;
+  font-weight: 800;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+/* desktop spacing */
+@media (min-width: 1100px){
+  .didk-cat-page{
+    padding-top: 18px;
+  }
+  .didk-cat-hero{
+    margin: 0 0 16px;
+    padding: 22px 22px 16px;
+    border-radius: 16px;
+  }
+  .didk-cat-title{
+    font-size: 40px;
+  }
+  .didk-facts{
+    padding: 22px 26px;
+    border-radius: 20px;
+  }
+  .didk-fact{
+    font-size: 15px;
+    padding: 16px 0;
+  }
+}
+
+.didk-heading{
+  margin: 26px 0 14px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #111827;
+  border-bottom: 2px solid rgba(255,79,109,0.25);
+  padding-bottom: 6px;
+}
+
+.didk-fact{
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #374151;
+}
+
+.didk-fact:last-child{
+  border-bottom: 0;
+}
+
+/* =========================
+   DID YOU KNOW — Article Layout (Myth/Fact)
+   ========================= */
+
+/* Myth title line (one line like your example) */
+.didk-myth-line{
+  margin: 18px 0 8px;
+  font-size: 18px;      /* bigger like screenshot */
+  line-height: 1.35;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* "1." */
+.didk-myth-num{
+  color: #ff4f6d;
+  font-style: italic;
+  font-weight: 900;
+}
+
+/* "Myth:" / "Mito:" */
+.didk-myth-label{
+  color: #ff4f6d;
+  font-style: italic;
+  font-weight: 900;
+}
+
+/* Myth sentence */
+.didk-myth-body{
+  font-weight: 700;
+}
+
+/* Fact paragraph under myth */
+.didk-fact-line{
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #111827;
+}
+
+/* "Fact:" label */
+.didk-fact-label{
+  color: #ff4f6d;
+  font-style: italic;
+  font-weight: 900;
+}
+
+/* Fact body */
+.didk-fact-body{
+  font-weight: 500;
+}
+
+/* =========================
+   DID YOU KNOW — Article Blocks (Myth/Fact)
+   ========================= */
+
+.didk-facts{
+  background: #fff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+}
+
+/* Normal paragraph (Trivia / extra lines) */
+.didk-paragraph{
+  margin: 0 0 12px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: #111827;
+}
+
+.didk-paragraph:last-child{
+  margin-bottom: 0;
+}
+
+/* Numbered Myth/Fact block */
+.didk-block{
+  padding: 14px 2px;
+}
+
+.didk-block + .didk-block{
+  border-top: 1px solid rgba(17,24,39,0.08);
+}
+
+.didk-block-title{
+  font-size: 20px;        /* ✅ makes "1. Myth: ..." bigger */
+  line-height: 1.35;
+  font-weight: 900;
+  color: #111827;
+  margin: 0;
+}
+
+.didk-num{
+  color: #ff4f6d;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.didk-title-text{
+  font-weight: 600;
+}
+
+/* Body under the title (Fact line) */
+.didk-block-body{
+  margin-top: 8px;        /* ✅ pushes Fact under title */
+  font-size: 15px;
+  line-height: 1.75;
+  color: #111827;
+}
+
+.didk-block-body--extra{
+  margin-top: 8px;
+}
+
+/* Labels */
+.didk-tag{
+  font-weight: 900;
+  font-style: italic;
+}
+
+.didk-tag--myth{
+  color: #ff4f6d;
+}
+
+.didk-tag--fact{
+  color: #ff4f6d;
+}
+
+/* Reference heading */
+.didk-ref-title{
+  margin: 50px 0 8px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #111827;
+}
+
+.didk-facts a{
+  color: #ff4f6d;
+  font-weight: 800;
+  text-decoration: underline;
+  word-break: break-word;
+}
+
+/* =========================
+   DID YOU KNOW — CLEAN ARTICLE STYLE
+   Paste at VERY BOTTOM
+   ========================= */
+
+.didk-facts{
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
+}
+
+/* Generic paragraph */
+.didk-paragraph{
+  margin: 0;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #374151;
+}
+.didk-paragraph:last-child{ border-bottom: 0; }
+
+/* Trivia style (matches your sample image) */
+.didk-trivia{
+  margin: 0;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  font-style: italic;
+  color: #374151;
+}
+.didk-trivia:last-child{ border-bottom: 0; }
+
+.didk-trivia-tag{
+  color: #ff4f6d;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 18px;           /* ✅ bigger “Did you know?” like sample */
+  letter-spacing: 0.2px;
+}
+.didk-trivia-body{
+  color: #374151;
+}
+
+/* Myth/Fact grouped block */
+.didk-block{
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.didk-block:last-child{ border-bottom: 0; }
+
+.didk-block-title{
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 18px;           /* ✅ makes “1. Myth: …” bigger */
+  line-height: 1.35;
+  font-weight: 900;
+  color: #111827;
+  margin: 0;
+}
+
+.didk-num{
+  color: #ff4f6d;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.didk-tag{
+  font-weight: 900;
+  font-style: italic;
+}
+
+.didk-tag--myth,
+.didk-tag--fact{
+  color: #ff4f6d;
+}
+
+/* ✅ This is what forces Fact under the myth title */
+.didk-block-body{
+  margin-top: 10px;          /* ✅ spacing under the title */
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #374151;
+}
+
+.didk-fact-body{
+  font-weight: 500;
+}
+
+/* Reference heading */
+.didk-ref-title{
+  margin: 50px 0 6px;
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: #111827;
+}
+
+/* Links */
+.didk-facts a{
+  color: #ff4f6d;
+  font-weight: 800;
+  text-decoration: underline;
+  word-break: break-word;
+}

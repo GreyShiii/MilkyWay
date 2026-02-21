@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let selectedRating = 0;
 
   function renderStars(fillUpTo) {
-    stars.forEach(s => {
+    stars.forEach((s) => {
       const shouldFill = Number(s.dataset.value) <= fillUpTo;
       s.classList.toggle("active", shouldFill);
       s.textContent = shouldFill ? "★" : "☆";
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape") closeThanks();
   });
 
-  stars.forEach(star => {
+  stars.forEach((star) => {
     star.addEventListener("mouseenter", () => {
       renderStars(Number(star.dataset.value));
     });
@@ -51,19 +51,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  likeButtons.forEach(btn => {
+  likeButtons.forEach((btn) => {
     btn.addEventListener("click", () => btn.classList.toggle("is-selected"));
   });
 
   submitBtn?.addEventListener("click", async () => {
     if (selectedRating < 1 || selectedRating > 5) {
-      alert("Please select a star rating first.");
+      alert(T("fb_alert_pick_star"));
       return;
     }
 
     const liked = [];
-    document.querySelectorAll("#likeGrid .like-card.is-selected")
-      .forEach(b => liked.push(b.dataset.like));
+    document
+      .querySelectorAll("#likeGrid .like-card.is-selected")
+      .forEach((b) => liked.push(b.dataset.like));
 
     submitBtn.disabled = true;
 
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch("/MilkyWay/process/save_feedback.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ rating: selectedRating, liked })
+        body: JSON.stringify({ rating: selectedRating, liked }),
       });
 
       const out = await res.json();
@@ -79,13 +80,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       selectedRating = 0;
       renderStars(0);
-      likeButtons.forEach(btn => btn.classList.remove("is-selected"));
+      likeButtons.forEach((btn) => btn.classList.remove("is-selected"));
 
       openThanks();
-
     } catch (e) {
       console.error(e);
-      alert("Failed to save feedback. Please try again.");
+      alert(T("fb_save_fail"));
     } finally {
       submitBtn.disabled = false;
     }

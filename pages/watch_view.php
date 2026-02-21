@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../helpers/videos.php';
+require_once __DIR__ . '/../helpers/lang.php';
 
 $id = (int)($_GET['id'] ?? 0);
 
@@ -20,7 +21,7 @@ if (!$video) {
 <main class="page watch-view-page">
 
   <div class="watch-top">
-    <a class="watch-back" href="/MilkyWay/index.php?page=watch">← Back</a>
+    <a class="watch-back" href="/MilkyWay/index.php?page=watch">← <?= htmlspecialchars(t('back')) ?></a>
   </div>
 
   <h2 class="watch-title"><?= htmlspecialchars($video['title']) ?></h2>
@@ -33,8 +34,8 @@ if (!$video) {
   </div>
 
   <p class="watch-info">
-    Duration: <strong><?= htmlspecialchars($video['duration']) ?></strong> •
-    Category: <strong><?= htmlspecialchars(ucfirst($video['category'])) ?></strong>
+    <?= htmlspecialchars(t('watch_duration')) ?>: <strong><?= htmlspecialchars($video['duration']) ?></strong> •
+    <?= htmlspecialchars(t('watch_category')) ?>: <strong><?= htmlspecialchars(ucfirst($video['category'])) ?></strong>
   </p>
 
 </main>

@@ -52,7 +52,6 @@ window.initMap = function initMap() {
   setupModeButtons();
   setupSearchBar();   
   setupAutocomplete();   
-
   fetchAndRender();
 };
 
