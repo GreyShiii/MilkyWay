@@ -6,16 +6,19 @@ if (!isset($_SESSION['lang'])) {
   $_SESSION['lang'] = 'en'; // default
 }
 
-function lang(): string {
+function lang(): string
+{
   return $_SESSION['lang'] ?? 'en';
 }
 
-function set_lang(string $code): void {
+function set_lang(string $code): void
+{
   $code = strtolower(trim($code));
   $_SESSION['lang'] = in_array($code, ['en', 'fil'], true) ? $code : 'en';
 }
 
-function t(string $key): string {
+function t(string $key): string
+{
   $dict = [
     'en' => [
       // Menu
@@ -103,6 +106,12 @@ function t(string $key): string {
       'fb_based_on' => 'Based on',
       'fb_review' => 'review',
       'fb_reviews' => 'reviews',
+
+      // About Page
+      'about_team' => 'Our Team',
+      'about_paragraph' =>
+      'We are a team of dedicated nursing students committed to supporting parents throughout their breastfeeding journey. Our mission is to empower families by providing accurate information, practical guidance, and reliable resources. Through this web application, we aim to make breastfeeding more accessible, manageable, and rewarding for both mothers and their babies, helping families build confidence and succeed every step of the way.',
+      'about_role' => 'Student Nurse',
     ],
 
     'fil' => [
@@ -185,7 +194,15 @@ function t(string $key): string {
       'fb_based_on' => 'Batay sa',
       'fb_review' => 'review',
       'fb_reviews' => 'mga review',
+
+      // About Page
+      'about_team' => 'Ang Aming Team',
+      'about_paragraph' =>
+      'Kami ay isang pangkat ng masisigasig na nursing students na nakatuon sa pagsuporta sa mga magulang sa kanilang breastfeeding journey. Layunin naming bigyang-lakas ang mga pamilya sa pamamagitan ng pagbibigay ng tamang impormasyon, praktikal na gabay, at mapagkakatiwalaang mga sanggunian. Sa web application na ito, nais naming gawing mas madaling maabot, mas madaling gawin, at mas kapaki-pakinabang ang pagpapasuso para sa mga ina at sanggol — upang makatulong sa pagbuo ng kumpiyansa at tagumpay sa bawat hakbang.',
+      'about_role' => 'Nursing Student',
     ],
+
+
   ];
 
   $l = lang();
@@ -195,7 +212,8 @@ function t(string $key): string {
 /**
  * For arrays like: ['en' => '...', 'fil' => '...']
  */
-function tr($value) {
+function tr($value)
+{
   if (is_array($value)) {
     $l = lang();
     // if the current language exists, return it (can be string or array)
@@ -212,7 +230,8 @@ function tr($value) {
 /**
  * Send translations to JS
  */
-function tjs(array $keys): array {
+function tjs(array $keys): array
+{
   $out = [];
   foreach ($keys as $k) $out[$k] = t($k);
   return $out;

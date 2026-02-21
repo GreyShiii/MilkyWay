@@ -1,6 +1,3 @@
-/* =========================
-   FONTS (LOCAL)
-   ========================= */
 @font-face{
   font-family: "Cornella";
   src: url("/MILKYWAY/public/fonts/Cornella-Regular.ttf") format("truetype");
@@ -42,6 +39,8 @@ body{
   display: block;
   min-height: 100vh;
   padding-bottom: calc(86px + env(safe-area-inset-bottom));
+  padding-bottom: 0 !important;
+  background: #ffffff;
 }
 
 .header {
@@ -87,12 +86,12 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0px;              /* space between icon and text */
-  min-width: 0;           /* prevents overflow issues */
+  gap: 0px;            
+  min-width: 0;       
 }
 
 .logo-img{
-  width: 40px;            /* adjust if you want bigger */
+  width: 40px;          
   height: 40px;
   object-fit: contain;
   display: block;
@@ -221,12 +220,7 @@ body{
   }
 }
 
-/* =========================
-   CONSISTENT PAGE TITLES
-   ========================= */
 .page-title-wrap{
-  text-align: center;
-  padding: 10px 0 6px;
   text-align: center;
   padding: 10px 0 6px;
   margin: 0px;
@@ -562,8 +556,6 @@ body{
   font-weight: 800;
 }
 
-/* ===== MENU DRAWER ===== */
-
 .menu-overlay {
   position: fixed;
   inset: 0;
@@ -639,29 +631,6 @@ body{
   gap: 12px;
 }
 
-.menu-btn {
-  background: #fff;
-  border-radius: 12px;
-  padding: 12px 14px;
-  text-decoration: none;
-  color: #111827;
-  font-weight: 600;
-  text-align: center;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-}
-
-.menu-btn:active {
-  transform: scale(0.99);
-}
-
-.menu-bottom {
-  margin-top: auto;
-  padding: 10px 18px 18px;
-  display: grid;
-  gap: 10px;
-  
-}
-
 .menu-nav {
   display: flex;
   align-items: center;
@@ -694,15 +663,12 @@ body{
   transform: translateX(0);
 }
 
-/* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   .menu-overlay,
   .menu-drawer {
     transition: none;
   }
 }
-
-/* ===== FEEDBACK PAGE ===== */
 
 .feedback-page {
   display: grid;
@@ -777,7 +743,11 @@ body{
 .star {
   cursor: pointer;
   color: #c4c4c4;
-  transition: color 0.2s ease, transform 0.15s ease;
+  transition: color 0.15s ease, transform 0.12s ease;
+}
+
+.star:hover {
+  transform: scale(1.15);
 }
 
 .star.active {
@@ -788,14 +758,6 @@ body{
   transform: scale(0.9);
 }
 
-.feedback-thanks {
-  display: none;
-  margin-top: 12px;
-  font-size: 12px;
-  color: #ff6f7a;
-}
-
-/* Likes section */
 .feedback-likes {
   background: #fff;
   border-radius: 22px;
@@ -828,32 +790,6 @@ body{
   color: #fff;
 }
 
-/* ===== STAR HOVER & ACTIVE EFFECTS ===== */
-
-.stars {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  font-size: 30px;
-}
-
-.star {
-  cursor: pointer;
-  color: #c4c4c4;
-  transition: color 0.15s ease, transform 0.12s ease;
-}
-
-.star:hover {
-  transform: scale(1.15);
-}
-
-/* Filled stars */
-.star.active {
-  color: #ff6f7a;
-}
-
-/* ===== LIKE CARDS HOVER & SELECTED ===== */
-
 .like-card {
   border: none;
   border-radius: 16px;
@@ -867,21 +803,18 @@ body{
     box-shadow 0.15s ease;
 }
 
-/* Hover effect */
 .like-card:hover {
   background: #ffd1d3;
   transform: translateY(-2px);
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
-/* Selected (clicked) */
 .like-card.is-selected {
   background: #ff9ea0;
   color: #fff;
   box-shadow: 0 10px 22px rgba(255, 158, 160, 0.45);
 }
 
-/* Submit button */
 .feedback-submit {
   margin-top: 14px;
   width: 100%;
@@ -900,7 +833,6 @@ body{
   cursor: not-allowed;
 }
 
-/* Message */
 .feedback-thanks {
   display: none;
   margin-top: 12px;
@@ -908,8 +840,6 @@ body{
   color: #ff6f7a;
   text-align: center;
 }
-
-/* ===== THANK YOU POPUP ===== */
 
 .thanks-overlay {
   position: fixed;
@@ -927,7 +857,7 @@ body{
 
 .thanks-modal {
   width: min(420px, 92vw);
-  background: #f3dede; /* soft blush like your mockup */
+  background: #f3dede; 
   border-radius: 22px;
   padding: 26px 22px;
   text-align: center;
@@ -977,15 +907,9 @@ body{
   box-shadow: 0 10px 20px rgba(255, 111, 122, 0.25);
 }
 
-/* ========================
-   WATCH & LEARN (FIXED)
-======================== */
-
 .watch-page {
   display: grid;
   gap: 12px;
-
-  /* 🔴 CRITICAL FIX */
   align-content: start;
 }
 
@@ -1007,10 +931,6 @@ body{
   font-size: 11px;
   color: #9ca3af;
 }
-
-/* ========================
-   CATEGORY CHIPS
-======================== */
 
 .watch-chips {
   display: flex;
@@ -1050,10 +970,6 @@ body{
     justify-content: center;
   }
 }
-
-/* ========================
-   VIDEO LIST (FIXED)
-======================== */
 
 .watch-list {
   display: grid;
@@ -1153,11 +1069,6 @@ body{
   overflow: hidden;
 }
 
-
-/* ========================
-   WATCH VIEW (YouTube-like)
-======================== */
-
 .watch-view-page{
   display: grid;
   gap: 10px;
@@ -1171,7 +1082,7 @@ body{
 .watch-view-page{
   display: grid;
   gap: 12px;
-  padding-top: 14px; /* ✅ pushes back button down */
+  padding-top: 14px;
 }
 
 .watch-player{
@@ -1189,7 +1100,6 @@ body{
   object-fit: contain;
 }
 
-/* Title (no container) */
 .watch-view-title{
   margin: 4px 0 0;
   font-size: 18px;
@@ -1198,7 +1108,6 @@ body{
   color: #111827;
 }
 
-/* Author line (no container) */
 .watch-view-meta{
   display: flex;
   align-items: center;
@@ -1218,7 +1127,6 @@ body{
   font-size: 13px;
 }
 
-/* Description (ONLY thing in a container) */
 .watch-desc-card{
   background: rgba(255,255,255,0.85);
   border: 1px solid rgba(0,0,0,0.06);
@@ -1227,7 +1135,6 @@ body{
   box-shadow: 0 10px 22px rgba(0,0,0,0.06);
 }
 
-/* header row inside description card */
 .watch-desc-head{
   display: flex;
   align-items: center;
@@ -1242,7 +1149,6 @@ body{
   color: rgba(17,24,39,0.7);
 }
 
-/* Show more button */
 .watch-desc-toggle{
   border: none;
   background: transparent;
@@ -1265,21 +1171,17 @@ body{
   font-size: 13px;
   line-height: 1.7;
   color: #374151;
-
-  /* collapsed state */
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-/* expanded */
 .watch-desc-card.is-open .watch-view-desc{
   -webkit-line-clamp: unset;
   overflow: visible;
 }
 
-/* Back button stays clean */
 .watch-back{
   display: inline-flex;
   align-items: center;
@@ -1297,10 +1199,6 @@ body{
 .watch-back:active{
   transform: scale(0.98);
 }
-
-/* =========================
-   ARTICLES
-   ========================= */
 
 .articles-page{
   padding-top: 10px;
@@ -1359,72 +1257,6 @@ body{
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 12px 12px;
-  text-align: center;
-  color: #fff;
-  font-weight: 900;
-  font-size: 13px;
-  letter-spacing: 0.4px;
-  border-radius: 0;
-}
-
-/* =========================
-          ARTICLES 
-   ========================= */
-
-/* ---------- PAGE 1 HEADER ---------- */
-.articles-page{
-  padding-top: 10px;
-}
-
-.articles-head{
-  text-align: center;
-  padding: 12px 0 6px;
-}
-
-.articles-head h1{
-  margin: 0;
-  font-size: 26px;
-  font-weight: 500;
-  color: #ff6f7a;
-  font-family: 'Pacifico', 'Brush Script MT', cursive;
-}
-
-.articles-head p{
-  margin: 2px 0 0;
-  font-size: 12px;
-  color: #9ca3af;
-  font-weight: 500;
-}
-
-/* ---------- CATEGORY STRIPS (PAGE 1) ---------- */
-.article-cats{
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-.article-cat{
-  display: block;
-  width: 100%;
-  position: relative;
-  text-decoration: none;
-  overflow: hidden;
-}
-
-.article-cat-img{
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  display: block;
-  filter: brightness(92%);
-}
-
-.article-cat-ribbon{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   padding: 12px;
   text-align: center;
   color: #fff;
@@ -1436,7 +1268,6 @@ body{
 .ribbon-red{ background: #ff4b4b; }
 .ribbon-purple{ background: #b58bff; }
 
-/* ---------- CATEGORY HERO (PAGE 2) ---------- */
 .articles-cat-hero{
   position: relative;
   overflow: hidden;
@@ -1462,18 +1293,6 @@ body{
   border-radius: 999px;
 }
 
-.articles-cat-ribbon{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 10px;
-  text-align: center;
-  color: #fff;
-  font-weight: 900;
-  font-size: 13px;
-}
-
 .articles-grid-cards{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1492,7 +1311,6 @@ body{
   overflow: hidden;
 }
 
-/* Image container */
 .article-card-img{
   position: relative;
   width: 100%;
@@ -1520,7 +1338,6 @@ body{
   background: #fff;
 }
 
-/* ---------- OVERVIEW (FULL WIDTH BAR) ---------- */
 .article-card-desc{
   position: absolute;
   left: 0;
@@ -1588,10 +1405,6 @@ body{
   }
 }
 
-/* =========================
-   CATEGORY COLOR THEMES
-   ========================= */
-
 .theme-intro{
   background: linear-gradient(135deg, #ff8fcf, #ff6fae);
 }
@@ -1611,10 +1424,6 @@ body{
 .theme-latch{
   background: linear-gradient(135deg, #ffb703, #fb8500);
 }
-
-/* =========================
-   ARTICLE CARD COLOR BINDING
-   ========================= */
 
 .articles-cat-ribbon{
   color: #fff;
@@ -1636,12 +1445,6 @@ body{
 .articles-cat-page.theme-tips .article-card-img{ border-color: rgba(139,92,246,0.55); }
 .articles-cat-page.theme-latch .article-card-img{ border-color: rgba(251,133,0,0.55); }
 
-
-/* =========================
-   ABOUT / OUR TEAM (COPY MOCKUP + FIX BROKEN LAYOUT)
-   Paste this whole block and REMOVE your old about/team CSS
-   ========================= */
-
 .about-page{
   padding: 0;
   margin: 0;
@@ -1650,7 +1453,6 @@ body{
   padding-bottom: 92px;
 }
 
-/* HERO */
 .about-hero{
   position: relative;
   width: 100%;
@@ -1707,7 +1509,7 @@ body{
 
 .about-subtitle{
   margin: 6px 0 0;
-  font-family: 'Pacifico', 'Brush Script MT', cursive;
+  font-family: 'Pacifico';
   font-size: 28px;
   font-weight: 500;
   color: rgba(255,79,109,0.92);
@@ -1998,7 +1800,6 @@ button.menu-btn:focus-visible{
   box-shadow: 0 0 0 3px rgba(255,111,122,0.35), 0 6px 14px rgba(0,0,0,0.06);
 }
 
-/* FULL WIDTH on desktop */
 @media (min-width: 900px){
   .page{
     max-width: none !important;
@@ -2120,7 +1921,6 @@ button.menu-btn:focus-visible{
   border-width: 4px !important;
 }
 
-/* ===== DID YOU KNOW (Accordion) ===== */
 .didk-page{
   background: #fdecef;
   min-height: 100vh;
@@ -2246,7 +2046,6 @@ button.menu-btn:focus-visible{
   font-weight: 600;
 }
 
-/* ===== Reusable Accordion Card ===== */
 .acc-card{
   border-radius: 16px;
   overflow: hidden;
@@ -2316,7 +2115,6 @@ button.menu-btn:focus-visible{
   font-weight: 600;
 }
 
-/* ===== DidYouKnow uses Article cards + dropdown ===== */
 .didk-cat-btn{
   width: 100%;
   padding: 0;
@@ -2326,7 +2124,6 @@ button.menu-btn:focus-visible{
   cursor: pointer;
 }
 
-/* Put chevron on the ribbon like a dropdown indicator */
 .article-cat-ribbon{
   display: flex;
   align-items: center;
@@ -2342,7 +2139,6 @@ button.menu-btn:focus-visible{
   transform: rotate(180deg);
 }
 
-/* dropdown panel under the card */
 .didk-panel{
   max-height: 0px;
   overflow: hidden;
@@ -2365,7 +2161,6 @@ button.menu-btn:focus-visible{
   box-shadow: 0 6px 14px rgba(0,0,0,0.08);
 }
 
-/* ===== Intro / Splash Screen ===== */
 .intro-page{
   min-height: 100vh;
   display: grid;
@@ -2402,7 +2197,6 @@ button.menu-btn:focus-visible{
   animation: introUp 900ms ease 260ms both;
 }
 
-/* Animations */
 @keyframes introPop{
   from { transform: scale(.75); opacity: 0; }
   to   { transform: scale(1); opacity: 1; }
@@ -2439,7 +2233,6 @@ button.menu-btn:focus-visible{
   opacity: 0.9;
 }
 
-/* ===== Global Page Loader ===== */
 .page-loader{
   position: fixed;
   inset: 0;
@@ -2489,20 +2282,16 @@ button.menu-btn:focus-visible{
   to { transform: rotate(360deg); }
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce){
   .page-loader{ transition: none; }
   .page-loader__spinner{ animation: none; }
 }
-
-/* ===== Force all page title blocks to align the same ===== */
 
 .page-title{
   margin: 0;
   line-height: 1.1;
 }
 
-/* Kill spacing differences from older title systems */
 .watch-head,
 .articles-head,
 .locator-title{
@@ -2510,7 +2299,6 @@ button.menu-btn:focus-visible{
   padding: 0 !important;
 }
 
-/* If any of these still exist, remove their extra margins */
 .watch-head h1,
 .articles-head h1,
 .locator-title h1{
@@ -2523,14 +2311,13 @@ button.menu-btn:focus-visible{
   margin: 4px 0 0 !important;
 }
 
-/* ===== ARTICLE VIEW ===== */
 .article-view-page{
   padding-top: 10px;
 }
 
 .article-view-head{
   position: relative;
-  padding-top: 16px; /* gives room for the back button */
+  padding-top: 16px; 
 }
 
 .article-back{
@@ -2577,7 +2364,6 @@ button.menu-btn:focus-visible{
   box-shadow: 0 10px 22px rgba(0,0,0,0.07);
 }
 
-/* ===== DID YOU KNOW (Category Text Page) ===== */
 .didk-cat-page{
   padding-top: 12px;
 }
@@ -2621,14 +2407,12 @@ button.menu-btn:focus-visible{
   margin-bottom: 0;
 }
 
-/* Make the "Did you know?" part feel like your sample */
 .didk-fact em,
 .didk-fact i{
   font-style: italic;
   font-weight: 900;
 }
 
-/* ===== Page Head (Back + Title Alignment) ===== */
 .page-head{
   display: grid;
   grid-template-columns: 44px 1fr 44px;
@@ -2678,33 +2462,6 @@ button.menu-btn:focus-visible{
   margin: 2px 0 0;
 }
 
-/* Category title below header */
-.didk-cat-title{
-  margin: 14px 0 10px;
-  font-size: 20px;
-  font-weight: 900;
-  color: #111827;
-}
-
-/* Facts container */
-.didk-facts{
-  background: #fff;
-  border-radius: 18px;
-  padding: 16px;
-  box-shadow: 0 10px 22px rgba(0,0,0,0.07);
-}
-
-.didk-fact{
-  margin: 0 0 12px;
-  font-size: 13px;
-  line-height: 1.65;
-  color: #111827;
-}
-
-.didk-fact:last-child{
-  margin-bottom: 0;
-}
-
 .page-title-wrap--center .page-title{
   margin: 0;
   line-height: 1.1;
@@ -2714,14 +2471,11 @@ button.menu-btn:focus-visible{
   margin: 2px 0 0;
 }
 
-/* ===== DID YOU KNOW HERO (match Latch Library style) ===== */
-
 .didk-cat-hero{
   position: relative;
   padding: 20px 0 10px;
 }
 
-/* Reuse same pill style from articles */
 .articles-cat-back{
   position: absolute;
   top: 8px;
@@ -2749,35 +2503,19 @@ button.menu-btn:focus-visible{
   margin: 2px 0 0;
 }
 
-
-/* =========================
-   DESKTOP UI — MATCH SCREENSHOTS
-   Paste at VERY BOTTOM of main.css
-   ========================= */
-
 @media (min-width: 1100px) {
 
-  /* Hide mobile bottom nav on desktop */
   .footer-container {
     display: none !important;
   }
 
-  /* Hide mobile topbar/hamburger area (desktop uses sidebar) */
   .topbar,
   .subbar,
   .topbar-spacer {
     display: none !important;
   }
 
-  /* Body should not reserve space for mobile footer */
-  body {
-    padding-bottom: 0 !important;
-    background: #ffffff;
-  }
 
-  /* =========================
-     SIDEBAR (menu-drawer)
-     ========================= */
   .menu-overlay {
     display: none !important;
     pointer-events: none !important;
@@ -2791,13 +2529,9 @@ button.menu-btn:focus-visible{
     width: 290px !important;
     transform: none !important;
     border-radius: 0 !important;
-
-    /* screenshot-like: white panel */
     background: #ffffff !important;
     box-shadow: none !important;
     z-index: 5000 !important;
-
-    /* subtle right divider */
     border-right: 1px solid rgba(0,0,0,0.08) !important;
     overflow: hidden !important;
   }
@@ -2809,7 +2543,6 @@ button.menu-btn:focus-visible{
     overflow: hidden !important;
   }
 
-  /* TOP BRAND HEADER (gradient like screenshot) */
   .menu-top {
     padding: 18px 18px 18px !important;
     background: linear-gradient(90deg, #ff7e86 0%, #ffb2a8 100%) !important;
@@ -2819,9 +2552,8 @@ button.menu-btn:focus-visible{
     text-align: left !important;
   }
 
-  /* If you show an image logo in sidebar, keep it small on desktop */
   .menu-logo {
-    display: none !important; /* screenshot shows text logo style */
+    display: none !important; 
   }
 
   .menu-title {
@@ -2840,14 +2572,12 @@ button.menu-btn:focus-visible{
     color: rgba(255,255,255,0.95) !important;
   }
 
-  /* MENU LIST AREA */
   .menu-section {
     padding: 14px 14px !important;
     display: grid !important;
     gap: 10px !important;
   }
 
-  /* Make menu items look like sidebar nav rows */
   .menu-bottom {
     margin-top: 0 !important;
     padding: 10px 14px 14px !important;
@@ -2855,7 +2585,6 @@ button.menu-btn:focus-visible{
     gap: 10px !important;
   }
 
-  /* Unify link/button menu rows */
   .menu-btn,
   .menu-nav,
   .menu-section a.menu-btn,
@@ -2881,7 +2610,6 @@ button.menu-btn:focus-visible{
     border: 1px solid transparent !important;
   }
 
-  /* Icon slot (works with your existing .menu-nav-ic) */
   .menu-nav-ic {
     width: 18px !important;
     min-width: 18px !important;
@@ -2892,13 +2620,11 @@ button.menu-btn:focus-visible{
     font-size: 18px !important;
   }
 
-  /* Hover */
   .menu-btn:hover,
   .menu-nav:hover {
     background: rgba(255, 111, 122, 0.08) !important;
   }
 
-  /* Active state like screenshot (pink pill) */
   .menu-nav.is-active,
   .menu-btn.is-active {
     background: linear-gradient(90deg, #ff6f7a 0%, #ffb7a6 100%) !important;
@@ -2911,12 +2637,10 @@ button.menu-btn:focus-visible{
     opacity: 1 !important;
   }
 
-  /* Bottom “Made with love” pinned */
   .menu-inner {
     position: relative !important;
   }
 
-  /* If you have a footer inside the menu, keep it at bottom (optional safety) */
   .menu-inner .made-with-love,
   .menu-inner .menu-footer {
     margin-top: auto !important;
@@ -2925,9 +2649,6 @@ button.menu-btn:focus-visible{
     font-size: 12px !important;
   }
 
-  /* =========================
-     MAIN CONTENT AREA
-     ========================= */
   .page {
     max-width: none !important;
     width: calc(100% - 290px) !important;
@@ -2936,7 +2657,6 @@ button.menu-btn:focus-visible{
     padding-bottom: 28px !important;
   }
 
-  /* Home hero bigger like screenshot */
   .hero {
     margin-top: 0 !important;
   }
@@ -2960,7 +2680,6 @@ button.menu-btn:focus-visible{
     max-width: 62% !important;
   }
 
-  /* Home feature row becomes 4 cards wide like screenshot */
   .feature-grid {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 16px !important;
@@ -2987,14 +2706,12 @@ button.menu-btn:focus-visible{
     font-size: 11px !important;
   }
 
-  /* Daily tip bar like screenshot */
   .daily-tip {
     margin-top: 18px !important;
     border-radius: 18px !important;
     padding: 22px !important;
   }
 
-  /* WATCH: make it grid cards on desktop (like screenshot) */
   .watch-chips {
     justify-content: center !important;
   }
@@ -3014,7 +2731,6 @@ button.menu-btn:focus-visible{
     height: 150px !important;
   }
 
-  /* ARTICLES category strips show clean centered */
   .articles-cat-hero {
     margin: 0 0 14px !important;
     border-radius: 22px !important;
@@ -3029,76 +2745,15 @@ button.menu-btn:focus-visible{
     height: 240px !important;
   }
 
-  /* LOCATOR: side-by-side layout like screenshot */
   .locator-page #map {
     height: 420px !important;
   }
 
-  /* FEEDBACK center card spacing */
   .feedback-page {
     gap: 18px !important;
   }
 }
 
-/* =========================
-   FIX: Watch category chips not aligned (desktop + all)
-   Paste at VERY BOTTOM of main.css
-   ========================= */
-
-.watch-chips{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.watch-chips .chip{
-  /* normalize <a> vs <button> */
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-
-  /* hard alignment */
-  height: 34px !important;
-  line-height: 1 !important;
-
-  padding: 0 14px !important;
-  border-radius: 999px !important;
-
-  /* remove default button styles if any chip is a button */
-  border: none !important;
-  background: #fff;
-  font: inherit !important;
-  text-decoration: none !important;
-  white-space: nowrap !important;
-  box-sizing: border-box !important;
-}
-
-/* Optional: make the row wrap cleanly on large screens */
-@media (min-width: 1100px){
-  .watch-chips{
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    row-gap: 10px !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-}
-
-
-/* =========================
-   FIX: Sidebar menu alignment
-   (make all items full-width rows)
-   ========================= */
-
-/* Make the sidebar containers consistent */
-.menu-section,
-.menu-bottom{
-  display: grid !important;
-  gap: 12px !important;
-  padding: 16px 18px !important;
-}
-
-/* Normalize BOTH buttons and links inside sidebar */
 .menu-section .menu-btn,
 .menu-section a.menu-btn,
 .menu-section button.menu-btn,
@@ -3106,21 +2761,15 @@ button.menu-btn:focus-visible{
   width: 100% !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-start !important; /* <-- fixes centering misalignment */
+  justify-content: flex-start !important; 
   text-align: left !important;
-
   padding: 14px 16px !important;
   border-radius: 14px !important;
-
   box-sizing: border-box !important;
   margin: 0 !important;
-
-  /* keep visuals consistent */
   background: #fff !important;
   color: #7b4b4f !important;
   font-weight: 700 !important;
-
-  /* remove random default styles */
   border: none !important;
   outline: none !important;
   appearance: none !important;
@@ -3129,13 +2778,11 @@ button.menu-btn:focus-visible{
   box-shadow: 0 6px 14px rgba(0,0,0,0.06) !important;
 }
 
-/* Remove any accidental “center text” styles */
 .menu-section .menu-btn,
 .menu-bottom .menu-nav{
   text-align: left !important;
 }
 
-/* Make sure the nav icon slot doesn’t shift spacing */
 .menu-nav-ic{
   width: 18px !important;
   min-width: 18px !important;
@@ -3145,14 +2792,12 @@ button.menu-btn:focus-visible{
   margin-right: 10px !important;
 }
 
-/* Active state keeps same padding/width so it doesn't "jump" */
 .menu-nav.is-active,
 .menu-btn.is-active{
   width: 100% !important;
   padding: 14px 16px !important;
 }
 
-/* Optional: if you want the "Language/Clinic/About/Feedback" to look like plain text rows */
 @media (min-width: 1100px){
   .menu-section .menu-btn{
     box-shadow: none !important;
@@ -3160,18 +2805,6 @@ button.menu-btn:focus-visible{
     padding: 12px 6px !important;
     border-radius: 10px !important;
   }
-}
-
-/* =========================
-   FIX: Sidebar bottom nav alignment (mobile drawer too)
-   ========================= */
-
-/* Remove the "push to bottom" spacing so it aligns like your screenshot layout */
-.menu-bottom{
-  margin-top: 0 !important;
-  padding: 16px 18px !important;
-  display: grid !important;
-  gap: 12px !important;
 }
 
 .menu-bottom a.menu-nav{
@@ -3190,36 +2823,30 @@ button.menu-btn:focus-visible{
   border: none !important;
 }
 
-/* If you don't use icons, remove the icon slot spacing */
 .menu-bottom a.menu-nav .menu-nav-ic{
   display: none !important;
 }
 
-/* =========================
-   LOCATOR DESKTOP LAYOUT (matches screenshot)
-   ========================= */
 @media (min-width: 1100px){
 
   .locator-shell{
     display: grid;
-    grid-template-columns: 1fr 420px; /* map | results */
+    grid-template-columns: 1fr 420px; 
     grid-template-rows: auto 1fr;
     gap: 18px 22px;
     align-items: start;
   }
 
-  /* top row spans both columns */
 .locator-top{
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: 1fr 420px; /* ✅ match the right column width */
+  grid-template-columns: 1fr 420px; 
   gap: 18px;
   align-items: center;
 }
 
 @media (min-width: 1100px){
 
-  /* ensure both right-column sections use the same width and left edge */
   .locator-results,
   .mode-row{
     width: 100% !important;
@@ -3227,7 +2854,6 @@ button.menu-btn:focus-visible{
     align-self: center !important;
   }
 
-  /* keep buttons filling the right column exactly */
   .mode-row{
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
@@ -3238,15 +2864,12 @@ button.menu-btn:focus-visible{
     width: 100% !important;
   }
 
-  /* make sure list cards start exactly under buttons */
   .places-list{
     padding: 0 !important;
     margin: 0 !important;
   }
 }
 
-
-  /* remove mobile paddings that cause misalignment */
   .locator-search,
   .mode-row,
   .map-card,
@@ -3278,7 +2901,6 @@ button.menu-btn:focus-visible{
     font-size: 13px !important;
   }
 
-  /* map left */
   .locator-map{ grid-column: 1; }
   .map-card{
     padding: 7px !important;
@@ -3289,7 +2911,6 @@ button.menu-btn:focus-visible{
     border-radius: 18px !important;
   }
 
-  /* results right */
   .locator-results{ grid-column: 2; }
   .places-list{
     padding: 0 !important;
@@ -3308,16 +2929,10 @@ button.menu-btn:focus-visible{
   }
 }
 
-/* =========================
-   LOCATOR — MOBILE ALIGNMENT FIX
-   Paste at VERY BOTTOM of main.css
-   ========================= */
-
 .locator-page .page-title-wrap{
   margin-bottom: 6px;
 }
 
-/* Remove extra side padding (page already has 16px) */
 .locator-page .locator-search,
 .locator-page .mode-row,
 .locator-page .places-list{
@@ -3325,20 +2940,17 @@ button.menu-btn:focus-visible{
   padding-right: 0 !important;
 }
 
-/* Make search pill full-width and consistent */
 .locator-page .search-pill{
   width: 100%;
   border-radius: 16px;
   padding: 12px 14px;
 }
 
-/* Clean input sizing so it doesn't look "tight" */
 .locator-page .search-pill input{
   font-size: 13px;
   min-width: 0;
 }
 
-/* Make buttons align with the same edges as search + map */
 .locator-page .mode-row{
   display: grid !important;
   grid-template-columns: 1fr 1fr;
@@ -3356,33 +2968,23 @@ button.menu-btn:focus-visible{
   justify-content: center;
 }
 
-/* Map card should also match the same left/right edges */
 .locator-page .map-card{
-  padding: 10px;          /* keep the pink frame */
+  padding: 10px;       
   border-radius: 20px;
   margin-top: 12px;
 }
 
 .locator-page #map{
-  height: 320px;          /* better mobile height */
+  height: 320px;         
   border-radius: 16px;
 }
 
-/* List should align with everything */
 .locator-page .places-list{
   margin-top: 12px;
 }
 
-/* =========================
-   FIX: Restore MOBILE menu drawer styling
-   (Your desktop sidebar rules were leaking into mobile)
-   Paste at VERY BOTTOM of main.css
-   ========================= */
-
-/* MOBILE / TABLET (drawer) */
 @media (max-width: 1099px){
 
-  /* restore drawer look */
   .menu-drawer{
     width: min(360px, 88vw) !important;
     height: 100vh !important;
@@ -3402,7 +3004,6 @@ button.menu-btn:focus-visible{
     -webkit-overflow-scrolling: touch;
   }
 
-  /* header stays centered on mobile */
   .menu-top{
     padding: 22px 18px 18px !important;
     background: transparent !important;
@@ -3427,32 +3028,26 @@ button.menu-btn:focus-visible{
     text-align: center !important;
   }
 
-  /* card sections */
   .menu-section{
     padding: 16px 18px !important;
     display: grid !important;
     gap: 12px !important;
   }
 
-  /* IMPORTANT: restore centered "card button" style */
   .menu-section .menu-btn,
   .menu-section a.menu-btn,
   .menu-section button.menu-btn{
     width: 100% !important;
     display: block !important;
     text-align: center !important;
-
     padding: 12px 14px !important;
     border-radius: 12px !important;
-
     background: #fff !important;
     color: #111827 !important;
-
     box-shadow: 0 6px 14px rgba(0,0,0,0.06) !important;
     border: none !important;
   }
 
-  /* bottom nav keeps centered pills too */
   .menu-bottom{
     margin-top: auto !important;
     padding: 10px 18px 18px !important;
@@ -3468,22 +3063,16 @@ button.menu-btn:focus-visible{
     box-shadow: 0 10px 20px rgba(255, 158, 160, 0.35) !important;
   }
 
-  /* Undo the “hide icon” rule (it broke mobile spacing) */
   .menu-bottom .menu-nav .menu-nav-ic{
     display: inline-flex !important;
     margin-right: 0 !important;
   }
 }
 
-/* DESKTOP ONLY (sidebar) – keep your sidebar rules here */
 @media (min-width: 1100px){
-  /* If you previously added any desktop-only sidebar rules WITHOUT this wrapper,
-     move them inside this media query. */
+
 }
 
-
-/* ✅ FIX: Intro must ignore desktop sidebar layout */
-/* ✅ Intro should be full-screen and ignore all page sizing rules */
 .page.intro-page{
   position: fixed !important;
   inset: 0 !important;
@@ -3495,7 +3084,6 @@ button.menu-btn:focus-visible{
   padding-bottom: 0 !important;
 }
 
-/* ✅ Intro should be full-screen and ignore all layout rules */
 .intro-page{
   position: fixed !important;
   inset: 0 !important;
@@ -3510,16 +3098,12 @@ button.menu-btn:focus-visible{
   place-items: center !important;
 }
 
-/* =========================
-   INTRO HARD ISOLATION
-   ========================= */
 body.is-intro{
   padding-bottom: 0 !important;
   overflow: hidden !important;
   background: #ffe9ee !important;
 }
 
-/* Hide any app chrome that might still be rendered */
 body.is-intro .menu-drawer,
 body.is-intro .menu-overlay,
 body.is-intro .topbar,
@@ -3528,7 +3112,6 @@ body.is-intro .footer-container{
   display: none !important;
 }
 
-/* Make intro ignore ALL .page desktop rules */
 body.is-intro .page.intro-page{
   position: fixed !important;
   inset: 0 !important;
@@ -3539,63 +3122,45 @@ body.is-intro .page.intro-page{
   z-index: 999999 !important;
 }
 
-/* =========================
-   DID YOU KNOW – CATEGORY TITLE STYLE
-   ========================= */
-
-/* =========================
-   DID YOU KNOW – Title like your screenshot
-   ========================= */
-
-/* Make the title look like a centered banner */
 .didk-cat-title{
   margin: 0;
   padding: 18px 12px;
   text-align: center;
-  background: #ffe9ee;        /* soft pink strip like image */
-  border-radius: 0;           /* flat strip */
+  background: #ffe9ee;     
+  border-radius: 0;         
   font-size: 30px;
   font-weight: 700;
   font-style: italic;
   letter-spacing: 0.6px;
-  color: #ff6f7a;             /* same pink vibe */
+  color: #ff6f7a;        
   line-height: 1.1;
 }
-
-/* =========================
-   DID YOU KNOW — CATEGORY VIEW (READABLE ARTICLE STYLE)
-   Paste at VERY BOTTOM of main.css
-   ========================= */
 
 .didk-cat-page{
   padding-top: 0 !important;
 }
 
-/* Header bar (like your sample) */
 .didk-cat-hero{
   position: relative;
   margin: 0 -16px 16px;
   padding: 18px 16px 18px;
-  background: #fde6ea;           /* soft pink strip */
+  background: #fde6ea;       
   border-bottom: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Keep back pill consistent */
 .didk-cat-hero .articles-cat-back{
   position: absolute;
   top: 12px;
   left: 12px;
 }
 
-/* Center header content */
 .didk-cat-hero-inner{
   display: grid;
   justify-items: center;
   gap: 6px;
-  padding-top: 10px; /* leaves space for the back pill */
+  padding-top: 10px; 
 }
 
-/* “Did U Know?” small label (matches your image sample vibe) */
 .didk-cat-kicker{
   font-size: 22px;
   font-style: italic;
@@ -3603,7 +3168,6 @@ body.is-intro .page.intro-page{
   line-height: 1;
 }
 
-/* Big category title (Trivia/Facts) */
 .didk-cat-title{
   margin: 0;
   font-family: 'Caveat', cursive;
@@ -3615,34 +3179,28 @@ body.is-intro .page.intro-page{
   line-height: 1;
 }
 
-/* Article card */
 .didk-facts{
   background: #fff;
   border-radius: 18px;
   padding: 18px 18px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.07);
-
-  /* readability */
   max-width: 860px;
   margin: 0 auto;
 }
 
-/* Better paragraph rhythm */
 .didk-fact{
   margin: 0;
   padding: 14px 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; /* more readable than decorative body font */
+  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; 
   font-size: 14px;
   line-height: 1.85;
   color: #111827;
 }
 
-/* subtle separators like article sections */
 .didk-fact + .didk-fact{
   border-top: 1px solid rgba(0,0,0,0.06);
 }
 
-/* Make “Did you know?” pop if it’s wrapped */
 .didk-fact em,
 .didk-fact i,
 .didk-fact strong,
@@ -3652,7 +3210,6 @@ body.is-intro .page.intro-page{
   color: #ff4f6d;
 }
 
-/* Links look like article references */
 .didk-facts a{
   color: #2563eb;
   font-weight: 700;
@@ -3660,7 +3217,6 @@ body.is-intro .page.intro-page{
   word-break: break-word;
 }
 
-/* Mobile tuning */
 @media (max-width: 420px){
   .didk-cat-title{ font-size: 36px; }
   .didk-cat-kicker{ font-size: 20px; }
@@ -3668,7 +3224,6 @@ body.is-intro .page.intro-page{
   .didk-fact{ font-size: 13px; line-height: 1.8; }
 }
 
-/* Desktop tuning (matches your screenshot spacing) */
 @media (min-width: 1100px){
   .didk-cat-hero{
     margin: 0 0 18px;
@@ -3682,16 +3237,10 @@ body.is-intro .page.intro-page{
   }
 }
 
-/* =========================
-   DID YOU KNOW — CATEGORY (Article Style)
-   Paste at VERY BOTTOM of main.css
-   ========================= */
-
 .didk-cat-page{
   padding-top: 16px;
 }
 
-/* soft header strip like your sample */
 .didk-cat-hero{
   margin: 0 -16px 14px;
   padding: 18px 16px 14px;
@@ -3700,7 +3249,6 @@ body.is-intro .page.intro-page{
   position: relative;
 }
 
-/* back button: keep your existing class, but make it cleaner */
 .didk-cat-hero .articles-cat-back{
   position: absolute;
   top: 14px;
@@ -3715,7 +3263,6 @@ body.is-intro .page.intro-page{
   backdrop-filter: blur(6px);
 }
 
-/* title looks like a real article heading */
 .didk-cat-title{
   margin: 0;
   text-align: center;
@@ -3727,25 +3274,20 @@ body.is-intro .page.intro-page{
   letter-spacing: 0.2px;
 }
 
-/* main article container */
 .didk-facts{
   background: #fff;
   border-radius: 18px;
   padding: 18px 18px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.07);
-
-  /* article feel */
   max-width: 860px;
   margin: 0 auto;
 }
 
-/* each paragraph becomes a clean "article paragraph" */
 .didk-fact{
   margin: 0;
   padding: 14px 0;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 
-  /* readable typography */
   font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.75;
@@ -3757,7 +3299,6 @@ body.is-intro .page.intro-page{
   padding-bottom: 0;
 }
 
-/* Make "Did you know?" pop consistently */
 .didk-fact strong,
 .didk-fact b,
 .didk-fact em:first-child,
@@ -3766,14 +3307,12 @@ body.is-intro .page.intro-page{
   font-weight: 900;
 }
 
-/* If your facts use <em>Did you know?</em>, keep it italic but bold */
 .didk-fact em,
 .didk-fact i{
   font-style: italic;
   font-weight: 900;
 }
 
-/* links inside facts (reference links) */
 .didk-fact a{
   color: #ff4f6d;
   font-weight: 800;
@@ -3781,7 +3320,6 @@ body.is-intro .page.intro-page{
   word-break: break-word;
 }
 
-/* desktop spacing */
 @media (min-width: 1100px){
   .didk-cat-page{
     padding-top: 18px;
@@ -3827,39 +3365,30 @@ body.is-intro .page.intro-page{
   border-bottom: 0;
 }
 
-/* =========================
-   DID YOU KNOW — Article Layout (Myth/Fact)
-   ========================= */
-
-/* Myth title line (one line like your example) */
 .didk-myth-line{
   margin: 18px 0 8px;
-  font-size: 18px;      /* bigger like screenshot */
+  font-size: 18px;    
   line-height: 1.35;
   font-weight: 800;
   color: #111827;
 }
 
-/* "1." */
 .didk-myth-num{
   color: #ff4f6d;
   font-style: italic;
   font-weight: 900;
 }
 
-/* "Myth:" / "Mito:" */
 .didk-myth-label{
   color: #ff4f6d;
   font-style: italic;
   font-weight: 900;
 }
 
-/* Myth sentence */
 .didk-myth-body{
   font-weight: 700;
 }
 
-/* Fact paragraph under myth */
 .didk-fact-line{
   margin: 0 0 16px;
   font-size: 14px;
@@ -3867,21 +3396,16 @@ body.is-intro .page.intro-page{
   color: #111827;
 }
 
-/* "Fact:" label */
 .didk-fact-label{
   color: #ff4f6d;
   font-style: italic;
   font-weight: 900;
 }
 
-/* Fact body */
 .didk-fact-body{
   font-weight: 500;
 }
 
-/* =========================
-   DID YOU KNOW — Article Blocks (Myth/Fact)
-   ========================= */
 
 .didk-facts{
   background: #fff;
@@ -3890,7 +3414,6 @@ body.is-intro .page.intro-page{
   box-shadow: 0 10px 22px rgba(0,0,0,0.07);
 }
 
-/* Normal paragraph (Trivia / extra lines) */
 .didk-paragraph{
   margin: 0 0 12px;
   font-size: 13px;
@@ -3902,7 +3425,6 @@ body.is-intro .page.intro-page{
   margin-bottom: 0;
 }
 
-/* Numbered Myth/Fact block */
 .didk-block{
   padding: 14px 2px;
 }
@@ -3912,7 +3434,7 @@ body.is-intro .page.intro-page{
 }
 
 .didk-block-title{
-  font-size: 20px;        /* ✅ makes "1. Myth: ..." bigger */
+  font-size: 20px;     
   line-height: 1.35;
   font-weight: 900;
   color: #111827;
@@ -3929,9 +3451,8 @@ body.is-intro .page.intro-page{
   font-weight: 600;
 }
 
-/* Body under the title (Fact line) */
 .didk-block-body{
-  margin-top: 8px;        /* ✅ pushes Fact under title */
+  margin-top: 8px;        
   font-size: 15px;
   line-height: 1.75;
   color: #111827;
@@ -3941,7 +3462,6 @@ body.is-intro .page.intro-page{
   margin-top: 8px;
 }
 
-/* Labels */
 .didk-tag{
   font-weight: 900;
   font-style: italic;
@@ -3955,7 +3475,6 @@ body.is-intro .page.intro-page{
   color: #ff4f6d;
 }
 
-/* Reference heading */
 .didk-ref-title{
   margin: 50px 0 8px;
   font-size: 20px;
@@ -3970,11 +3489,6 @@ body.is-intro .page.intro-page{
   word-break: break-word;
 }
 
-/* =========================
-   DID YOU KNOW — CLEAN ARTICLE STYLE
-   Paste at VERY BOTTOM
-   ========================= */
-
 .didk-facts{
   background: #fff;
   border-radius: 18px;
@@ -3982,7 +3496,6 @@ body.is-intro .page.intro-page{
   box-shadow: 0 10px 22px rgba(0,0,0,0.07);
 }
 
-/* Generic paragraph */
 .didk-paragraph{
   margin: 0;
   padding: 14px 0;
@@ -3994,7 +3507,6 @@ body.is-intro .page.intro-page{
 }
 .didk-paragraph:last-child{ border-bottom: 0; }
 
-/* Trivia style (matches your sample image) */
 .didk-trivia{
   margin: 0;
   padding: 16px 0;
@@ -4011,14 +3523,13 @@ body.is-intro .page.intro-page{
   color: #ff4f6d;
   font-weight: 900;
   font-style: italic;
-  font-size: 18px;           /* ✅ bigger “Did you know?” like sample */
+  font-size: 18px;    
   letter-spacing: 0.2px;
 }
 .didk-trivia-body{
   color: #374151;
 }
 
-/* Myth/Fact grouped block */
 .didk-block{
   padding: 16px 0;
   border-bottom: 1px solid rgba(0,0,0,0.08);
@@ -4027,7 +3538,7 @@ body.is-intro .page.intro-page{
 
 .didk-block-title{
   font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  font-size: 18px;           /* ✅ makes “1. Myth: …” bigger */
+  font-size: 18px;         
   line-height: 1.35;
   font-weight: 900;
   color: #111827;
@@ -4050,9 +3561,8 @@ body.is-intro .page.intro-page{
   color: #ff4f6d;
 }
 
-/* ✅ This is what forces Fact under the myth title */
 .didk-block-body{
-  margin-top: 10px;          /* ✅ spacing under the title */
+  margin-top: 10px;    
   font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   font-size: 14px;
   line-height: 1.8;
@@ -4063,7 +3573,6 @@ body.is-intro .page.intro-page{
   font-weight: 500;
 }
 
-/* Reference heading */
 .didk-ref-title{
   margin: 50px 0 6px;
   font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
@@ -4072,18 +3581,12 @@ body.is-intro .page.intro-page{
   color: #111827;
 }
 
-/* Links */
 .didk-facts a{
   color: #ff4f6d;
   font-weight: 800;
   text-decoration: underline;
   word-break: break-word;
 }
-
-/* =========================
-   FIX: Center .page on iPad / tablet
-   (because .page is position:absolute)
-   ========================= */
 
 @media (min-width: 768px) and (max-width: 1099px){
   .page{
@@ -4094,12 +3597,6 @@ body.is-intro .page.intro-page{
   }
 }
 
-/* =========================
-   GLOBAL HOVER SYSTEM (Buttons + Pill Links)
-   Paste at VERY BOTTOM of main.css
-   ========================= */
-
-/* Smooth interactions everywhere */
 a, button {
   -webkit-tap-highlight-color: transparent;
 }
@@ -4136,10 +3633,8 @@ a.articles-cat-back,
     opacity 180ms ease;
 }
 
-/* Desktop / laptop hover */
 @media (hover: hover) and (pointer: fine) {
 
-  /* Generic hover “lift” */
   button:hover,
   a.menu-btn:hover,
   a.menu-nav:hover,
@@ -4165,7 +3660,6 @@ a.articles-cat-back,
     filter: brightness(1.02) saturate(1.05);
   }
 
-  /* Pills/white buttons should get a soft pink “ink” */
   a.watch-back:hover,
   a.article-back:hover,
   .page-back:hover,
@@ -4179,7 +3673,6 @@ a.articles-cat-back,
       0 0 0 3px rgba(255,111,122,0.12);
   }
 
-  /* Pink buttons: stronger glow + better contrast */
   .mode-btn:hover,
   .feedback-submit:hover,
   .thanks-close:hover {
@@ -4189,7 +3682,6 @@ a.articles-cat-back,
       0 0 0 3px rgba(255,111,122,0.16);
   }
 
-  /* Active chips / active menu should not “wash out” */
   .watch-chips .chip.is-active:hover,
   .menu-nav.is-active:hover,
   .lang-option.is-active:hover {
@@ -4200,7 +3692,6 @@ a.articles-cat-back,
       0 0 0 3px rgba(255,111,122,0.14);
   }
 
-  /* Footer tabs: subtle lift only (avoid huge shadows) */
   .footer-container a:hover {
     transform: translateY(-1px);
     box-shadow: none;
@@ -4215,7 +3706,6 @@ a.articles-cat-back,
     font-weight: 800;
   }
 
-  /* Cards that act like buttons */
   .place-card:hover,
   .didk-item:hover,
   .acc-item:hover {
@@ -4223,7 +3713,6 @@ a.articles-cat-back,
   }
 }
 
-/* Mobile tap feedback (no hover) */
 button:active,
 a.menu-btn:active,
 a.menu-nav:active,
@@ -4247,7 +3736,6 @@ a.articles-cat-back:active,
   transform: scale(0.98);
 }
 
-/* Keyboard accessibility (important on desktop) */
 button:focus-visible,
 a.menu-btn:focus-visible,
 a.menu-nav:focus-visible,
@@ -4270,7 +3758,6 @@ a.articles-cat-back:focus-visible,
     0 10px 22px rgba(0,0,0,0.08);
 }
 
-/* Disabled buttons shouldn’t react */
 button:disabled,
 .feedback-submit:disabled {
   transform: none !important;
@@ -4278,32 +3765,19 @@ button:disabled,
   filter: none !important;
 }
 
-/* =========================
-   ABOUT (DESKTOP FIX)
-   Bigger text + no scroll + fit-to-screen
-   Paste at VERY BOTTOM of main.css
-   ========================= */
-
 @media (min-width: 1100px){
 
-  /* About page should behave like a single-screen section */
   .page.about-page{
-    /* override your mobile about-page rules */
     padding: 22px 26px !important;
     min-height: calc(100vh) !important;
     height: calc(100vh) !important;
     overflow: hidden !important;
-
-    /* keep your soft theme */
     background: #ffe9ee !important;
-
-    /* layout: logo/title -> team -> about text */
     display: grid !important;
     grid-template-rows: auto 1fr auto;
     gap: 18px !important;
   }
 
-  /* Remove the big hero padding that causes scroll on desktop */
   .about-hero{
     padding: 12px 0 0 !important;
     background: transparent !important;
@@ -4315,7 +3789,6 @@ button:disabled,
     gap: 10px;
   }
 
-  /* Logo slightly bigger but controlled */
   .about-logo{
     width: 200px !important;
     height: auto !important;
@@ -4323,28 +3796,23 @@ button:disabled,
     margin: 0 auto !important;
   }
 
-  /* Subtitle readable */
   .about-subtitle{
     margin: 0 !important;
-    font-size: 26px !important;
+    font-size: 40px !important;
     font-weight: 800 !important;
     color: #ff4f6d !important;
     line-height: 1.1 !important;
   }
 
-  /* Stop the overlap trick on desktop (this is a main scroll cause) */
   .about-team{
     margin-top: 0 !important;
     padding: 0 !important;
 
-    /* center the team area */
     display: grid;
     align-content: center;
     justify-items: center;
   }
 
-  /* Make team layout fit one screen:
-     2 on top, 3 on bottom, but tighter and centered */
   .team-grid-top{
     gap: 28px !important;
     margin-bottom: 18px !important;
@@ -4354,7 +3822,6 @@ button:disabled,
     gap: 28px !important;
   }
 
-  /* Bigger avatars for desktop but still compact */
   .team-avatar{
     width: 120px !important;
     height: 120px !important;
@@ -4366,12 +3833,11 @@ button:disabled,
     height: 128px !important;
   }
 
-  /* Make names + roles readable */
   .team-name{
     margin-top: 8px;
     font-size: 14px !important;
     font-weight: 900 !important;
-    color: #ff2f58 !important; /* stronger contrast */
+    color: #ff2f58 !important; 
     line-height: 1.2 !important;
   }
 
@@ -4381,33 +3847,24 @@ button:disabled,
     color: rgba(17,24,39,0.72) !important;
   }
 
-  /* About text: larger + readable + clamp to prevent scroll */
   .about-box{
     margin: 0 auto !important;
     width: min(900px, 100%) !important;
-
     background: rgba(255, 255, 255, 0.70) !important;
     border: 1px solid rgba(255, 79, 109, 0.18) !important;
     border-radius: 18px !important;
     padding: 16px 18px !important;
-
-    /* keep it from pushing page height */
     max-height: 170px;
     overflow: hidden;
   }
 
   .about-box p{
     margin: 0 !important;
-
-    /* readable font on desktop */
     font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
     font-size: 14px !important;
     line-height: 1.75 !important;
-
     color: rgba(17,24,39,0.85) !important;
     font-weight: 600 !important;
-
-    /* prevent overflow while keeping it clean */
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
@@ -4415,36 +3872,27 @@ button:disabled,
   }
 }
 
-/* =========================
-   ABOUT BOX — Desktop Fix
-   ========================= */
-
 @media (min-width: 1100px){
 
   .about-box{
-    max-width: 800px !important;   /* make it wider */
+    max-width: 800px !important;  
     width: 100% !important;
 
-    padding: 28px 34px !important; /* more breathing space */
+    padding: 28px 34px !important; 
 
     border-radius: 22px !important;
 
-    max-height: none !important;   /* REMOVE height limit */
-    overflow: visible !important;  /* show full text */
+    max-height: none !important; 
+    overflow: visible !important; 
   }
 
   .about-box p{
-    font-size: 17px !important;    /* larger readable text */
-    line-height: 1.9 !important;   /* better readability */
+    font-size: 17px !important;  
+    line-height: 1.9 !important;   
     font-weight: 500 !important;
   }
 
 }
-
-/* =========================
-   ABOUT PAGE — Enable Scroll
-   ========================= */
-
 @media (min-width: 1100px){
 
   .page.about-page{
