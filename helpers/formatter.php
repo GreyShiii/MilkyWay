@@ -1,15 +1,8 @@
 <?php
-
-/**
- * Escape helper (safe HTML output)
- */
 function e(string $s): string {
   return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
 }
 
-/**
- * Auto link URLs (expects already-escaped text)
- */
 function linkify(string $escaped): string {
   return preg_replace(
     '/(https?:\/\/[^\s<]+)/',
@@ -18,10 +11,6 @@ function linkify(string $escaped): string {
   );
 }
 
-/**
- * Inline formatting: **bold** and *italic*
- * Input must be escaped already.
- */
 function inline_format(string $escaped): string {
   // **bold**
   $escaped = preg_replace('/\*\*(.+?)\*\*/s', '<strong>$1</strong>', $escaped);
@@ -30,13 +19,6 @@ function inline_format(string $escaped): string {
   return $escaped;
 }
 
-/**
- * For general single-line formatting (kept for other pages if you use it).
- * Supports:
- *   ***Heading*** -> H1
- *   **Heading**   -> H2
- *   Otherwise -> paragraph
- */
 function format_text($text): string
 {
   if (is_array($text)) {
@@ -48,12 +30,10 @@ function format_text($text): string
   $raw = trim((string)$text);
   if ($raw === '') return '';
 
-  // H1: ***Heading***
   if (preg_match('/^\*\*\*(.+?)\*\*\*$/s', $raw, $m)) {
     return '<h1 class="didk-heading-xl">' . e(trim($m[1])) . '</h1>';
   }
 
-  // H2: **Heading**
   if (preg_match('/^\*\*(.+?)\*\*$/s', $raw, $m)) {
     return '<h2 class="didk-heading">' . e(trim($m[1])) . '</h2>';
   }
@@ -65,25 +45,16 @@ function format_text($text): string
   return '<p class="didk-paragraph">' . $escaped . '</p>';
 }
 
-/**
- * ✅ IMPORTANT:
- * This is what fixes your layout:
- * - Detects numbered Myth lines and groups the next Fact line UNDER it.
- * - Styles Trivia ("Did you know?") like your sample.
- * - Handles Reference/Sanggunian blocks cleanly.
- *
- * Returns an array of HTML strings (already wrapped).
- */
 function format_facts(array $factsRaw): array
 {
   $out = [];
-  $currentBlock = null; // ['num'=>..., 'label'=>..., 'myth'=>..., 'fact'=>...]
+  $currentBlock = null; 
 
   $flushBlock = function() use (&$out, &$currentBlock) {
     if (!$currentBlock) return;
 
     $num   = e($currentBlock['num']);
-    $label = e($currentBlock['label']); // Myth or Mito
+    $label = e($currentBlock['label']); 
     $myth  = e($currentBlock['myth']);
     $fact  = trim($currentBlock['fact'] ?? '');
 
@@ -114,27 +85,23 @@ function format_facts(array $factsRaw): array
     $raw = trim((string)$line);
     if ($raw === '') continue;
 
-    // --- Reference headings ---
     if (preg_match('/^\*\*(Reference|Sanggunian)\s*:\s*\*\*$/i', $raw, $m)) {
       $flushBlock();
       $out[] = '<div class="didk-ref-title">' . e($m[1]) . ':</div>';
       continue;
     }
 
-    // --- H1/H2 headings inside facts array ---
     if (preg_match('/^\*\*\*(.+?)\*\*\*$/s', $raw, $m)) {
       $flushBlock();
       $out[] = '<h1 class="didk-heading-xl">' . e(trim($m[1])) . '</h1>';
       continue;
     }
     if (preg_match('/^\*\*(.+?)\*\*$/s', $raw, $m) && !preg_match('/^\*\*\d+\./', $raw)) {
-      // avoid stealing "**1. Myth:**" lines
       $flushBlock();
       $out[] = '<h2 class="didk-heading">' . e(trim($m[1])) . '</h2>';
       continue;
     }
 
-    // --- Trivia line: **Did you know?** body...
     if (preg_match('/^\*\*(Did you know\?|Alam mo ba\?)\*\*\s*(.+)$/i', $raw, $m)) {
       $flushBlock();
 
@@ -149,7 +116,6 @@ function format_facts(array $factsRaw): array
       continue;
     }
 
-    // --- Numbered Myth/Mito: **1. Myth:** something...
     if (preg_match('/^\*\*(\d+)\.\s*(Myth|Mito)\s*:\s*\*\*\s*(.+)$/i', $raw, $m)) {
       $flushBlock();
 
@@ -158,19 +124,16 @@ function format_facts(array $factsRaw): array
         'label' => $m[2],
         'myth'  => trim($m[3]),
         'fact'  => '',
-        'factLabel' => 'Fact', // default, can be Katotohanan
+        'factLabel' => 'Fact', 
       ];
       continue;
     }
 
-    // --- Fact/Katotohanan line: **Fact:** something...
     if (preg_match('/^\*\*(Fact|Katotohanan)\s*:\s*\*\*\s*(.+)$/i', $raw, $m)) {
-      // If we have a current myth block, attach it under it.
       if ($currentBlock) {
         $currentBlock['factLabel'] = $m[1];
         $currentBlock['fact']      = trim($m[2]);
       } else {
-        // Fact without a myth: just render as a normal paragraph
         $factEsc = linkify(inline_format(e(trim($m[2]))));
         $out[] =
           '<p class="didk-paragraph">' .
@@ -181,7 +144,6 @@ function format_facts(array $factsRaw): array
       continue;
     }
 
-    // --- URL line alone ---
     if (preg_match('/^https?:\/\/\S+$/i', $raw)) {
       $flushBlock();
       $u = e($raw);
@@ -189,16 +151,12 @@ function format_facts(array $factsRaw): array
       continue;
     }
 
-    // --- Default paragraph ---
-    // If a Myth block exists and we meet unrelated text, flush first.
-    // (prevents weird mixing)
     $flushBlock();
 
     $escaped = linkify(inline_format(e($raw)));
     $out[] = '<p class="didk-paragraph">' . $escaped . '</p>';
   }
 
-  // flush last block
   $flushBlock();
 
   return $out;

@@ -49,11 +49,6 @@ $ARTICLE_CATEGORIES = [
   ],
 ];
 
-/* =========================
-   ARTICLE CARDS
-   - Every card redirects to an external link
-   ========================= */
-
 $ARTICLES = [
 
   [

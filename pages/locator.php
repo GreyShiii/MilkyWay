@@ -7,10 +7,8 @@
     <p class="page-subtitle"><?= htmlspecialchars(t('locator_sub')) ?></p>
   </section>
 
-  <!-- ✅ NEW: Desktop layout wrapper -->
   <div class="locator-shell">
 
-    <!-- ✅ Top row: Search + Mode -->
     <div class="locator-top">
 
       <section class="locator-search">
@@ -39,14 +37,12 @@
 
     </div>
 
-    <!-- ✅ Main row: Map (left) -->
     <section class="locator-map">
       <section class="map-card">
         <div id="map"></div>
       </section>
     </section>
 
-    <!-- ✅ Main row: Results (right) -->
     <section class="locator-results">
       <section id="nearbyList" class="places-list"></section>
     </section>

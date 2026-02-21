@@ -12,13 +12,8 @@ $routes = [
   'articles'     => __DIR__ . '/pages/articles.php',
   'articles_cat' => __DIR__ . '/pages/articles_cat.php',
   'article_view' => __DIR__ . '/pages/article_view.php',
-
-  // MAP PAGE
   'locator'      => __DIR__ . '/pages/locator.php',
-
-  // Buddy alias
   'buddy'        => __DIR__ . '/pages/locator.php',
-
   'didyouknow'     => __DIR__ . '/pages/didyouknow.php',
   'didyouknow_cat' => __DIR__ . '/pages/didyouknow_cat.php',
   'feedback'       => __DIR__ . '/pages/feedback.php',

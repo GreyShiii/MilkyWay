@@ -3,7 +3,7 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 
 if (!isset($_SESSION['lang'])) {
-  $_SESSION['lang'] = 'en'; // default
+  $_SESSION['lang'] = 'en';
 }
 
 function lang(): string
@@ -209,27 +209,18 @@ function t(string $key): string
   return $dict[$l][$key] ?? $dict['en'][$key] ?? $key;
 }
 
-/**
- * For arrays like: ['en' => '...', 'fil' => '...']
- */
 function tr($value)
 {
   if (is_array($value)) {
     $l = lang();
-    // if the current language exists, return it (can be string or array)
     if (array_key_exists($l, $value)) return $value[$l];
-    // fallback to english
     if (array_key_exists('en', $value)) return $value['en'];
-    // fallback to first value
     $first = reset($value);
     return $first;
   }
   return $value;
 }
 
-/**
- * Send translations to JS
- */
 function tjs(array $keys): array
 {
   $out = [];

@@ -17,7 +17,6 @@ if (!$video) {
   return;
 }
 
-/* ✅ DEFINE THESE BEFORE HTML */
 $title  = (string)($video['title'] ?? '');
 $author = (string)($video['author'] ?? '');
 $desc   = (string)($video['description'] ?? '');
@@ -37,10 +36,8 @@ $src    = (string)($video['src'] ?? '');
     </video>
   </div>
 
-  <!-- Title (no container) -->
   <h2 class="watch-view-title"><?= htmlspecialchars($title) ?></h2>
 
-  <!-- Author (no container) -->
   <?php if ($author !== ''): ?>
     <div class="watch-view-meta">
       <div class="watch-author-row">
@@ -49,7 +46,6 @@ $src    = (string)($video['src'] ?? '');
     </div>
   <?php endif; ?>
 
-  <!-- Description (ONLY container) -->
   <?php if (trim($desc) !== ''): ?>
     <section class="watch-desc-card" id="descCard">
       <div class="watch-desc-head">

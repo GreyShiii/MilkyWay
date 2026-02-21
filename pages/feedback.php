@@ -68,7 +68,6 @@ $avgRatingFormatted = number_format($avgRating, 1);
       Submit Feedback
     </button>
 
-    <!-- THANK YOU POPUP -->
 <div id="thanksOverlay" class="thanks-overlay" aria-hidden="true">
   <div class="thanks-modal" role="dialog" aria-modal="true" aria-labelledby="thanksTitle">
     <div class="thanks-icon">
