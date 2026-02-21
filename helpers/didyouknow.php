@@ -12,9 +12,9 @@ function didyouknow_sections()
         'en'  => 'Trivia',
         'fil' => 'Kaalaman',
       ],
-      'image' => '/MILKYWAY/public/images/didyouknow/trivia.jpg',
+      'image' => 'public/images/didyouknow/trivia.jpg',
       'ribbon_class' => 'ribbon-pink',
-      'link' => '/MILKYWAY/index.php?page=didyouknow_cat&cat=trivia',
+      'link' => 'index.php?page=didyouknow_cat&cat=trivia',
 
       'facts' => [
 
@@ -60,9 +60,9 @@ function didyouknow_sections()
         'en'  => 'Facts & Myths',
         'fil' => 'Katotohanan at Mito',
       ],
-      'image' => '/MILKYWAY/public/images/didyouknow/myths.jpg',
+      'image' => 'public/images/didyouknow/myths.jpg',
       'ribbon_class' => 'ribbon-red',
-      'link' => '/MILKYWAY/index.php?page=didyouknow_cat&cat=facts-myths',
+      'link' => 'index.php?page=didyouknow_cat&cat=facts-myths',
 
       'facts' => [
 

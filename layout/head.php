@@ -14,7 +14,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" href="/MILKYWAY/public/css/main.css">
+  <link rel="stylesheet" href="public/css/main.css">
 
   <script>
     window.__I18N = <?= json_encode(tjs([

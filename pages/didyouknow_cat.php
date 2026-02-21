@@ -19,7 +19,7 @@ foreach ($DIDYOUKNOW_SECTIONS as $s) {
 
   <section class="didk-cat-hero">
     <a class="articles-cat-back"
-      href="/MILKYWAY/index.php?page=didyouknow">
+      href="index.php?page=didyouknow">
       &larr; <?= htmlspecialchars(t('didk_all_categories')) ?>
     </a>
 

@@ -293,12 +293,12 @@ function renderList(places, emptyMessage = "No results found. Try switching mode
 
   <div class="place-meta">
     <div class="meta-row">
-      <img class="meta-ic" src="/MILKYWAY/public/images/location.png" alt="Location" loading="lazy">
+      <img class="meta-ic" src="public/images/location.png" alt="Location" loading="lazy">
       <span>${escapeHtml(p.address)}</span>
     </div>
 
     <div class="meta-row">
-      <img class="meta-ic" src="/MILKYWAY/public/images/clock.png" alt="Hours" loading="lazy">
+      <img class="meta-ic" src="public/images/clock.png" alt="Hours" loading="lazy">
       <span>${escapeHtml(openLabel)}</span>
     </div>
   </div>

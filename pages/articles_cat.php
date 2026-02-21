@@ -41,7 +41,7 @@ $filtered = array_values(
       src="<?= htmlspecialchars((string)($category['hero'] ?? '')) ?>"
       alt="">
 
-    <a class="articles-cat-back" href="/MILKYWAY/index.php?page=articles">
+    <a class="articles-cat-back" href="index.php?page=articles">
       &larr; <?= htmlspecialchars(t('articles_all')) ?>
     </a>
 

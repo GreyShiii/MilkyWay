@@ -26,7 +26,7 @@ $src    = (string)($video['src'] ?? '');
 <main class="page watch-view-page">
 
   <div class="watch-top">
-    <a class="watch-back" href="/MilkyWay/index.php?page=watch">← <?= htmlspecialchars(t('back')) ?></a>
+    <a class="watch-back" href="index.php?page=watch">← <?= htmlspecialchars(t('back')) ?></a>
   </div>
 
   <div class="watch-player">

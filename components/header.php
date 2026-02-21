@@ -9,7 +9,7 @@
         </button>
 
         <div class="logo">
-            <img class="logo-img" src="/MILKYWAY/public/images/logo.png" alt="Milky Way">
+            <img class="logo-img" src="public/images/logo.png" alt="Milky Way">
             <span class="logo-text">Milky Way</span>
         </div>
 

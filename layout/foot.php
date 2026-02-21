@@ -1,4 +1,4 @@
-<script src="/MilkyWay/public/js/menu.js"></script>
-<script src="/MilkyWay/public/js/feedback.js"></script>
+<script src="public/js/menu.js"></script>
+<script src="public/js/feedback.js"></script>
 </body>
 </html>

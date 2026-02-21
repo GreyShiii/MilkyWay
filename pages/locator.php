@@ -14,7 +14,7 @@
       <section class="locator-search">
         <div class="search-pill">
           <span class="search-ic">
-            <img class="search-icon" src="/MILKYWAY/public/images/search.png" alt="">
+            <img class="search-icon" src="public/images/search.png" alt="">
           </span>
 
           <input
@@ -25,7 +25,7 @@
           />
 
           <button class="gps-btn" type="button" aria-label="Use my location">
-            <img class="target-location" src="/MILKYWAY/public/images/target-location.png" alt="">
+            <img class="target-location" src="public/images/target-location.png" alt="">
           </button>
         </div>
       </section>
@@ -50,12 +50,12 @@
   </div>
 </main>
 
-<script src="/MILKYWAY/public/js/locator.js"></script>
+<script src="public/js/locator.js"></script>
 
 <script>
 (async () => {
   try {
-    const res = await fetch("/MILKYWAY/api/maps_key.php", { cache: "no-store" });
+    const res = await fetch("api/maps_key.php", { cache: "no-store" });
     const data = await res.json();
 
     if (!data || !data.key) {

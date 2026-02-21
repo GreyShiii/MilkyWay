@@ -20,7 +20,7 @@ $cat = $article['cat'] ?? 'intro';
 
   <section class="page-title-wrap article-view-head">
     <a class="article-back"
-       href="/MILKYWAY/index.php?page=articles_cat&cat=<?= htmlspecialchars($cat) ?>">
+       href="index.php?page=articles_cat&cat=<?= htmlspecialchars($cat) ?>">
       &larr; Back
     </a>
 

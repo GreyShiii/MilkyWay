@@ -18,23 +18,23 @@ $isBuddy    = in_array($page, ['locator','clinic_connect'], true);
 
 
 <footer class="footer-container">
-  <a href="/MILKYWAY/index.php?page=home" class="<?= $isHome ? 'is-active' : '' ?>">
-    <img src="/MILKYWAY/public/images/footer-home.png" alt="">
+  <a href="index.php?page=home" class="<?= $isHome ? 'is-active' : '' ?>">
+    <img src="public/images/footer-home.png" alt="">
     <p class="image-title"><?= htmlspecialchars(t('nav_home')) ?></p>
   </a>
 
-  <a href="/MILKYWAY/index.php?page=watch" class="<?= $isWatch ? 'is-active' : '' ?>">
-    <img src="/MILKYWAY/public/images/footer-video.png" alt="">
+  <a href="index.php?page=watch" class="<?= $isWatch ? 'is-active' : '' ?>">
+    <img src="public/images/footer-video.png" alt="">
     <p class="image-title"><?= htmlspecialchars(t('nav_watch')) ?></p>
   </a>
 
-  <a href="/MILKYWAY/index.php?page=articles" class="<?= $isArticles ? 'is-active' : '' ?>">
-    <img src="/MILKYWAY/public/images/footer-book.png" alt="">
+  <a href="index.php?page=articles" class="<?= $isArticles ? 'is-active' : '' ?>">
+    <img src="public/images/footer-book.png" alt="">
     <p class="image-title"><?= htmlspecialchars(t('nav_articles')) ?></p>
   </a>
 
-  <a href="/MILKYWAY/index.php?page=locator" class="<?= $isBuddy ? 'is-active' : '' ?>">
-    <img src="/MILKYWAY/public/images/footer-location.png" alt="">
+  <a href="index.php?page=locator" class="<?= $isBuddy ? 'is-active' : '' ?>">
+    <img src="public/images/footer-location.png" alt="">
     <p class="image-title"><?= htmlspecialchars(t('nav_locator')) ?></p>
   </a>
 </footer>

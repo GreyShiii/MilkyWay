@@ -1,6 +1,6 @@
 <main class="page intro-page">
   <div class="intro-wrap">
-    <img class="intro-logo" src="/MILKYWAY/public/images/logo.png" alt="Milky Way">
+    <img class="intro-logo" src="public/images/logo.png" alt="Milky Way">
     <div class="intro-title">Milky Way</div>
     <div class="intro-sub">A Breastfeeding Support App</div>
   </div>
@@ -8,6 +8,6 @@
 
 <script>
   setTimeout(() => {
-    window.location.href = "/MILKYWAY/index.php?page=home";
+    window.location.href = "index.php?page=home";
   }, 2200);
 </script>

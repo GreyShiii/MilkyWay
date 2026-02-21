@@ -20,8 +20,8 @@ $VIDEOS = [
     'description' => 'A guide for proper latching and effective breastfeeding technique and making sure the infants are getting fed properly.',
     'category' => 'latch',
     'duration' => '4:01',
-    'thumb' => '/MilkyWay/public/images/thumbnails/latch/latch1.jpg',
-    'src' => '/MilkyWay/public/videos/latch/latch1.mp4',
+    'thumb' => 'public/images/thumbnails/latch/latch1.jpg',
+    'src' => 'public/videos/latch/latch1.mp4',
   ],
   [
     'id' => 2,
@@ -30,8 +30,8 @@ $VIDEOS = [
     'description' => 'A proper latch allows your baby to draw milk efficiently. It promotes steady milk flow, supports healthy weight gain, and encourages a strong milk supply making feeding smoother, more comfortable, and more rewarding for both mother and baby.',
     'category' => 'latch',
     'duration' => '2:28',
-    'thumb' => '/MilkyWay/public/images/thumbnails/latch/latch2.jpg',
-    'src' => '/MilkyWay/public/videos/latch/latch2.mp4',
+    'thumb' => 'public/images/thumbnails/latch/latch2.jpg',
+    'src' => 'public/videos/latch/latch2.mp4',
   ],
 //   Nutrition
   [
@@ -41,8 +41,8 @@ $VIDEOS = [
     'description' => 'A practical guide on nutrient tips and diet strategies to support breastfeeding moms’ health, including foods to include for energy, hydration, and milk production',
     'category' => 'nutrition',
     'duration' => '14:12',
-    'thumb' => '/MilkyWay/public/images/thumbnails/nutrition/nutrition1.jpg',
-    'src' => '/MilkyWay/public/videos/nutrition/nutrition1.mp4',
+    'thumb' => 'public/images/thumbnails/nutrition/nutrition1.jpg',
+    'src' => 'public/videos/nutrition/nutrition1.mp4',
   ],
   [
     'id' => 4,
@@ -51,8 +51,8 @@ $VIDEOS = [
     'description' => 'Key guidance on what foods may affect your baby or breast milk negatively so you can adjust your diet with confidence while nursing.',
     'category' => 'nutrition',
     'duration' => '4:06',
-    'thumb' => '/MilkyWay/public/images/thumbnails/nutrition/nutrition2.jpg',
-    'src' => '/MilkyWay/public/videos/nutrition/nutrition2.mp4',
+    'thumb' => 'public/images/thumbnails/nutrition/nutrition2.jpg',
+    'src' => 'public/videos/nutrition/nutrition2.mp4',
   ],
   [
     'id' => 5,
@@ -61,8 +61,8 @@ $VIDEOS = [
     'description' => 'Discover the top 10 nutritious foods that can help breastfeeding moms boost milk production and stay energized with healthy, family-friendly nutrition tips.',
     'category' => 'nutrition',
     'duration' => '1:56',
-    'thumb' => '/MilkyWay/public/images/thumbnails/nutrition/nutrition3.jpg',
-    'src' => '/MilkyWay/public/videos/nutrition/nutrition3.mp4',
+    'thumb' => 'public/images/thumbnails/nutrition/nutrition3.jpg',
+    'src' => 'public/videos/nutrition/nutrition3.mp4',
   ],
   [
     'id' => 6,
@@ -71,8 +71,8 @@ $VIDEOS = [
     'description' => 'Learn which 6 fruits are most beneficial to include in your breastfeeding diet for extra vitamins, hydration, and overall nourishment.',
     'category' => 'nutrition',
     'duration' => '3:51',
-    'thumb' => '/MilkyWay/public/images/thumbnails/nutrition/nutrition4.jpg',
-    'src' => '/MilkyWay/public/videos/nutrition/nutrition4.mp4',
+    'thumb' => 'public/images/thumbnails/nutrition/nutrition4.jpg',
+    'src' => 'public/videos/nutrition/nutrition4.mp4',
   ],
 //   Anatomy
   [
@@ -82,8 +82,8 @@ $VIDEOS = [
     'description' => 'Discover the fascinating design and function of the female breast and how it produces and delivers life-nourishing milk.',
     'category' => 'anatomy',
     'duration' => '3:34',
-    'thumb' => '/MilkyWay/public/images/thumbnails/anatomy/anatomy1.jpg',
-    'src' => '/MilkyWay/public/videos/anatomy/anatomy1.mp4',
+    'thumb' => 'public/images/thumbnails/anatomy/anatomy1.jpg',
+    'src' => 'public/videos/anatomy/anatomy1.mp4',
   ],
   [
     'id' => 8,
@@ -92,8 +92,8 @@ $VIDEOS = [
     'description' => 'From hormonally guided production to its nutrient-packed flow, breast milk is naturally crafted to feed, defend, and build your baby’s strength from the very first drop.',
     'category' => 'anatomy',
     'duration' => '3:41',
-    'thumb' => '/MilkyWay/public/images/thumbnails/anatomy/anatomy2.jpg',
-    'src' => '/MilkyWay/public/videos/anatomy/anatomy2.mp4',
+    'thumb' => 'public/images/thumbnails/anatomy/anatomy2.jpg',
+    'src' => 'public/videos/anatomy/anatomy2.mp4',
   ],
 //   Problems
   [
@@ -103,8 +103,8 @@ $VIDEOS = [
     'description' => 'Latch right, feed bright. Secured attachment turns every feed into an effortless, nurturing experience',
     'category' => 'problems',
     'duration' => '1:04',
-    'thumb' => '/MilkyWay/public/images/thumbnails/problems/problems1.jpg',
-    'src' => '/MilkyWay/public/videos/problems/problems1.mp4',
+    'thumb' => 'public/images/thumbnails/problems/problems1.jpg',
+    'src' => 'public/videos/problems/problems1.mp4',
   ],
   [
     'id' => 10,
@@ -113,8 +113,8 @@ $VIDEOS = [
     'description' => 'Awareness today prevents complications tomorrow. Protected breast health, protects your milk flow.',
     'category' => 'problems',
     'duration' => '2:48',
-    'thumb' => '/MilkyWay/public/images/thumbnails/problems/problems2.jpg',
-    'src' => '/MilkyWay/public/videos/problems/problems2.mp4',
+    'thumb' => 'public/images/thumbnails/problems/problems2.jpg',
+    'src' => 'public/videos/problems/problems2.mp4',
   ],
   [
     'id' => 11,
@@ -123,8 +123,8 @@ $VIDEOS = [
     'description' => 'When supply feels low, knowledge and support help it grow because understanding the causes, signs, and solutions can turn worry into action.',
     'category' => 'problems',
     'duration' => '4:08',
-    'thumb' => '/MilkyWay/public/images/thumbnails/problems/problems3.jpg',
-    'src' => '/MilkyWay/public/videos/problems/problems3.mp4',
+    'thumb' => 'public/images/thumbnails/problems/problems3.jpg',
+    'src' => 'public/videos/problems/problems3.mp4',
   ],
   [
     'id' => 12,
@@ -133,8 +133,8 @@ $VIDEOS = [
     'description' => 'Relieve engorgement, restore comfort. Keep your milk supply steady and feed your baby happy and healthy. ',
     'category' => 'problems',
     'duration' => '4:26',
-    'thumb' => '/MilkyWay/public/images/thumbnails/problems/problems4.jpg',
-    'src' => '/MilkyWay/public/videos/problems/problems4.mp4',
+    'thumb' => 'public/images/thumbnails/problems/problems4.jpg',
+    'src' => 'public/videos/problems/problems4.mp4',
   ],
   [
     'id' => 13,
@@ -143,8 +143,8 @@ $VIDEOS = [
     'description' => 'Exploring the sore or cracked nipples, identifying their causes, and learning effective ways to prevent and treat them.',
     'category' => 'problems',
     'duration' => '2:44',
-    'thumb' => '/MilkyWay/public/images/thumbnails/problems/problems5.jpg',
-    'src' => '/MilkyWay/public/videos/problems/problems5.mp4',
+    'thumb' => 'public/images/thumbnails/problems/problems5.jpg',
+    'src' => '/public/videos/problems/problems5.mp4',
   ],
 //   Proper Position
   [
@@ -154,8 +154,8 @@ $VIDEOS = [
     'description' => 'Guide the head, support the body, cross-cradle makes feeding easy.',
     'category' => 'position',
     'duration' => '0:45',
-    'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position1.jpg',
-    'src' => '/MilkyWay/public/videos/proper_position/proper_position1.mp4',
+    'thumb' => 'public/images/thumbnails/proper_position/proper_position1.jpg',
+    'src' => 'public/videos/proper_position/proper_position1.mp4',
   ],
   [
     'id' => 15,
@@ -164,8 +164,8 @@ $VIDEOS = [
     'description' => 'Cradle the bond, cradle the baby. With this guide master the cradle hold with confidence and comfort.',
     'category' => 'position',
     'duration' => '0:44',
-    'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position2.jpg',
-    'src' => '/MilkyWay/public/videos/proper_position/proper_position2.mp4',
+    'thumb' => 'public/images/thumbnails/proper_position/proper_position2.jpg',
+    'src' => 'public/videos/proper_position/proper_position2.mp4',
   ],
   [
     'id' => 16,
@@ -174,8 +174,8 @@ $VIDEOS = [
     'description' => 'Relax, and let your baby find the perfect latch with confidence.',
     'category' => 'position',
     'duration' => '0:48',
-    'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position3.jpg',
-    'src' => '/MilkyWay/public/videos/proper_position/proper_position3.mp4',
+    'thumb' => 'public/images/thumbnails/proper_position/proper_position3.jpg',
+    'src' => 'public/videos/proper_position/proper_position3.mp4',
   ],
   [
     'id' => 17,
@@ -184,8 +184,8 @@ $VIDEOS = [
     'description' => 'Position your little one under your arm, keeping them close and their head steady. Keep their neck and spine in line to ensure a safe, comfortable feeding posture with a football position.',
     'category' => 'position',
     'duration' => '1:30',
-    'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position4.jpg',
-    'src' => '/MilkyWay/public/videos/proper_position/proper_position4.mp4',
+    'thumb' => 'public/images/thumbnails/proper_position/proper_position4.jpg',
+    'src' => 'public/videos/proper_position/proper_position4.mp4',
   ],
   [
     'id' => 18,
@@ -194,8 +194,8 @@ $VIDEOS = [
     'description' => 'In side-lying breastfeeding, the mother can fully rest while the baby feeds, creating a calm and comfortable environment. Keeping the baby’s body aligned with their head supported encourages efficient milk transfer. This position is ideal for reducing strain, promoting bonding, and making feeding sessions peaceful.',
     'category' => 'position',
     'duration' => '2:05',
-    'thumb' => '/MilkyWay/public/images/thumbnails/proper_position/proper_position5.jpg',
-    'src' => '/MilkyWay/public/videos/proper_position/proper_position5.mp4',
+    'thumb' => 'public/images/thumbnails/proper_position/proper_position5.jpg',
+    'src' => 'public/videos/proper_position/proper_position5.mp4',
   ],
 //   Techniques
   [
@@ -205,8 +205,8 @@ $VIDEOS = [
     'description' => 'Step-by-step demonstration of hand expression techniques and massage tips to help gently express breast milk without a pump.',
     'category' => 'techniques',
     'duration' => '9:21',
-    'thumb' => '/MilkyWay/public/images/thumbnails/techniques/techniques1.jpg',
-    'src' => '/MilkyWay/public/videos/techniques/techniques1.mp4',
+    'thumb' => 'public/images/thumbnails/techniques/techniques1.jpg',
+    'src' => 'public/videos/techniques/techniques1.mp4',
   ],
   [
     'id' => 20,
@@ -215,7 +215,7 @@ $VIDEOS = [
     'description' => 'Expert strategies and tips on enhancing milk supply naturally, including lifestyle changes and nursing tips to support low milk production.',
     'category' => 'techniques',
     'duration' => '3:21',
-    'thumb' => '/MilkyWay/public/images/thumbnails/techniques/techniques2.jpg',
-    'src' => '/MilkyWay/public/videos/techniques/techniques2.mp4',
+    'thumb' => 'public/images/thumbnails/techniques/techniques2.jpg',
+    'src' => 'public/videos/techniques/techniques2.mp4',
   ],
 ];

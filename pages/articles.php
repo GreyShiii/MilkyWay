@@ -13,7 +13,7 @@ require_once __DIR__ . '/../helpers/articles.php';
   <section class="article-cats">
     <?php foreach (($ARTICLE_CATEGORIES ?? []) as $c): ?>
       <a class="article-cat"
-         href="/MILKYWAY/index.php?page=articles_cat&cat=<?= htmlspecialchars($c['slug'] ?? '') ?>">
+         href="index.php?page=articles_cat&cat=<?= htmlspecialchars($c['slug'] ?? '') ?>">
 
         <img class="article-cat-img"
              src="<?= htmlspecialchars($c['hero'] ?? '') ?>"

@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.disabled = true;
 
     try {
-      const res = await fetch("/MilkyWay/process/save_feedback.php", {
+      const res = await fetch("process/save_feedback.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ rating: selectedRating, liked }),

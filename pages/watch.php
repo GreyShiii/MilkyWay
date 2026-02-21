@@ -28,7 +28,7 @@ $filtered = array_values(array_filter($VIDEOS, function ($v) use ($cat) {
   <section class="watch-chips">
     <?php foreach ($VIDEO_CATEGORIES as $c): ?>
       <a class="chip <?= $cat === $c['slug'] ? 'is-active' : '' ?>"
-        href="/MilkyWay/index.php?page=watch&cat=<?= htmlspecialchars($c['slug']) ?>">
+        href="index.php?page=watch&cat=<?= htmlspecialchars($c['slug']) ?>">
         <?= htmlspecialchars($c['name']) ?>
       </a>
     <?php endforeach; ?>
@@ -40,7 +40,7 @@ $filtered = array_values(array_filter($VIDEOS, function ($v) use ($cat) {
     <?php endif; ?>
 
     <?php foreach ($filtered as $v): ?>
-      <a class="watch-card" href="/MilkyWay/index.php?page=watch_view&id=<?= (int)$v['id'] ?>">
+      <a class="watch-card" href="index.php?page=watch_view&id=<?= (int)$v['id'] ?>">
         <div class="watch-thumb">
           <img src="<?= htmlspecialchars($v['thumb']) ?>" alt="">
           <span class="watch-play">▶</span>

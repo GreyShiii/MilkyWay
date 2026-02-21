@@ -32,7 +32,7 @@ $tip = $list[$dayIndex % count($list)];
 
   <section class="hero">
     <div class="hero-card">
-      <img class="hero-img" src="/MILKYWAY/public/images/home-photo1.jpg" alt="">
+      <img class="hero-img" src="public/images/home-photo1.jpg" alt="">
       <p class="hero-quote">
         <?= htmlspecialchars(t('home_quote')) ?>
       </p>
@@ -42,9 +42,9 @@ $tip = $list[$dayIndex % count($list)];
   <section class="feature-grid">
 
     <div class="feature-container">
-      <a href="/MILKYWAY/index.php?page=watch" class="feature-card">
+      <a href="index.php?page=watch" class="feature-card">
         <div class="card-icon">
-          <img src="/MILKYWAY/public/images/home-video.png" alt="">
+          <img src="public/images/home-video.png" alt="">
         </div>
         <div class="card-text">
           <h3><?= htmlspecialchars(t('home_feature_watch')) ?></h3>
@@ -54,9 +54,9 @@ $tip = $list[$dayIndex % count($list)];
     </div>
 
     <div class="feature-container">
-      <a href="/MILKYWAY/index.php?page=articles" class="feature-card">
+      <a href="index.php?page=articles" class="feature-card">
         <div class="card-icon">
-          <img src="/MILKYWAY/public/images/home-book.png" alt="">
+          <img src="public/images/home-book.png" alt="">
         </div>
         <div class="card-text">
           <h3><?= htmlspecialchars(t('home_feature_articles')) ?></h3>
@@ -66,9 +66,9 @@ $tip = $list[$dayIndex % count($list)];
     </div>
 
     <div class="feature-container">
-      <a href="/MILKYWAY/index.php?page=didyouknow" class="feature-card">
+      <a href="index.php?page=didyouknow" class="feature-card">
         <div class="card-icon">
-          <img src="/MILKYWAY/public/images/home-community.png" alt="">
+          <img src="public/images/home-community.png" alt="">
         </div>
         <div class="card-text">
           <h3><?= htmlspecialchars(t('home_feature_didk')) ?></h3>
@@ -78,9 +78,9 @@ $tip = $list[$dayIndex % count($list)];
     </div>
 
     <div class="feature-container">
-      <a href="/MILKYWAY/index.php?page=locator" class="feature-card">
+      <a href="index.php?page=locator" class="feature-card">
         <div class="card-icon">
-          <img src="/MILKYWAY/public/images/home-location.png" alt="">
+          <img src="public/images/home-location.png" alt="">
         </div>
         <div class="card-text">
           <h3><?= htmlspecialchars(t('home_feature_buddy')) ?></h3>
