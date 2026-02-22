@@ -64,11 +64,11 @@ $ARTICLES = [
   [
     'id' => 2,
     'cat' => 'what-is-breastfeeding',
-    'title' => 'Breastfeeding',
-    'author' => 'World Health Organization',
+    'title' => 'Breastfeeding: How to start, benefits & Common Concerns',
+    'author' => 'Cleveland Clinic (2021) ',
     'thumb' => 'public/images/articles/thumbs/who.jpg',
     'overview' => 'WHO overview on breastfeeding benefits, recommendations, and global health impact.',
-    'link' => 'https://www.who.int/health-topics/breastfeeding',
+    'link' => 'https://my.clevelandclinic.org/health/articles/5182-breastfeeding',
   ],
 
   [
