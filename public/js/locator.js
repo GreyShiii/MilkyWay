@@ -1,7 +1,7 @@
 const CAVITE_CENTER = { lat: 14.2766, lng: 120.862 };
 const RADIUS_METERS = 12000;
 
-const CAVITE_BOUNDS_SW = { lat: 13.65, lng: 120.70 };
+const CAVITE_BOUNDS_SW = { lat: 13.65, lng: 120.7 };
 const CAVITE_BOUNDS_NE = { lat: 14.53, lng: 121.05 };
 
 const MODE_CONFIG = {
@@ -35,7 +35,7 @@ window.initMap = function initMap() {
 
   caviteBounds = new google.maps.LatLngBounds(
     new google.maps.LatLng(CAVITE_BOUNDS_SW.lat, CAVITE_BOUNDS_SW.lng),
-    new google.maps.LatLng(CAVITE_BOUNDS_NE.lat, CAVITE_BOUNDS_NE.lng)
+    new google.maps.LatLng(CAVITE_BOUNDS_NE.lat, CAVITE_BOUNDS_NE.lng),
   );
 
   map = new google.maps.Map(mapEl, {
@@ -50,8 +50,8 @@ window.initMap = function initMap() {
   geocoder = new google.maps.Geocoder();
 
   setupModeButtons();
-  setupSearchBar();   
-  setupAutocomplete();   
+  setupSearchBar();
+  setupAutocomplete();
   fetchAndRender();
 };
 
@@ -69,7 +69,8 @@ function setupModeButtons() {
   const btnStation = document.getElementById("btnStation");
 
   if (btnClinic) btnClinic.addEventListener("click", () => setMode("clinic"));
-  if (btnStation) btnStation.addEventListener("click", () => setMode("station"));
+  if (btnStation)
+    btnStation.addEventListener("click", () => setMode("station"));
 }
 
 function setupSearchBar() {
@@ -96,7 +97,10 @@ function setupSearchBar() {
 
       navigator.geolocation.getCurrentPosition(
         (pos) => {
-          const loc = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+          const loc = new google.maps.LatLng(
+            pos.coords.latitude,
+            pos.coords.longitude,
+          );
           if (!isInsideCavite(loc)) {
             map.panTo(loc);
             map.setZoom(12);
@@ -110,7 +114,7 @@ function setupSearchBar() {
           fetchAndRender();
         },
         () => alert("Location permission denied or unavailable."),
-        { enableHighAccuracy: true, timeout: 10000 }
+        { enableHighAccuracy: true, timeout: 10000 },
       );
     });
   }
@@ -123,7 +127,7 @@ function setupAutocomplete() {
   autocomplete = new google.maps.places.Autocomplete(input, {
     fields: ["geometry", "name", "formatted_address", "place_id"],
     types: ["geocode"],
-    componentRestrictions: { country: "ph" }, 
+    componentRestrictions: { country: "ph" },
   });
 
   autocomplete.bindTo("bounds", map);
@@ -198,7 +202,10 @@ function setMode(mode) {
 function fetchAndRender() {
   if (!placesService) return;
 
-  const centerLatLng = new google.maps.LatLng(searchCenter.lat, searchCenter.lng);
+  const centerLatLng = new google.maps.LatLng(
+    searchCenter.lat,
+    searchCenter.lng,
+  );
   if (!isInsideCavite(centerLatLng)) {
     showCaviteOnlyMessageAndClear();
     return;
@@ -249,7 +256,7 @@ function fetchAndRender() {
           addPins(places);
           renderList(places);
         }
-      }
+      },
     );
   });
 }
@@ -271,7 +278,10 @@ function addPins(places) {
   });
 }
 
-function renderList(places, emptyMessage = "No results found. Try switching mode.") {
+function renderList(
+  places,
+  emptyMessage = "No results found. Try switching mode.",
+) {
   const list = document.getElementById("nearbyList");
   if (!list) return;
 
@@ -284,7 +294,11 @@ function renderList(places, emptyMessage = "No results found. Try switching mode
 
   places.forEach((p) => {
     const openLabel =
-      p.openNow === true ? "Open now" : p.openNow === false ? "Closed" : "Hours unknown";
+      p.openNow === true
+        ? "Open now"
+        : p.openNow === false
+          ? "Closed"
+          : "Hours unknown";
 
     const card = document.createElement("div");
     card.className = "place-card";
@@ -304,7 +318,6 @@ function renderList(places, emptyMessage = "No results found. Try switching mode
   </div>
 `;
 
-
     card.addEventListener("click", () => {
       const marker = markersByPlaceId.get(p.placeId);
       if (marker) focusPlace(p, marker);
@@ -323,15 +336,18 @@ function focusPlace(place, marker) {
   map.setZoom(16);
 
   infoWindow.setContent(`
-    <div style="font-family: Arial; font-size: 12px;">
-      <strong>${escapeHtml(place.name)}</strong><br/>
-      ${escapeHtml(place.address)}<br/>
-      <a target="_blank" rel="noopener"
-         href="https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}">
-        Directions
-      </a>
-    </div>
-  `);
+  <div class="mw-iw">
+    <div class="mw-iw__title">${escapeHtml(place.name)}</div>
+    <div class="mw-iw__addr">${escapeHtml(place.address)}</div>
+
+    <a class="mw-iw__btn"
+       target="_blank"
+       rel="noopener"
+       href="https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}">
+      Directions
+    </a>
+  </div>
+`);
 
   infoWindow.open({ anchor: marker, map });
 }
@@ -343,11 +359,15 @@ function clearMarkers() {
 }
 
 function escapeHtml(str) {
-  return String(str).replace(/[&<>"']/g, (m) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;",
-  })[m]);
+  return String(str).replace(
+    /[&<>"']/g,
+    (m) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;",
+      })[m],
+  );
 }
