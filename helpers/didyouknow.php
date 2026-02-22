@@ -19,7 +19,7 @@ function didyouknow_sections()
       'facts' => [
 
         'en' => [
-          "**Did you know?** Breastfeeding protects your baby from ear infections, diarrhoea, pneumonia and other childhood diseases.",
+          "**Did you know?** Breastfeeding protects your baby from ear infections, diarrhea, pneumonia and other childhood diseases.",
           "**Did you know?** Breastfeeding protects the mother from diabetes, breast and ovarian cancers, heart disease and postpartum depression.",
           "**Did you know?** The ‘first milk’ – or colostrum – is rich in antibodies and gives newborns an immunity boost while their own immune systems are still developing.",
           "**Did you know?** Newborns have a strong sense of smell and know the unique scent of your breastmilk. That is why your baby will turn his or her head to you when he or she is hungry.",
