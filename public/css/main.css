@@ -3003,10 +3003,14 @@ button.menu-btn:focus-visible{
 
   .menu-title{
     text-align: center !important;
+    margin: 0;
   }
 
   .menu-subtitle{
     text-align: center !important;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    margin: 0;
   }
 
   .menu-section{
@@ -4125,3 +4129,4 @@ button:disabled,
   width: 32px !important;
   height: 32px !important;
 }
+

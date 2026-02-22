@@ -2,11 +2,11 @@
 
 $VIDEO_CATEGORIES = [
   ['slug' => 'all',       'name' => 'All'],
-  ['slug' => 'latch',     'name' => 'Latch'],
-  ['slug' => 'position',  'name' => 'Proper Position'],
+  ['slug' => 'anatomy',     'name' => 'Anatomy'],
+  ['slug' => 'latch',  'name' => 'Latch'],
   ['slug' => 'problems',  'name' => 'Problems'],
-  ['slug' => 'nutrition', 'name' => 'Nutrition'],
-  ['slug' => 'anatomy',   'name' => 'Anatomy'],
+  ['slug' => 'position', 'name' => 'Proper position'],
+  ['slug' => 'nutrition',   'name' => 'Nutrition'],
   ['slug' => 'techniques','name' => 'Techniques'],
 ];
 

@@ -57,7 +57,7 @@ $ARTICLES = [
     'title' => 'Breastfeeding',
     'author' => 'WHO 2026',
     'thumb' => 'public/images/articles/thumbs/how-to-start.jpg',
-    'overview' => 'Explains what breastfeeding is, how it works, how to start, and common concerns.',
+    'overview' => 'Breastfeeding: the natural way to nourish, protect, support growth and development of your baby.',
     'link' => 'https://www.who.int/health-topics/breastfeeding#tab=tab_1',
   ],
 
@@ -67,7 +67,7 @@ $ARTICLES = [
     'title' => 'Breastfeeding: How to start, benefits & Common Concerns',
     'author' => 'Cleveland Clinic (2021) ',
     'thumb' => 'public/images/articles/thumbs/who.jpg',
-    'overview' => 'WHO overview on breastfeeding benefits, recommendations, and global health impact.',
+    'overview' => 'Breastfeeding provides essential nutrients and antibodies that fuels baby’s health and immunity.',
     'link' => 'https://my.clevelandclinic.org/health/articles/5182-breastfeeding',
   ],
 
@@ -77,7 +77,7 @@ $ARTICLES = [
     'title' => 'Breastfeeding is best pero paano nga ba? ',
     'author' => 'UNICEF (2023)',
     'thumb' => 'public/images/articles/thumbs/unicef.jpg',
-    'overview' => 'Tagalog guide discussing common breastfeeding problems and practical solutions.',
+    'overview' => 'Breastfeeding: Walang kapantay na nutrisyon at proteksyon para sa sanggol, habang pinapalakas ang katawan at nagbubuo ng matibay na bond sa bawat ina at anak',
     'link' => 'https://www.unicef.org/philippines/stories/breastfeeding-best-pero-paano-nga-ba',
   ],
 
