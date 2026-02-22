@@ -1286,6 +1286,7 @@ body{
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
   padding: 14px 10px 10px;
+  align-items: stretch !important;
 }
 
 .article-card{
@@ -1841,13 +1842,14 @@ button.menu-btn:focus-visible{
 }
 
 .article-link-card{
-  display: block;
+  display: flex;            
+  flex-direction: column;
+  height: 150px;               
   text-decoration: none;
   color: inherit;
-
   background: #fff;
   border-radius: 18px;
-  padding: 14px 14px;
+  padding: 14px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.08);
   min-width: 0;
 }
@@ -1858,38 +1860,41 @@ button.menu-btn:focus-visible{
   line-height: 1.45;
   color: #6b7280;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;  
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .article-divider{
-  height: 1px;
+ height: 1px;
   background: rgba(0,0,0,0.08);
   margin: 12px 0;
 }
 
 .article-meta{
+  margin-top: auto;    
   display: grid;
   gap: 4px;
 }
 
 .article-title{
+  margin: 0;
   font-size: 13px;
   font-weight: 900;
   color: #111827;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 2;    
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .article-source{
+  margin: 0;
   font-size: 11px;
   color: rgba(17,24,39,0.55);
   font-weight: 700;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 1;    
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
