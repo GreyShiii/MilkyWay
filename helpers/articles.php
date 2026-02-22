@@ -58,7 +58,7 @@ $ARTICLES = [
     'author' => 'WHO 2026',
     'thumb' => 'public/images/articles/thumbs/how-to-start.jpg',
     'overview' => 'Explains what breastfeeding is, how it works, how to start, and common concerns.',
-    'link' => 'https://my.clevelandclinic.org/health/articles/15274-breastfeeding',
+    'link' => 'https://www.who.int/health-topics/breastfeeding#tab=tab_1',
   ],
 
   [
