@@ -2930,7 +2930,7 @@ button.menu-btn:focus-visible{
 .locator-page .mode-row,
 .locator-page .places-list{
   padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding-right: 10 !important;
 }
 
 .locator-page .search-pill{
