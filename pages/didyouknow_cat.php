@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__ . '/../helpers/auth.php';
+require_login();
+
 require_once __DIR__ . '/../helpers/didyouknow.php';
 
 $DIDYOUKNOW_SECTIONS = didyouknow_sections();

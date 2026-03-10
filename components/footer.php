@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config/app.php';
 require_once __DIR__ . '/../helpers/lang.php';
 
 $page = $_GET['page'] ?? 'home';
@@ -19,22 +20,22 @@ $isBuddy    = in_array($page, ['locator','clinic_connect'], true);
 
 <footer class="footer-container">
   <a href="index.php?page=home" class="<?= $isHome ? 'is-active' : '' ?>">
-    <img src="public/images/footer-home.png" alt="">
+    <img src="<?= BASE_URL ?>/public/images/footer-home.png" alt="">
     <p class="image-title"><?= htmlspecialchars(t('nav_home')) ?></p>
   </a>
 
   <a href="index.php?page=watch" class="<?= $isWatch ? 'is-active' : '' ?>">
-    <img src="public/images/footer-video.png" alt="">
+    <img src="<?= BASE_URL ?>/public/images/footer-video.png" alt="">
     <p class="image-title"><?= htmlspecialchars(t('nav_watch')) ?></p>
   </a>
 
   <a href="index.php?page=articles" class="<?= $isArticles ? 'is-active' : '' ?>">
-    <img src="public/images/footer-book.png" alt="">
+    <img src="<?= BASE_URL ?>/public/images/footer-book.png" alt="">
     <p class="image-title"><?= htmlspecialchars(t('nav_articles')) ?></p>
   </a>
 
   <a href="index.php?page=locator" class="<?= $isBuddy ? 'is-active' : '' ?>">
-    <img src="public/images/footer-location.png" alt="">
+    <img src="<?= BASE_URL ?>/public/images/footer-location.png" alt="">
     <p class="image-title"><?= htmlspecialchars(t('nav_locator')) ?></p>
   </a>
 </footer>

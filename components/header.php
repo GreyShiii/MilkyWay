@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../config/app.php'; ?>
 <?php include __DIR__ . '/menu.php'; ?>
 
 <header class="header">
@@ -9,7 +10,7 @@
         </button>
 
         <div class="logo">
-            <img class="logo-img" src="public/images/logo.png" alt="Milky Way">
+            <img class="logo-img" src="<?= BASE_URL ?>/public/images/logo.png" alt="Milky Way">
             <span class="logo-text">Milky Way</span>
         </div>
 

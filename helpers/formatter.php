@@ -12,9 +12,7 @@ function linkify(string $escaped): string {
 }
 
 function inline_format(string $escaped): string {
-  // **bold**
   $escaped = preg_replace('/\*\*(.+?)\*\*/s', '<strong>$1</strong>', $escaped);
-  // *italic*
   $escaped = preg_replace('/\*(.+?)\*/s', '<em>$1</em>', $escaped);
   return $escaped;
 }

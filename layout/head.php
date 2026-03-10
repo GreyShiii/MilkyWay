@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/../config/app.php'; ?>
 <?php require_once __DIR__ . '/../helpers/lang.php'; ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 
 
-  <link rel="stylesheet" href="public/css/main.css?v=<?= filemtime(__DIR__ . '/../public/css/main.css') ?>">
+  <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/main.css?v=<?= filemtime(__DIR__ . '/../public/css/main.css') ?>">
 
   <script>
     window.__I18N = <?= json_encode(tjs([

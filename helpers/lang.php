@@ -1,24 +1,20 @@
 <?php
-// helpers/lang.php
-if (session_status() === PHP_SESSION_NONE) session_start();
+require_once __DIR__ . '/../config/session.php';
 
 if (!isset($_SESSION['lang'])) {
   $_SESSION['lang'] = 'en';
 }
 
-function lang(): string
-{
+function lang(): string {
   return $_SESSION['lang'] ?? 'en';
 }
 
-function set_lang(string $code): void
-{
+function set_lang(string $code): void {
   $code = strtolower(trim($code));
   $_SESSION['lang'] = in_array($code, ['en', 'fil'], true) ? $code : 'en';
 }
 
-function t(string $key): string
-{
+function t(string $key): string {
   $dict = [
     'en' => [
       // Menu
@@ -26,6 +22,8 @@ function t(string $key): string
       'menu_clinic'   => 'Clinic Connect',
       'menu_about'    => 'About Us',
       'menu_feedback' => 'MomMoments',
+      'menu_tracker'   => 'Breastfeeding Tracker',
+      'menu_admin_panel' => 'Admin Panel',
 
       // Bottom nav + footer labels
       'nav_home'      => 'Home',
@@ -120,6 +118,8 @@ function t(string $key): string
       'menu_clinic'   => 'Clinic Connect',
       'menu_about'    => 'Tungkol sa Amin',
       'menu_feedback' => 'MomMoments',
+      'menu_tracker'      => 'Breastfeeding Tracker',
+      'menu_admin_panel'  => 'Admin Panel',
 
       // Language modal
       'lang_title'    => 'Pumili ng Wika',

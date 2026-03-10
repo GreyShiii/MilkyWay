@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__ . '/../helpers/auth.php';
+require_login();
+
 require_once __DIR__ . '/../helpers/lang.php';
 require_once __DIR__ . '/../helpers/articles.php';
 
