@@ -125,6 +125,10 @@ unset($_SESSION['flash_err'], $_SESSION['flash_ok']);
               <img src="<?= BASE_URL ?>/public/images/google.png" class="google-icon" alt="Google">
               Continue with Google
             </a>
+
+            <a class="auth-google auth-google--login auth-guest-link" href="<?= BASE_URL ?>/auth/guest.php">
+              Continue as Guest
+            </a>
           </form>
         </div>
       </div>

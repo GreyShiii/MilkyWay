@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/main.css?v=<?= filemtime(__DIR__ . '/../public/css/main.css') ?>">
 
   <script>
+    window.BASE_URL = "<?= BASE_URL ?>";
+
     window.__I18N = <?= json_encode(tjs([
                       'loc_cavite_only',
                       'loc_loading',

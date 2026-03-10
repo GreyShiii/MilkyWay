@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__ . '/../helpers/auth.php';
 require_login();
+
+// display any flash errors/ok
+$err = $_SESSION['flash_err'] ?? '';
+$ok  = $_SESSION['flash_ok'] ?? '';
+unset($_SESSION['flash_err'], $_SESSION['flash_ok']);
+
 require_once __DIR__ . '/../helpers/lang.php';
 
 $dailyTips = [
@@ -31,6 +37,18 @@ $tip = $list[$dayIndex % count($list)];
 ?>
 
 <main class="page">
+
+  <?php if ($err): ?>
+    <div class="auth-alert auth-alert--err" style="margin:16px auto;max-width:500px;">
+      <?= htmlspecialchars($err) ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($ok): ?>
+    <div class="auth-alert auth-alert--ok" style="margin:16px auto;max-width:500px;">
+      <?= htmlspecialchars($ok) ?>
+    </div>
+  <?php endif; ?>
 
   <section class="hero">
     <div class="hero-card">

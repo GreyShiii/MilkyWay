@@ -4,7 +4,11 @@ require_once __DIR__ . '/../config/session.php';
 require_once __DIR__ . '/../config/db.php';
 
 function require_login(): void {
-  if (empty($_SESSION['user_id'])) {
+  // Allow either a logged-in user or a guest visitor. Guests are marked with
+  // \$_SESSION['guest'] and do not have a user_id. This keeps the existing
+  // behaviour (redirecting non-authenticated visitors to login) while
+  // permitting anonymous browsing for most pages.
+  if (empty($_SESSION['user_id']) && empty($_SESSION['guest'])) {
     header("Location: " . BASE_URL . "/auth/login.php");
     exit;
   }
@@ -18,12 +22,22 @@ function require_guest(): void {
 }
 
 function auth_login(int $userId): void {
+  // normal login clears any guest state and registers the user id
+  unset($_SESSION['guest']);
   $_SESSION['user_id'] = $userId;
 }
 
 function auth_logout(): void {
   unset($_SESSION['user_id']);
   session_destroy();
+}
+
+
+/**
+ * Returns true if the current session is a "guest" visit.
+ */
+function is_guest(): bool {
+  return !empty($_SESSION['guest']) && empty($_SESSION['user_id']);
 }
 
 function auth_user(): ?array {

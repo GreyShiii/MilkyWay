@@ -34,7 +34,21 @@ $initial  = $userName !== '' ? strtoupper(substr($userName, 0, 1)) : 'G';
         <a class="menu-btn" href="index.php?page=locator&mode=clinic"><?= htmlspecialchars(t('menu_clinic')) ?></a>
         <a class="menu-btn" href="index.php?page=about"><?= htmlspecialchars(t('menu_about')) ?></a>
         <a class="menu-btn" href="index.php?page=feedback"><?= htmlspecialchars(t('menu_feedback')) ?></a>
-        <a class="menu-btn" href="index.php?page=tracker"><?= htmlspecialchars(t('menu_tracker')) ?></a>
+
+        <?php if ($isAuthed): ?>
+          <a class="menu-btn" href="index.php?page=tracker">
+            <?= htmlspecialchars(t('menu_tracker')) ?>
+          </a>
+        <?php else: ?>
+          <a class="menu-btn locked-feature" href="#" id="lockedTracker">
+            <img
+              src="<?= BASE_URL ?>/public/images/lock.png"
+              alt="Locked"
+              class="menu-lock-icon">
+            <?= htmlspecialchars(t('menu_tracker')) ?>
+          </a>
+        <?php endif; ?>
+
       </div>
 
       <nav class="menu-links">
@@ -91,7 +105,7 @@ $initial  = $userName !== '' ? strtoupper(substr($userName, 0, 1)) : 'G';
   <div class="lang-sheet">
     <div class="lang-head">
       <p class="lang-title"><?= htmlspecialchars(t('lang_title')) ?></p>
-      <button id="closeLang" class="lang-close" aria-label="Close">&times;</button>
+      <button id="closeLang" class="lang-close" aria-label="Close" type="button">&times;</button>
     </div>
     <form action="<?= BASE_URL ?>/process/set_language.php" method="POST">
       <div class="lang-options">
@@ -101,3 +115,52 @@ $initial  = $userName !== '' ? strtoupper(substr($userName, 0, 1)) : 'G';
     </form>
   </div>
 </div>
+
+<div id="loginPromptModal" class="lang-modal" aria-hidden="true">
+  <div class="lang-sheet">
+    <div class="lang-head">
+      <p class="lang-title">Login Required</p>
+      <button id="closeLoginPrompt" class="lang-close" aria-label="Close" type="button">&times;</button>
+    </div>
+
+    <div class="lang-options">
+      <p>
+        The Breastfeeding Tracker is only available for
+        logged-in users. Please log in to continue.
+      </p>
+
+      <button id="cancelLoginBtn" class="lang-option" type="button">
+        Cancel
+      </button>
+
+      <button id="goLoginBtn" class="lang-option" type="button">
+        Log In
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const locked = document.getElementById("lockedTracker");
+
+  if (!locked) return;
+
+  locked.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const overlay = document.getElementById("menuOverlay");
+    const drawer = document.getElementById("menuDrawer");
+
+    if (document.body.classList.contains("menu-open")) {
+      document.body.classList.remove("menu-open");
+      if (overlay) overlay.setAttribute("aria-hidden", "true");
+      if (drawer) drawer.setAttribute("aria-hidden", "true");
+    }
+
+    if (typeof window.openLoginPrompt === "function") {
+      window.openLoginPrompt();
+    }
+  });
+});
+</script>

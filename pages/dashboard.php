@@ -1,6 +1,13 @@
 <?php
 require_once __DIR__ . '/../helpers/auth.php';
 require_login();
+
+if (function_exists('is_guest') && is_guest()) {
+    $_SESSION['flash_err'] = "Please log in to view your dashboard.";
+    header("Location: " . BASE_URL . "/auth/login.php");
+    exit;
+}
+
 $u = auth_user();
 ?>
 

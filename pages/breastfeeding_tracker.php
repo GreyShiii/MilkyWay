@@ -2,8 +2,14 @@
 require_once __DIR__ . '/../helpers/auth.php';
 
 require_login();
-$user = auth_user();
+
+// determine if this session is a guest visit; no redirect here
+$isGuest = function_exists('is_guest') && is_guest();
+
+// only fetch user data for real users
+$user = $isGuest ? null : auth_user();
 ?>
+<?php if (!$isGuest): ?>
 <main class="page breastfeeding-page">
   <div class="page-title-wrap">
     <h1 class="page-title">Breastfeeding Tracker</h1>
@@ -55,7 +61,12 @@ $user = auth_user();
     <div class="bf-history-list" id="bfHistoryList"></div>
   </section>
 </main>
+<?php else: ?>
+<!-- guest sees only modal; content is intentionally omitted -->
+<main class="page breastfeeding-page"></main>
+<?php endif; ?>
 
+<?php if (!$isGuest): ?>
 <script>
   window.MILKYWAY_BF = {
     historyUrl: '<?= BASE_URL ?>/api/breastfeeding_history.php',
@@ -67,3 +78,19 @@ $user = auth_user();
   };
 </script>
 <script src="<?= BASE_URL ?>/public/js/breastfeeding_tracker.js"></script>
+<?php endif; ?>
+
+<?php if ($isGuest): ?>
+<script>
+  (function(){
+    function tryOpen(){
+      if (typeof openLoginPrompt === 'function') {
+        openLoginPrompt();
+      } else {
+        setTimeout(tryOpen, 30);
+      }
+    }
+    document.addEventListener('DOMContentLoaded', tryOpen);
+  })();
+</script>
+<?php endif; ?>
